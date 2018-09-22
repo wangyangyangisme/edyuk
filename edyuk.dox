@@ -1,0 +1,76 @@
+/*!
+	\mainpage Edyuk manual
+	
+	Sumarry :
+		- \ref intro "Introduction"
+		- \ref license "License"
+		- \ref tutorial "Tutorial"
+		- \ref examples "Examples"
+	
+	
+	\section intro Introduction 
+	
+	Edyuk is full-featured Qt4 Integrated Developpment Environment.
+	
+	\ref license "[Next:License]"
+*/
+
+/*!
+	\page license License
+	
+	<pre align=left>\ref intro "[Previous:Introduction]"</pre><pre align=right>\ref tutorial "[Next:Tutorial]"</pre>
+	
+	\verbinclude GPL.txt
+	
+	<pre align=left>\ref intro "[Previous:Introduction]"</pre><pre align=right>\ref tutorial "[Next:Tutorial]"</pre>
+*/
+
+/*!
+	\page tutorial Tutorial
+	<pre align=left>\ref license "[Previous:License]"</pre><pre align=right>\ref examples "[Next:Examples]"</pre>
+	
+	Sumarry :
+		- \ref install "Installation"
+		- \ref start "Getting started"
+		- \ref examples "Examples"
+	
+	\section install Installation
+	Installing Edyuk is really simple.
+	
+	\subsection install-unix Unix : Building from sources
+	
+		-# Make sure you have Qt4 installed and a supported compiler
+		-# Get Edyuk sources : http://sourceforge.net/projects/edyuk/files
+		-# Uncompress the archive into the directory of your choice
+		-# Step into that directory and open a shell and type :\verbatim $ ./build \endverbatim
+		-# Once the compilation is finished type : \verbatim $ su -c "make install" \endverbatim
+	
+	\subsection install-win Windows : Using the binary installer
+	
+		-# Make sure you have Qt4 installed
+		-# Get Edyuk windows installer : http://sourceforge.net/projects/edyuk/files
+		-# Run it
+		
+	\subsection install-win Mac : Using the bundle
+	
+	\note The mac bundle isn't available yet...
+	
+		-# Make sure you have Qt4 installed
+		-# Get Edyuk mac bundle : http://sourceforge.net/projects/edyuk/files
+		-# Install it
+	
+	
+	\section start Getting started
+	
+	Edyuk's interface is inspired of Dev-Cpp's, Code::Blocks' and KDevelop ones so programmers that
+	have already used these IDEs should get lost. Others may want to read this short guide...\n
+	...or directly try Edyuk and experience it on their own.
+	
+	<pre align=left>\ref license "[Previous:License]"</pre><pre align=right>\ref examples "[Next:Examples]"</pre>
+*/
+
+/*!
+	\page examples Example
+	
+	
+*/

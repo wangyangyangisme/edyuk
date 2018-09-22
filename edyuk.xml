@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+	<mime-type type="text/x-c++src">
+		<comment xml:lang="en">C++ source file</comment>
+		<comment xml:lang="fr">Fichier source C++</comment>
+		
+		<glob pattern="*.cpp;*.cxx;*.c++"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+	<mime-type type="text/x-c++hdr">
+		<comment xml:lang="en">C++ header file</comment>
+		<comment xml:lang="fr">Fichier en-tête C++</comment>
+		
+		<glob pattern="*.hxx;*.h++"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+	<mime-type type="text/x-csrc">
+		<comment xml:lang="en">C source file</comment>
+		<comment xml:lang="fr">Fichier source C</comment>
+		
+		<glob pattern="*.c;*.cc"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+	<mime-type type="text/x-chdr">
+		<comment xml:lang="en">C header file</comment>
+		<comment xml:lang="fr">Fichier en-tête C</comment>
+		
+		<glob pattern="*.h;*.hh"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+	<mime-type type="text/x-pro">
+		<comment xml:lang="en">qmake project file</comment>
+		<comment xml:lang="fr">Fichier de projet qmake</comment>
+		
+		<glob pattern="*.pro"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+	<mime-type type="text/x-qrc">
+		<comment xml:lang="en">Qt resource file</comment>
+		<comment xml:lang="fr">Fichier de ressource Qt</comment>
+		
+		<glob pattern="*.qrc"/>
+		<desktop:can-edit-with>edyuk.desktop</desktop:can-edit-with>
+	</mime-type>
+</mime-info>

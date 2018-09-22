@@ -1,0 +1,9 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="$name$" version="1.0.0" class="Plugin" >
+	<Component type="">
+		<Class name="" label="" >
+			<Description />
+			<Config />
+		</Class>
+	</Component>
+</EdyukPlugin>

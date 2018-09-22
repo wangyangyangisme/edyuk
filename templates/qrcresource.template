@@ -1,0 +1,10 @@
+[main]
+name=Qt Resource
+category=files
+icon=:/qrc.png
+description=Basic Qt resource file
+
+[file]
+input=qrcresource.qrc
+output=$name$
+extension=qrc

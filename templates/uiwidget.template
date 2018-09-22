@@ -1,0 +1,10 @@
+[main]
+name=Qt Designer Widget
+category=files
+icon=:/designer.png
+description=Basic Qt Designer widget
+
+[file]
+input=uiwidget.ui
+output=$name$
+extension=ui

@@ -1,0 +1,152 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="default" version="1.0.0" class="DefaultPlugin" >
+	<Component type="QProjectParser">
+		<Class name="QMakeParser" label="QMake projects parser" icon="" >
+			<Description>
+				A simple parser/manager for QMake project files.
+			</Description>
+			<Config>
+				<Key id="subset" label="Parser subset" >
+					<Type control="option-list" sendAs="index">
+						<Item>Default</Item>
+						<Item>Interpreter</Item>
+					</Type>
+					<Value>0</Value>
+				</Key>
+				<Key id="flat" label="Flat variables" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+	<Component type="QCodeParser">
+		<Class name="QCppParser" label="C++ code parser" icon="" >
+			<Description>
+				A simple parser for C++ source code.
+			</Description>
+			<Config>
+				<Key id="macros" label="Macros" >
+					<Type control="entry-list" />
+					<Value>
+					WINAPI
+					VOID=void
+					WXDLLIMPEXP_XRC
+					_GLIBCXX_STD=std
+					WXDLLIMPEXP_CORE
+					WXDLLIMPEXP_BASE
+					WXDLLIMPEXP_XML
+					WXDLLIMPEXP_XRC
+					WXDLLIMPEXP_ADV
+					WXDLLIMPEXP_AUI
+					WXMAKINGDLL
+					WXUSINGDLL
+					_CRTIMP
+					__CRT_INLINE
+					__cdecl
+					__stdcall
+					WXDLLEXPORT
+					WXDLLIMPORT
+					wxTopLevelWindowNative=wxTopLevelWindowMSW
+					WXUNUSED
+					wxDEPRECTAED
+					ATTRIBUTE_PRINTF_1
+					ATTRIBUTE_PRINTF_2
+					WXDLLIMPEXP_FWD_BASE
+					WXDLLIMPEXP_FWD_CORE
+					DLLIMPORT
+					DECLARE_INSTANCE_TYPE
+					emit
+					Q_OBJECT
+					Q_PACKED
+					Q_GADGET
+					QT3_SUPPORT
+					Q_CORE_EXPORT
+					Q_GUI_EXPORT
+					Q_XML_EXPORT
+					Q_SVG_EXPORT
+					Q_SQL_EXPORT
+					Q_HELP_EXPORT
+					Q_COMPAT_EXPORT
+					Q_NETWORK_EXPORT
+					Q_SCRIPT_EXPORT
+					Q_OPENGL_EXPORT
+					QT_BEGIN_HEADER
+					QT_END_HEADER
+					QT_BEGIN_NAMESPACE
+					QT_END_NAMESPACE
+					Q_INLINE_TEMPLATE
+					Q_REQUIRED_RESULT
+					Q_SLOTS=slots
+					Q_SIGNALS=signals
+					</Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+	<Component type="QBuilder">
+		<Class name="QMakeBuilder" label="QMake project builder" icon=":/builder.png" >
+			<Description>
+				A simple builder that turns QMake project files into GNU Makefiles.
+			</Description>
+			<Config>
+				<Key id="qmake" label="qmake command" >
+					<Type control="text" />
+					<Value>qmake</Value>
+				</Key>
+			</Config>
+		</Class>
+		<Class name="GnuMakeBuilder" label="GNU Makefile builder" icon=":/builder.png" >
+			<Description>
+				A simple builder that processes GNU Makefiles.
+			</Description>
+			<Config>
+				<Key id="make" label="make command" >
+					<Type control="text" />
+					<Value>$${win32:mingw32-make,make}</Value>
+				</Key>
+				<Key id="args" label="Always ask for arguments" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+	<Component type="QCodeCompletionEngine">
+		<Class name="CppCompletion" label="C++ code completer" icon="" >
+			<Description>
+				Code completion for C++ source code.
+			</Description>
+			<Config>
+				<Key id="enabled" label="Code completion" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="file" label="Scan current file" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="projects" label="Scan projects headers" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="sysheaders" label="Scan system headers" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="suffixless" label="Scan suffixless system headers" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="pathlist" label="System headers" >
+					<Type control="entry-list" />
+					<Value>$${QT_INSTALL_HEADERS}/Qt</Value>
+				</Key>
+				<Key id="ns" label="Implicit namespaces" >
+					<Type control="entry-list" />
+					<Value></Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+</EdyukPlugin>

@@ -1,0 +1,16 @@
+[main]
+name=Qt 4 GUI application
+category=projects
+icon=:/qt.png
+description=Basic Qt 4 GUI application
+
+[file0]
+input=qtgui.pro
+output=$name$
+extension=pro
+open=project
+
+[file1]
+input=qtgui.main
+output=main.cpp
+extension=cpp

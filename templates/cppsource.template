@@ -1,0 +1,10 @@
+[main]
+name=C++ Source
+category=files
+icon=:/cpp.png
+description=Standard C++ source file
+
+[file]
+input=cppsource.cpp
+output=$name$
+extension=cpp

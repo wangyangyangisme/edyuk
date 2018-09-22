@@ -1,0 +1,6 @@
+<!DOCTYPE RCC>
+<RCC>
+	<qresource prefix="/assistant-qt4" >
+		<file>assistant.xml</file>
+	</qresource>
+</RCC>

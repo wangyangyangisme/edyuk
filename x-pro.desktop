@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Comment=qmake project file
+Comment[fr]=Fichier de projet qmake
+Icon=edyuk
+Type=MimeType
+MimeType=text/x-pro
+Patterns=*.pro;
+X-KDE-IsAlso=text/plain
+
+[Property::X-KDE-text]
+Type=bool
+Value=true

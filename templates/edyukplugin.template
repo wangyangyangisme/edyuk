@@ -1,0 +1,28 @@
+[main]
+name=Edyuk plugin
+category=projects
+icon=:/qt.png
+description=Basic Edyuk plugin
+
+[file0]
+input=edyukplugin.pro
+output=$name$
+extension=pro
+open=project
+
+[file1]
+input=edyukplugin.extra
+output=extra.cpp
+extension=cpp
+
+[file2]
+input=edyukplugin.xml
+output=$name$.xml
+extension=xml
+open=file
+
+[file3]
+input=edyukplugin.qrc
+output=plugin.qrc
+extension=qrc
+

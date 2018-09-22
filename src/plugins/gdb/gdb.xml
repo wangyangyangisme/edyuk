@@ -1,0 +1,24 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="gdb" version="1.0.0" class="GDBPlugin" >
+	<Component type="QDebugger">
+		<Class name="GDBDriver" label="GDB plugin" icon=":/gdb-plugin/ddd.png" >
+			<Description>
+				A basic graphical frontend to the GNU Debugger (GDB) integrated into Edyuk.
+			</Description>
+			<Config>
+				<Key id="gdb" label="gdb command" >
+					<Type control="text" />
+					<Value>gdb</Value>
+				</Key>
+				<Key id="autoUpdateVar" label="Auto-refresh watches" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="autoUpdateReg" label="Auto-refresh registers" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+</EdyukPlugin>

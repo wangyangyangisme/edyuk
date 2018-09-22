@@ -1,0 +1,9 @@
+
+ * improve debugging
+ 
+ * make completion db building faster
+ 
+ * add version control support
+ 
+ * polish...
+ 

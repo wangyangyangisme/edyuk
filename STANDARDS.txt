@@ -1,0 +1,126 @@
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+      Edyuk, (C) 2006-2008 FullMetalCoder, is a free and open source software
+
+      You may use, distribute and copy Edyuk under the terms of GNU GPL v 2
+      (General Public License, see the file GPL.txt, distributed along, for
+      more informations).
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+This file is an introduction on coding style and conventions used throughout Edyuk
+source code. If you want to find something in Edyuk sources you'd better read this
+first and if you want to get involved and do some bugfixing/improvement you MUST
+read this and comply to it while coding.
+
+
+ I ) Indentation for dummies
+
+	* You shall use tabs to indent.
+
+	* You shall set tabstop to 4 in your favorite editor to preserve the visual
+	consistency of Edyuk source code
+
+	* curly bracket '{' always indent and its counterpart '}' unindent. e.g :
+
+int main(int argc, char **argv)
+{
+	int x;
+	
+	if ( x == 0 )
+	{
+		// lucky you, your compiler initialize it to zero
+	}
+}
+
+	* chained conditions are written as follow
+
+int main(int argc, char **argv)
+{
+	int x;
+	
+	if ( x == 0 )
+	{
+		// lucky you, your compiler initialize it to zero
+	} else if ( x == 1 ) {
+		// try again...
+	} else if ( x == 2 ) {
+		// try again...
+	} else {
+		// try again...
+	}
+}
+
+	* classes body are indented according to both brackets and visibility :
+
+class Example
+{
+	public:
+		Example();
+		~Example();
+		
+	public slots:
+		void do();
+		
+	signals:
+		void done(int nth);
+		
+	protected:
+		void notifyDone();
+		
+	private:
+		int m_count;
+}
+
+
+ II ) Naming conventions
+
+	* Reusable classes that fit in 3rdparty modules follow Qt naming conventions,
+	the only exception here is qmdilib which uses a 'qmdi' prefix instead of 'QMdi'
+
+	* Classes in the core library use the prefix 'Edyuk'
+
+	* All classes follow Qt naming conventions for getter/setter and methods in
+	general
+
+	* While Hungarian-like notation is still used in parts of the code (mainly
+	for booleans, integers, pointers and strings), Qt-like notation using 'm_'
+	prefix is now prefered for class members.
+
+
+ III ) Warnings
+
+	* Warnings are bad. They often are in fact errors - and they clutter up and help
+	really bad warnings to hide. While we do realize that this is not easy as many
+	compilers behave different, we try to produce warning free code.
+
+
+ IV ) Misc
+
+	* In most cases a file defines (or implements) a single class and a single class
+	spans over two files (header and implementation)
+
+	* Exceptionally, internal classes can be defined and implemented in a single source
+	file (the one that rely on it, from another class)
+
+	* Templated class are also an exception to this rule. Just mentionning it here to
+	make sure no newbie will end up creating an empty source for a templated class... ;)
+
+	* Other exceptions are quite rare and mostly concern internals so most coder need not
+	bothering with these and won't have to alter that design anyway.
+
+	* Avoid using macros whenever possible! Enums are far better for numeric constants
+
+	* Avoid implementations inside headers! For this reason, use of inline methods should
+	be restricted to few specific cases where it makes sense...
+
+
+ V ) Last notes
+
+	* This file is probably NOT exhaustive. Refering to the existing code is always
+	a good idea. Besides, don't hesitate to ask an "old" team member (most probably
+	fullmetalcoder) to solve any dilemma you might face regarding coding standards.
+

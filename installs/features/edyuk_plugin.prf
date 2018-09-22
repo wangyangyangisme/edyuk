@@ -1,0 +1,19 @@
+#
+# And the creation of Edyuk plugins became so easy...
+#
+
+TEMPLATE = lib
+CONFIG += plugin
+
+load(qplugin_from_scheme.prf)
+
+DEFINES += _EDYUK_
+LIBS += -L$${QMAKE_LIBDIR_QT}/Edyuk
+INCLUDEPATH += $${QMAKE_INCDIR_QT}/Edyuk
+
+CONFIG(debug, debug|release) {
+	LIBS += -ledyuk_debug
+	DEFINES += _EDYUK_DEBUG_
+} else {
+	LIBS += -ledyuk
+}

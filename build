@@ -1,0 +1,456 @@
+#! /bin/bash 
+
+#
+# (c) FullMetalCoder 2006-2007
+#
+#	Script taking care of Edyuk's build process
+#
+# This script is rather useless ATM but as some platforms
+# don't handle subdirs template very well, one is provided
+# under M$ Window$ and for a better cross-platform build,
+# Unix also has one.
+#
+# Apart from that, the build process might someday become a
+# little more complicated and if users are used to type :
+#	./build
+# instead of :
+#	qmake && make
+# they wouldn't notice any possible change
+#
+# This script is licensed under General Public License (GPL)
+# version 2, even if I doubt that anyone would find it useful
+#
+
+#
+# Steps:
+#
+#	1) extended arguments parsing for easier behaviour
+#	2) qmake detection (and Qt version check)
+#	3) compilation (if checks successful or bypassed)
+#	4) installation (if requested)
+#
+
+#
+# main check function :
+#
+QtMajor=0
+QtMinor=0
+QtPatch=0
+
+check_qmake()
+{
+	QtVersion=""
+	
+	if which $1 &> /dev/null ;
+	then
+		QtVersion=$($1 -query QT_VERSION)
+	else
+		return 1
+	fi
+	
+	# QtVersion=$($qmakename -v &> /tmp/qmake-version && grep -o -E 'Qt (version)? 4\\.\\d\\.\\d' /tmp/qmake-version)
+	
+	QtVerLen=${#QtVersion}
+	
+	if [ -z $QtVerLen ] || [ $QtVersion == "**Unknown**" ]
+	then
+		return 1
+	fi
+	
+	# most common pitfalls : tp, rc and beta screw up the qmake version string
+	# gotta catch "tp", "rc", ... (Tech Preview, Release Candidate, ...)
+	QtType=${QtVersion:($QtVerLen-3):2}
+	
+	if [ $QtType == "tp" ] || [ $QtType == "rc" ] || [ ${QtVersion:($QtVerLen-4):4} == "beta" ]
+	then
+		# pretend shorter string : discard "-tpN" or "-rcN" or "beta" (hopefully they are all the same size :) )
+		QtVerLen=$(($QtVerLen - 4))
+	fi
+	
+	QtMajor=${QtVersion:($QtVerLen-5):1}
+	QtMinor=${QtVersion:($QtVerLen-3):1}
+	QtPatch=${QtVersion:($QtVerLen-1):1}
+	
+	if [[ $QtMajor -ne 4 ]] || [[ $QtMinor -lt 3 ]]
+	then
+		return 1
+	fi
+	
+	return 0
+}
+
+#
+# formating :
+#
+
+formated_output()
+{
+	printf "$1\r\t\t\t\t$2"
+}
+
+#
+# defaulting :
+#
+
+qmakename="qmake"
+
+_help=0
+
+_checks=1
+
+_target=""
+_build=1
+_clean=0
+_run=0
+
+_verbose=0
+
+_examples=0
+
+_installation=0
+_uninstallation=0
+
+for arg in $@
+do
+	if [ $arg == "--bypass-checks" ] || [ $arg == "-b" ]
+	then
+		_checks=0
+	fi
+	
+	if [ $arg == "--verbose" ] || [ $arg == "-v" ]
+	then
+		_verbose=1
+	fi
+	
+	if [ $arg == "--all" ] || [ $arg == "-a" ]
+	then
+		_target="all"
+	fi
+	
+	if [ $arg == "--no-build" ] || [ $arg == "-n" ]
+	then
+		_build=0
+	fi
+	
+	if [ $arg == "--run" ] || [ $arg == "-r" ]
+	then
+		_run=1
+	fi
+	
+	if [ $arg == "--clean" ] || [ $arg == "-c" ]
+	then
+		_clean=1
+	fi
+	
+	if [ $arg == "--install" ] || [ $arg == "-i" ]
+	then
+		_installation=1
+	fi
+	
+	if [ $arg == "--uninstall" ] || [ $arg == "-u" ]
+	then
+		_uninstallation=1
+	fi
+	
+	if [ $arg == "--examples" ] || [ $arg == "-e" ]
+	then
+		_examples=1
+	fi
+	
+	if [ $arg == "--help" ] || [ $arg == "-h" ]
+	then
+		_help=1
+	fi
+	
+	
+	if [ ${arg:0:13} == "--with-qmake=" ]
+	then
+		qmakename=${arg:13}
+	fi
+	
+	if [ ${arg:0:9} == "--target=" ]
+	then
+		_target=${arg:9}
+	fi
+	
+	if [ $arg == "--debug" ] || [ $arg == "-d" ]
+	then
+		_target="debug"
+	fi
+	
+	if [ $arg == "--release" ] || [ $arg == "-r" ]
+	then
+		_target="release"
+	fi
+done
+
+if [ $_help -eq 1 ]
+then
+	echo ""
+	echo "/*******************************************************************************************\\"
+	echo ""
+	echo "  Edyuk build script version 1.0"
+	echo "  This script is available under GNU GPL v2."
+	echo ""
+	echo " Valid command line options :"
+	echo "   -a, --all             : build all targets (i.e. debug AND release)"
+	echo "   -b, --bypass-checks   : do not check for valid Qt 4 version and qmake executable"
+	echo "   -c, --clean           : clean before building (i.e. rebuild all)"
+	echo "   -e, --examples        : build examples"
+	echo "   -h, --help            : show this help and exit"
+	echo "   -i, --install         : install Edyuk once build"
+	echo "   -n, --no-build        : do not build Edyuk"
+	echo "   -r, --run             : run Edyuk if build is successful"
+	echo "   -u, --uninstall       : uninstall Edyuk"
+	echo "   -v, --verbose         : show full compilation log instead of formated summary"
+	echo ""
+	echo "       --with-qmake=X    : specify qmake command by hand"
+	echo "       --target=X        : specify makefile target by hand"
+	echo "       --debug           : build in debug mode"
+	echo "       --release         : build in release mode"
+	echo ""
+	echo "If you face any problem when building Edyuk please report it :"
+	echo " fullmetalcoder                                       <fullmetalcoder@hotmail.fr>"
+	echo " Edyuk devel mailing list                             <edyuk-devel@lists.sourceforge.net>"
+	echo " QtCentre forum (go in the \"Qt Software\" section)     <http://qtcentre.org/forum>"
+	echo ""
+	echo "\\*******************************************************************************************/"
+	echo ""
+	
+	exit 0;
+fi
+
+if [ $_checks -eq 1 ]
+then
+	echo ""
+	echo " --- Checking configuration --- "
+	
+	if [ -n $qmakename ] && [ $qmakename != "qmake" ] && check_qmake $qmakename ; then
+		echo "replacement fits" > /dev/null
+	elif check_qmake "qmake-qt4" ; then
+		qmakename="qmake-qt4"
+	elif check_qmake "qmake4" ; then
+		qmakename="qmake4"
+	elif check_qmake "qmake" ; then
+		qmakename="qmake"
+	else
+		qmakename=""
+	fi
+	
+	if [[ $QtMajor -ne 4 ]] || [[ $QtMinor -lt 2 ]] || [ -z $qmakename ]
+	then
+		formated_output "Qt version    :" "[Failed]\n"
+		echo " --- Configuration failed --- "
+		echo ""
+		
+		echo ""
+		echo "Edyuk will only compile and run with Qt 4.2 or higher. Consider upgrading..."
+		echo ""
+		echo "Qt 4 detection, done through qmake executable was not successful."
+		echo "This comes from at least of of the following issues :"
+		echo " * no qmake executable present on your system"
+		echo " * qmake executable is too old (Qt 3 or Qt 4 but < 4.2)"
+		echo " * qmake executable has a weird name. This script auto-detect only a few"
+		echo "   ones : qmake, qmake4 and qmake-qt4. Use the \"--with-qmake=X\" switch..."
+		echo ""
+		echo "See http://www.trolltech.com/products/qt/downloads"
+		echo ""
+		echo "If you are convinced that your system is not to blame please report the script"
+		echo "misbehaviour, with as many details as possible. (see the help : $0 -h)"
+		echo ""
+		
+		exit 1
+	else
+		formated_output "Qt version    :" "[OK] $QtMajor.$QtMinor.$QtPatch\n"
+		formated_output "qmake command :" "[OK] $qmakename\n"
+	fi
+	
+	echo " --- Configuration successful --- "
+	echo ""
+fi
+
+olddir=$PWD
+dirname=`dirname $0`
+
+cd $dirname
+
+if [ $_clean -eq 1 ]
+then
+	echo ""
+	echo " --- Cleaning previous build ---"
+	
+	rm -f .clean.log
+	
+	if [ $_verbose -eq 1 ]
+	then
+		make distclean 2>&1 | ./write_log -o .clean.log
+	else
+		make distclean 2>&1 | ./write_log -s -o .clean.log
+	fi
+	
+	# removing makefiles... (done by make distclean...)
+	# rm -f `find . Makefile | egrep 'Makefile(\.Debug|\.Release)?$'` >> .clean.log
+
+	echo " --- Cleaning successful --- "
+	echo ""
+fi
+
+if [ $_build -eq 1 ]
+then
+	rm -f .compile.log
+	
+	if [ $_verbose -eq 1 ]
+	then
+		$qmakename 2>&1 | ./write_log -o .compile.log
+	else
+		$qmakename 2>&1 | ./write_log -s -o .compile.log
+	fi
+	
+	if [ $? -eq 0 ]
+	then
+		echo ""
+		echo " --- Building Edyuk ---"
+		
+		if [ $_verbose -eq 1 ]
+		then
+			make $_target 2>&1 | ./write_log -o .compile.log
+		else
+			make $_target 2>&1 | ./write_log -s -o .compile.log
+		fi
+		
+		if [ $? -eq 0 ]
+		then
+			echo " --- Compilation successful ---"
+			echo ""
+			
+			if [ $_run -eq 1 ]
+			then
+				echo ""
+				echo " --- Running Edyuk ---"
+				
+				if [ $_verbose -eq 1 ]
+				then
+					./edyuk
+				else
+					./edyuk &> .run.log
+				fi
+				
+				if [ $? -eq 0 ]
+				then
+					echo " --- Edyuk returned with no errors ---"
+					echo ""
+				else
+					echo " --- Edyuk returned with error $? ---"
+					echo ""
+					echo "Check out .run.log and report anything suspicious."
+					echo ""
+				fi
+			fi
+		else
+			echo " --- Errors encountered ---"
+			echo ""
+			echo "Please be kind and report them (see $0 -h)"
+			echo ""
+		fi
+	else
+		echo " --- Makefile generation failed ---"
+		echo ""
+		echo "Check out .compile.log and report anything suspicious."
+		echo ""
+	fi
+fi
+
+
+if [ $_examples -eq 1 ]
+then
+	echo ""
+	echo " --- Building examples ---"
+	
+	cd examples
+	
+	cd ..
+	
+	echo " --- Compilation successful ---"
+	echo ""
+fi
+
+
+if [ $_installation -eq 1 ]
+then
+	echo ""
+	echo " --- Installing Edyuk ---"
+	formated_output "Install prefix : " "/usr/edyuk\n"
+	echo ""
+	
+	if [ $_verbose -eq 1 ]
+	then
+		$qmakename
+		
+		echo ""
+		echo "root privileges needed..."
+		su -c "make install"
+	else
+		$qmakename &> /dev/null
+		
+		echo ""
+		echo "root privileges needed..."
+		su -c "make install &> .install.log"
+	fi
+	
+	if [ $? -eq 0 ]
+	then
+		echo " --- Installation successful ---"
+		echo ""
+	else
+		echo " --- Installation failed ---"
+		echo ""
+		
+		if [ $_verbose -eq 0 ]
+		then
+			echo "Check out .install.log"
+			echo ""
+		fi
+	fi
+fi
+
+
+if [ $_uninstallation -eq 1 ]
+then
+	echo ""
+	echo " --- Uninstalling Edyuk ---"
+	formated_output "Install prefix : " "/usr/edyuk\n"
+	echo ""
+	
+	
+	if [ $_verbose -eq 1 ]
+	then
+		$qmakename
+		
+		echo ""
+		echo "root privileges needed..."
+		su -c "make uninstall"
+	else
+		$qmakename &> /dev/null
+		
+		echo ""
+		echo "root privileges needed..."
+		su -c "make uninstall &> .uninstall.log"
+	fi
+	
+	if [ $? -eq 0 ]
+	then
+		echo " --- Uninstallation successful ---"
+		echo ""
+	else
+		echo " --- Uninstallation failed ---"
+		echo ""
+		
+		if [ $_verbose -eq 0 ]
+		then
+			echo "Check out .uninstall.log"
+			echo ""
+		fi
+	fi
+fi
+
+cd $olddir

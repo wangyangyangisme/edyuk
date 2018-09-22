@@ -1,0 +1,10 @@
+[main]
+name=C++ Header
+category=files
+icon=:/h.png
+description=Standard C++ header file
+
+[file]
+input=cppheader.h
+output=$name$
+extension=h

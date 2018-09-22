@@ -1,0 +1,19 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="vimacs" version="1.0.0" class="Plugin" >
+	<Component type="QEditorInputBindingInterface">
+		<Class name="Emacs" label="Emacs bindings" icon=":/vimacs-plugin/emacs.png" >
+			<Description>
+				A input binding for QCodeEdit that brings Emacs key bindings.
+			</Description>
+			<Config>
+			</Config>
+		</Class>
+		<Class name="Vim" label="Vim bidings" icon=":/vimacs-plugin/vim.png" >
+			<Description>
+				A input binding for QCodeEdit that brings Vim-like editing.
+			</Description>
+			<Config>
+			</Config>
+		</Class>
+	</Component>
+</EdyukPlugin>

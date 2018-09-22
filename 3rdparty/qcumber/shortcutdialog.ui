@@ -1,0 +1,121 @@
+<ui version="4.0" >
+ <class>ShortcutDialog</class>
+ <widget class="QDialog" name="ShortcutDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>403</width>
+    <height>562</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Set shortcuts</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QTreeWidget" name="twShortcuts" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Expanding" hsizetype="MinimumExpanding" >
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Action</string>
+      </property>
+      <property name="icon" >
+       <iconset resource="../../src/lib/images/Edyuk.qrc" >
+        <normaloff>:/exec.png</normaloff>:/exec.png</iconset>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Shortcut</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gbAmbiguous" >
+     <property name="title" >
+      <string>Ambiguous shortcuts</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QLabel" name="lblWarning" >
+        <property name="text" >
+         <string>If you save an ambiguous shortcut, the shortcut will be assigned to the action that was to it was last assigned to. I.e. the older assignments are lost.</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="lwAmbiguous" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../src/lib/images/Edyuk.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ShortcutDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>260</x>
+     <y>539</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>5</x>
+     <y>494</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ShortcutDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>362</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>401</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

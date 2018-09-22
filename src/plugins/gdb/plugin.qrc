@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC>
+	<qresource prefix="/gdb-plugin" >
+		<file>gdb.xml</file>
+		<file>ddd.png</file>
+	</qresource>
+</RCC>

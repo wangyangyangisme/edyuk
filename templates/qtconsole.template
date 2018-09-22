@@ -1,0 +1,16 @@
+[main]
+name=Qt 4 console application
+category=projects
+icon=:/console.png
+description=Basic Qt 4 console application
+
+[file0]
+input=qtconsole.pro
+output=$name$
+extension=pro
+open=project
+
+[file1]
+input=qtconsole.main
+output=main.cpp
+extension=cpp

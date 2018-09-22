@@ -1,0 +1,623 @@
+<ui version="4.0" >
+ <class>GDB</class>
+ <widget class="QWidget" name="GDB" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>847</width>
+    <height>259</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>GDB debuger</string>
+  </property>
+  <layout class="QHBoxLayout" >
+   <item>
+    <widget class="QListWidget" name="lwPages" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Minimum" hsizetype="Maximum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>160</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="verticalScrollBarPolicy" >
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy" >
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="resizeMode" >
+      <enum>QListView::Adjust</enum>
+     </property>
+     <property name="currentRow" >
+      <number>-1</number>
+     </property>
+     <item>
+      <property name="text" >
+       <string>Locals</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Variables watch</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Breakpoints</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Registers</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Data</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Disassemble</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="swPages" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_6" >
+      <layout class="QGridLayout" name="gridLayout" >
+       <item row="0" column="0" colspan="3" >
+        <widget class="QTreeWidget" name="twLocals" >
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionBehavior" >
+          <enum>QAbstractItemView::SelectItems</enum>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Type</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Value</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QCheckBox" name="chkAutoUpdateLocals" >
+         <property name="text" >
+          <string>Auto update</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <spacer name="horizontalSpacer" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>545</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2" >
+        <widget class="QPushButton" name="pbUpdateLocals" >
+         <property name="text" >
+          <string>Update</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>2</number>
+       </property>
+       <property name="spacing" >
+        <number>4</number>
+       </property>
+       <item row="0" column="0" colspan="5" >
+        <widget class="QTreeWidget" name="twVariableWatch" >
+         <property name="selectionBehavior" >
+          <enum>QAbstractItemView::SelectItems</enum>
+         </property>
+         <property name="verticalScrollMode" >
+          <enum>QAbstractItemView::ScrollPerPixel</enum>
+         </property>
+         <property name="uniformRowHeights" >
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Variable name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Type</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Value</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Watchpoint</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QPushButton" name="bAddWatch" >
+         <property name="text" >
+          <string>Add watch</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <widget class="QPushButton" name="bRemoveWatch" >
+         <property name="text" >
+          <string>Remove watch</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" >
+        <widget class="QPushButton" name="bClearWatch" >
+         <property name="text" >
+          <string>Clear</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="4" >
+        <widget class="QPushButton" name="bRefreshWatch" >
+         <property name="text" >
+          <string>Refresh values</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_4" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>2</number>
+       </property>
+       <property name="spacing" >
+        <number>4</number>
+       </property>
+       <item row="0" column="0" colspan="3" >
+        <widget class="QTableView" name="tvBreak" >
+         <property name="editTriggers" >
+          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QPushButton" name="bRemoveBreak" >
+         <property name="text" >
+          <string>Remove break</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <widget class="QPushButton" name="bClearBreak" >
+         <property name="text" >
+          <string>Clear</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>113</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>4</number>
+       </property>
+       <property name="margin" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QTableWidget" name="twRegisters" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="verticalScrollMode" >
+          <enum>QAbstractItemView::ScrollPerItem</enum>
+         </property>
+         <property name="horizontalScrollMode" >
+          <enum>QAbstractItemView::ScrollPerPixel</enum>
+         </property>
+         <row>
+          <property name="text" >
+           <string>Name</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>Hex</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>Value</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>Watch</string>
+          </property>
+         </row>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>602</width>
+           <height>102</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_5" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>2</number>
+       </property>
+       <property name="spacing" >
+        <number>4</number>
+       </property>
+       <item row="0" column="0" colspan="2" >
+        <widget class="QLabel" name="label" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Maximum" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Expression</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" colspan="7" >
+        <widget class="QLineEdit" name="leExpression" />
+       </item>
+       <item row="0" column="9" >
+        <widget class="QPushButton" name="bEvaluate" >
+         <property name="text" >
+          <string>Evaluate</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="10" >
+        <widget class="Line" name="line" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QToolButton" name="bGoMem" >
+         <property name="maximumSize" >
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Go</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2" >
+        <widget class="QLabel" name="label_3" >
+         <property name="text" >
+          <string>Address :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3" >
+        <widget class="QLineEdit" name="leMemAddress" />
+       </item>
+       <item row="2" column="4" >
+        <widget class="QLabel" name="label_4" >
+         <property name="text" >
+          <string>Size :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5" >
+        <widget class="QSpinBox" name="sbMemRows" >
+         <property name="suffix" >
+          <string> rows</string>
+         </property>
+         <property name="minimum" >
+          <number>1</number>
+         </property>
+         <property name="maximum" >
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="6" >
+        <widget class="QLabel" name="label_5" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Maximum" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>x</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="7" >
+        <widget class="QSpinBox" name="sbMemColumns" >
+         <property name="suffix" >
+          <string> columns</string>
+         </property>
+         <property name="minimum" >
+          <number>1</number>
+         </property>
+         <property name="maximum" >
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="8" colspan="2" >
+        <widget class="QComboBox" name="cbMemSize" >
+         <item>
+          <property name="text" >
+           <string>byte (8 bits)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>word (16 bits)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>dword (32 bits)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>qword (64 bits)</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="10" >
+        <widget class="QTableWidget" name="twMemory" >
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3" >
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>2</number>
+       </property>
+       <property name="spacing" >
+        <number>4</number>
+       </property>
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_2" >
+         <property name="text" >
+          <string>File :</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <widget class="QLineEdit" name="leFileDisasm" />
+       </item>
+       <item row="0" column="2" >
+        <widget class="QSpinBox" name="sbLineDisasm" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="prefix" >
+          <string>starting at line </string>
+         </property>
+         <property name="maximum" >
+          <number>10000000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" >
+        <widget class="QSpinBox" name="sbLengthDisasm" >
+         <property name="suffix" >
+          <string> lines</string>
+         </property>
+         <property name="prefix" >
+          <string>for </string>
+         </property>
+         <property name="minimum" >
+          <number>-1</number>
+         </property>
+         <property name="maximum" >
+          <number>10000000</number>
+         </property>
+         <property name="value" >
+          <number>-1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4" >
+        <widget class="QPushButton" name="bGoDisasm" >
+         <property name="maximumSize" >
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Go</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="5" >
+        <widget class="QTableWidget" name="twAssembly" >
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="verticalScrollMode" >
+          <enum>QAbstractItemView::ScrollPerPixel</enum>
+         </property>
+         <property name="horizontalScrollMode" >
+          <enum>QAbstractItemView::ScrollPerPixel</enum>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Address</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Instruction</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lwPages</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>swPages</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>63</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>460</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leExpression</sender>
+   <signal>returnPressed()</signal>
+   <receiver>bEvaluate</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>267</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>714</x>
+     <y>33</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAutoUpdateLocals</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pbUpdateLocals</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>180</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>759</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

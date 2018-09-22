@@ -1,0 +1,22 @@
+#
+# Makes the creation of QPlugin way smoother :)
+#
+
+isEmpty(QMAKE_QPLUGIN_PATH) {
+	QMAKE_QPLUGIN_PATH = $$[QT_INSTALL_BINS]
+}
+
+isEmpty(QMAKE_QPLUGIN_GENERATOR) {
+	QMAKE_QPLUGIN_GENERATOR = $${QMAKE_QPLUGIN_PATH}/qplugin_generator
+}
+
+qplugin_gen.output = plugin.cpp
+#silent:qplugin_gen.commands = @echo Generating code from scheme ${QMAKE_FILE_IN} && $${QMAKE_QPLUGIN_GENERATOR} -i ${QMAKE_FILE_NAME} -o plugin -r $${RESOURCES}
+qplugin_gen.commands = $${QMAKE_QPLUGIN_GENERATOR} -i ${QMAKE_FILE_NAME} -o plugin -r $${RESOURCES}
+silent:qplugin_gen.commands = @echo Generating plugin code from scheme ${QMAKE_FILE_IN} && $${qplugin_gen.commands}
+qplugin_gen.input = QPLUGIN_SCHEMES
+qplugin_gen.variable_out = SOURCES
+qplugin_gen.CONFIG += target_predeps
+qplugin_gen.name = UIC ${QMAKE_FILE_IN}
+
+QMAKE_EXTRA_COMPILERS += qplugin_gen

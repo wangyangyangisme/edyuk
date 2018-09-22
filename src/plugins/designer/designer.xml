@@ -1,0 +1,10 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="designer" version="1.0.0" class="DesignerPlugin" >
+	<Component type="qmdiPerspective">
+		<Class name="QDesignerPerspective" label="Integrated Designer" icon=":/designer.png" >
+			<Description>
+				A simple perspective bringing integration of Qt4 Designer
+			</Description>
+		</Class>
+	</Component>
+</EdyukPlugin>

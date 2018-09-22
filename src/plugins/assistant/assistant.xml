@@ -1,0 +1,21 @@
+<!DOCTYPE EdyukPlugin>
+<EdyukPlugin name="assistant" version="1.0.0" class="AssistantPlugin" >
+	<Component type="qmdiPerspective">
+		<Class name="AssistantPerspective" label="Qt4 perspective" icon=":/assistant.png" >
+			<Description>
+				A simple perspective bringing some more Qt4-related features like
+				graphical management of Qt resource files and Assistant integration.
+			</Description>
+			<Config>
+				<Key id="integration" label="Assistant integration" >
+					<Type control="bool" />
+					<Value>true</Value>
+				</Key>
+				<Key id="liveSearch" label="Search on type" >
+					<Type control="bool" />
+					<Value>false</Value>
+				</Key>
+			</Config>
+		</Class>
+	</Component>
+</EdyukPlugin>

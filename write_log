@@ -1,0 +1,63 @@
+#! /bin/sh
+
+silent=0
+logfile="log"
+
+for arg in $@
+do
+	if [ $arg == "-s" ] || [ $arg == "--silent" ] ; then
+		silent=1
+	elif [ $arg == "-o" ] ; then
+		echo "" > /dev/null
+	else
+		logfile=$arg
+	fi
+done
+
+while read cmd_line
+do
+	echo $cmd_line >> $logfile
+	
+	if [ $silent -eq 0 ]
+	then
+		echo $cmd_line
+	else
+		echo $cmd_line | awk "\
+		{																				\
+			if ( \$1 == \"cd\" )														\
+			{ print \"Moving to directory \" \$2 }										\
+																						\
+			if ( \$1 == \"make\" )														\
+			{ print \"\tGenerating makefile. \" }										\
+																						\
+			if ( \$0 ~ /^g(cc|\\+\\+) -c .+ -o .+\\.o .+\\.(c|cxx|cc|cpp)/ )			\
+			{ print \"\tCompiling \" \$NF }												\
+																						\
+			if ( \$0 ~ /^(\\/([^\\/]+\\/)*)?moc [^[:space:]]+/ )						\
+			{ print \"\tmoc'ing \" \$(NF-2) }											\
+																						\
+			if ( \$0 ~ /^(\\/([^\\/]+\\/)*)?uic [^[:space:]]+/ )						\
+			{ print \"\tProcessing form \" \$2 }										\
+																						\
+			if ( \$0 ~ /^(\\/([^\\/]+\\/)*)?uic3 [^[:space:]]+/ )						\
+			{ print \"\tProcessing Qt3 form \" \$2 }									\
+																						\
+			if ( \$0 ~ /^(\\/([^\\/]+\\/)*)?rcc (-name [^[:space:]]+ )?[^[:space:]]+/ )	\
+			{ print \"\tProcessing resource \" \$(NF-2) }								\
+																						\
+			if ( \$0 ~ /^g(cc|\\+\\+) .+ -o [^[:space:]]+ .+\\.o+/ )					\
+			{																			\
+				n = 1;																	\
+				while ( \$n != \"-o\" )	{ n++ }											\
+				print \"\tLinking \" \$(n+1)											\
+			}																			\
+																						\
+			if ( \$0 ~ /^[^\n:]+:[[:digit:]]+:.+/ ) 									\
+			{ print \$0 }																\
+																						\
+		}"
+	fi
+	
+done
+
+exit 0

@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Qt;Development;
+Comment=
+Encoding=UTF-8
+Exec=/usr/edyuk/edyuk %F
+GenericName=Integrated Development Environment
+Icon=edyuk
+InitialPreference=10
+MimeType=text/x-chdr;text/x-c++hdr;text/x-csrc;text/x-c++src;text/x-pro;text/x-qrc
+Name=Edyuk
+Path=
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DCOP-ServiceType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=

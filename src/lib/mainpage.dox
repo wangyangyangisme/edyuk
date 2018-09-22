@@ -1,0 +1,56 @@
+ /*!
+	\file mainpage.dox
+	
+	\mainpage Edyuk manual
+	
+	Sumarry
+	* \ref intro "Introduction"
+	* \ref tuto "Tutorial"
+	* \ref license "License"
+	
+	\section intro Introduction 
+	
+	Edyuk is the best... ;-)
+	
+*/
+
+/*!
+	\page tuto Tutorial
+	
+	Sumarry
+	* \ref install "Installation"
+	* \ref start "Getting started"
+	* \ref examples "Examples"
+	
+	\section install Installation
+	
+	
+	
+	\section start Getting started
+	
+	Edyuk's interface is inspired of Dev-Cpp's, Code::Blocks' and KDevelop ones so programmers that
+	have already used these IDEs should get lost. Others may want to read this short guide...
+	... or directly try Edyuk and experience it on their own.
+	
+	\section examples Examples
+	
+	Sumarry
+	* \ref hello "Hello world from console"
+	* \ref hellogui "Hello world with GUI"
+	* \ref hellolib "Hello world from library"
+	* \ref helloplug "Hello world from plugins"
+	
+	\subsection hello Hello world from console
+	
+	\subsection hellogui Hello world with GUI
+	
+	\subsection hellolib Hello world from library
+	
+	\subsection helloplug Hello world from plugins
+*/
+
+/*!
+	\page license License
+	
+	
+*/

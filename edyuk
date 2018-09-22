@@ -1,0 +1,53 @@
+#! /bin/bash
+
+#
+# (c) fullmetacloder 2006-2008
+#
+# Script for running Edyuk. It can be used for any other app,
+# provided that its real executable has the same name as the
+# running script (plus a .bin extension).
+#
+# This script is licensed under General Public License (GPL)
+# version 2
+#
+
+appname=`basename $0 | sed s,\.sh$,,`
+dirname=`dirname $0`
+
+if [ $dirname == "." ]
+then
+	dirname="/"
+elif [ ${dirname:0:1} == "/" ]
+then
+	dirname="$dirname/"
+else
+	dirname="/$dirname/"
+fi
+
+for path in ${dirname} ${PWD}${dirname}
+do
+	for mode in "" "_debug"
+	do
+		app=${path}${appname}${mode}.bin
+		
+		if [ -x $app ]
+		then
+			if [ $dirname != "/usr/bin" ]
+			then
+				# Unix variable
+				LD_LIBRARY_PATH=`dirname $app`:$LD_LIBRARY_PATH
+				
+				# MacX variable
+				DYLD_LIBRARY_PATH=`dirname $app`:$DYLD_LIBRARY_PATH
+				
+				export LD_LIBRARY_PATH DYLD_LIBRARY_PATH
+			fi
+			
+			$app $*
+			exit
+		fi
+	done
+done
+
+echo "Unable to locate Edyuk binary..."
+exit -1

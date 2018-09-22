@@ -1,0 +1,10 @@
+[main]
+name=Qt Designer Dialog
+category=files
+icon=:/designer.png
+description=Basic Qt Designer dialog
+
+[file]
+input=uidialog.ui
+output=$name$
+extension=ui

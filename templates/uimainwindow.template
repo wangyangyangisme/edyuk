@@ -1,0 +1,10 @@
+[main]
+name=Qt Designer Main Window
+category=files
+icon=:/designer.png
+description=Basic Qt Designer main window
+
+[file]
+input=uimainwindow.ui
+output=$name$
+extension=ui

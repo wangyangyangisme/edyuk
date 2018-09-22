@@ -1,0 +1,166 @@
+<html>
+	<head>
+	<title>Edyuk manual</title>
+		<meta content=""><style></style>
+	</head>
+	<body>
+		<h2>Disclaimer : </h2>
+		This is not a meant to be a definite manual. This is roughly a bunch of information supposed to be useful to a
+		newcomer. If you are willing to write a more in-depth manual or tutorials please do. They may be added to official
+		packages if you submit them.
+		<br><br>
+		The incompleteness inherent to this file has two main causes :
+		<ul>
+			<li>Lack of time and motivation. Writing doc is not one of my hobby and I'm not quite good at it anyway so
+			I spend my time coding.</li>
+			
+			<li>Too much knowledge of Edyuk. Sounds weird? well, it's been more than two years I've been working on it
+			and more than a year that I've been using it daily so I became quite familiar with every aspects and can
+			not guess what a newcomer (whatever his experience) expect to find in a manual. I tried my best and hope
+			you'll be happy with it.</li>
+		</ul>
+		
+		This being said you may go on reading but leave your expectations at bay ;)
+		<br>
+		<h2>Bindings</h2>
+		The text editor has "standard" key bindings. That is the same you would expect any other Qt4 based application to have.
+		They are mostly based on QTextEdit itself with a couple of exceptions :
+		<br><br>
+		First, copy/paste/... are not hard-coded and shortcuts can thus be adjusted, just like any other shortcut in Edyuk.
+		Then QCodeEdit (Edyuk's editing framework) adds neat new features to text editing :
+		<ul>
+			<li>column selection : Hold down CTRL and SHIFT and drag the mouse (while pressing left button...)</li>
+			<li>column editing : Hold down CTRL and ALT and drag the mouse then type.<br>
+				Column editing stops when any of the cursor leaves its line.<br>
+				Column editing is automatically enabled when a column selection is made.<br>
+				If you use SHIFT + left or right arrow in column editing mode you can perform a column selection.<br>
+				If you use CTRL + ALT + up or down arrow in column editing mode you can add new cursors before and
+				after the first in the column (respectively)
+			</li>
+			<li>cursor mirrors : Just like column editing except that the multiples cursors are not constrained.
+				To use this hold down CTRL and ALT and place cursors anywhere you want (single mouse clicks,
+				no drag)
+			</li>
+		</ul>
+		It is possible to tweak QCodeEdit deep down using input bindings. Two skeletons are available, meant to mimic
+		respectively emacs and vim editing but unfortunately they have not been implemented yet (no volunteer found and
+		the current developers do not have enough knowledge of these editors to do it themselves).
+		<br>
+		<h2>Project management</h2>
+		Edyuk can manage qmake project files (.pro extension).
+		<br><br>
+		The "default" way is to open them using "Project|Open project". The project structure appears in the "workspace"
+		sidebar. You can easily manage files through the context menu, drag and drop and inline editing. Additionally, you
+		can use the project settings dialog (accessible through context menu or "Project" menu). Last, but not least, you
+		can switch on/off the "detailed view" in which comments, functions and all variables are visible and editable.
+		<br><br>
+		If you are not happy with this way, it is possible to use another paradigm. Go "Tools|Configure Edyuk|Plugins".
+		Select the plugin named "QMake project parser" and set the value of "parser subset" to "interpreter". this option
+		forces the parser to rely on qmake code which actually runs like an interpreter (hence the name) and fills a list
+		of variables. This variables are used to generate a flat project structure. Then you can edit your project as a
+		text file and the tree will be reloaded automatically upon saving. This is particularly interesting when you
+		sue a lot of $$, conditionnals and for loops across your project for it makes sure you can access all the files
+		of your project.
+		<br><br>
+		<strong>Note :</strong> when changing the "parser subset" opened projects will not be reloaded. You have to close them and reopen
+		them again.
+		<br><br>
+		<strong>Warning :</strong> DO NOT SAVE PROJECTS LOADED WITH "parser subset" SET TO "interpreter". It is highly likely that you will
+		face data loss if so because the parser does not save the internal structure of the project files it scans.
+		<br><br>
+		Unlike many other IDEs, Edyuk allows you to open several projects at the same time. Hence the need for the concept
+		of "active project". The active project can be seen (and changed) in the combobox at the top of the "workspace"
+		sidebar.
+		<br><br>
+		<strong>Note :</strong> The actions in the "Project", "Build" and "Debug" menu only affect the active project.
+		<br>
+		<h2>Designer integration</h2>
+		Edyuk integrates Qt 4 Designer to allow form creation/modification without being forced to open dozens of different
+		applications.
+		<br>
+		The designer integration makes use of the perspective system. The Designer perspective is displayed as soon as you
+		open a form file. Note that you can also switch to it manually using the toolbar/menus.
+		<br>
+		<h2>Assistant integration</h2>
+		Edyuk also features Qt Assistant integration. You can browse Qt docs within it as simply as if you were using Qt
+		Assistant. The only requirement to take advantage of this integration is to run Qt Assistant at least once (and
+		switch successively to every tab of the sidebar) so that the databases are generated. Indeed, while it is able to
+		read them, the Assistant integration can not create them.
+		<br>
+		<h2>Even more Qt 4 support</h2>
+		You can edit QRC files in a dedicated widget.
+		<br><br>
+		Opening a translation file from the project will be forwarded to Qt Linguist.
+		<br>
+		<h2>Compilation</h2>
+		Edyuk can compile you qmake projects (provided they are C++). For this you need a working C++ compiler, preferably
+		GCC/MinGW. You can tweak a bit the compiler settings in "Tools|Configure Edyuk|Plugins" and you may even succeed in
+		using another compiler if qmake is set to generate proper makefiles for it in the first place.
+		<br><br>
+		Edyuk offers an easy way to set the build mode of your project which is especially handy if your project does not
+		force a build mode. And even more when you are under Windows with no debug libs and the the default build mode is
+		debug ;)
+		<br><br>
+		It is also possible to select the execution target if several are available among the different subprojects.
+		<br><br>
+		Apart from that the actions in the build menu should be self-explanatory. Otherwise you may still ask questions
+		(see README.txt for more informations on that topic).
+		<br><br>
+		The compilation log is shown in bottom dock ("Build log" tab). A human readable output is available in the "Messages"
+		tab. When errors are encountered the corresponding line in the "Message" tab is clickable and clicking them will lead
+		you to the place where the error occurred (open the file and jump to the line).
+		<br>
+		<h2>Debugging</h2>
+		Edyuk provides some facility for graphical debugging.
+		<br><br>
+		You can place breakpoint in source files at any time by clicking on the leftmost part of the editor (before line numbers)
+		or using the "toggle breakpoint" action in the debug menu/toolbar.
+		<br><br>
+		Then, it uses GDB to start a debugging session, feeding him with the breakpoints you set. Programs that come with
+		debugging symbols automatically break at the begining of the main() function.
+		<br><br>
+		Apart from stepping-related facilites, directly available in the menus/toolbars Edyuk offers a number of great features
+		which make debugging easier. All these can be found in the extra "Debug" tab in the logs dock widget. Watchpoints,
+		break conditions, variable watches, register display and watches, expression evaluation, memory examination and program
+		disassembly are among the supported features.
+		<br>
+		<h2>All about code</h2>
+		Edyuk has many other features most coders are looking for.
+		<br><br>
+		First of all, class browsing. For every opened project, a class tree is generated from the headers. You can view this
+		structure and easily jump to the corresponding locations by activating a node of the tree (e.g. with a double click).
+		<br><br>
+		Of course, Edyuk provides syntax highlighting, parenthesis matching, code folding and auto indenting. But the best thing
+		is that these things are done in a generic way from a set of XML files. You can find them in the "qxs" subdir. The one
+		ending with ".qnfa" are the actual language definition. The one ending in .qxf holds the format definition you can tweak
+		it to change the way highlighted text looks. Finally, the one ending in .qxm holds the line marks definition. It is not of
+		much use at the moment apart from the fact that it allows you to tweak the aspect of breakpoints in the editor.
+		If you want to add support for new languages you're welcome. C++, Doxygen, XML, pro, Python, PHP, and C# are supported already
+		but may require some adjustements. As for new languages it shouldn't be too hard to create proper syntax files after having
+		a quick look at the existing ones. Again, you can always ask for informations until a proper documentation is written on the
+		subject.
+		<br><br>
+		Last, but not least, Edyuk supports code completion. This is actually the reason why it takes so long to load the first time...
+		Because it builds a completion database for Qt 4. And you can ask for more databases to be built in "Tools|Configure Edyuk|Plugins".
+		Edyuk code completion is actually very robust and efficient. The results are displayed in a matter of milliseconds, even using
+		a debug build that throws lots of debugging output to the console and the log file. It can be tweaked in some ways to make sure
+		it does not slow down editing on old systems, and does not annoy the user as well.
+		Currently, the only known limit to Edyuk completion is an abuse of macros but even this can be overcome most of the time by
+		setting a proper macro list to the C++ parser in "Tools|Configure Edyuk|Plugins". Templates, inheritance, namespaces, overloaded
+		-> and [] operators, classes from form files,... All these are supported, and more. If you were to find a syntax construct that
+		fails to complete while being syntactically correct please report it so that it might be fixed.
+		<br>
+		<h2>Toward infinity and beyond</h2>
+		Edyuk has been designed to be as modular as possible. As you may have noticed most of the advanced functionalities (compilation,
+		debuging, code completion, designer integration, assitant integration, ...) are provided by plugins. Actually, without the default
+		plugins Edyuk is a simple text editor quite similar to Kate (with some functionalities missing but a lot of potential).
+		<br><br>
+		Edyuk comes with a template that create the basic layout of a plugin which should make your life easier. Then to fill the xml file
+		which is the core of the interaction between Edyuk and plugins (proper code is automatically generated) have a look at the existing
+		ones (in the default set of plugins).
+		<br><br>
+		The vimacs plugin (Vim + Emacs bindings) which comes with Edyuk may also be a good place to start as it is only a skeleton currently.
+		<br><br>
+		A simpler way of extending Edyuk is to create new project/file templates. Have a look at the "template" subdir if you're interested.
+	</body>
+</html>

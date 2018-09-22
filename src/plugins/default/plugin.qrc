@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC>
+	<qresource prefix="/default-cpp-qt4" >
+		<file>default.xml</file>
+		<file>ui-impl.h</file>
+		<file>ui-impl.cpp</file>
+	</qresource>
+</RCC>

@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC>
+	<qresource prefix="/" >
+		<file>plugin.h</file>
+		<file>plugin.cpp</file>
+	</qresource>
+</RCC>

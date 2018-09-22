@@ -1,0 +1,2900 @@
+
+<< Edyuk Changelog >>
+<< Sat, 18 Jul 2009 16:07:43 +0200 >>
+
+------------------------------------------------------------------------
+r1015 | fullmetalcoder | 2009-07-18 15:10:38 +0200 (Sat, 18 Jul 2009) | 3 lines
+
+Last part of snippet integration : input binding for named insertion.
+Cleaned up qdocumentcommand.cpp (removed old commented code).
+Fixed some display glitches related to placeholders (and only part of widget being updated when switching placeholder).
+------------------------------------------------------------------------
+r1014 | fullmetalcoder | 2009-07-17 23:28:17 +0200 (Fri, 17 Jul 2009) | 1 line
+
+Finished snippet integration (there may be room for some polish but at least it is now properly integrated).
+------------------------------------------------------------------------
+r1013 | fullmetalcoder | 2009-07-17 17:56:31 +0200 (Fri, 17 Jul 2009) | 1 line
+
+Another batch of snippet integration work (proper load/save of snippets in files remains to be done but the rest is done).
+------------------------------------------------------------------------
+r1012 | fullmetalcoder | 2009-07-17 12:25:46 +0200 (Fri, 17 Jul 2009) | 1 line
+
+Started migrating example app to "now official" QCE snippets.
+------------------------------------------------------------------------
+r1011 | fullmetalcoder | 2009-07-17 11:57:28 +0200 (Fri, 17 Jul 2009) | 1 line
+
+Some progress in snippets integration.
+------------------------------------------------------------------------
+r1010 | fullmetalcoder | 2009-07-17 11:56:07 +0200 (Fri, 17 Jul 2009) | 1 line
+
+Got rid of some more warnings.
+------------------------------------------------------------------------
+r1009 | fullmetalcoder | 2009-07-16 10:42:48 +0200 (Thu, 16 Jul 2009) | 1 line
+
+Small fix in XML syntax definition.
+------------------------------------------------------------------------
+r1008 | fullmetalcoder | 2009-07-16 10:37:08 +0200 (Thu, 16 Jul 2009) | 2 lines
+
+Added WIP ColdFusion syntax definition.
+Small fix in Doxygen syntax definition.
+------------------------------------------------------------------------
+r1007 | fullmetalcoder | 2009-07-16 10:35:13 +0200 (Thu, 16 Jul 2009) | 2 lines
+
+Fixed a bug in QNFA embed request flushing which caused specific request (lang:context) not to be flushed when there were no general (lang) request for a given language.
+Made it possible to have orphan contexts (no start/stop tags but available for embedding).
+------------------------------------------------------------------------
+r1006 | fullmetalcoder | 2009-07-15 15:57:15 +0200 (Wed, 15 Jul 2009) | 1 line
+
+Started integration of snippets : moved from example to lib, cleaned up and refactored.
+------------------------------------------------------------------------
+r1005 | fullmetalcoder | 2009-07-12 21:19:06 +0200 (Sun, 12 Jul 2009) | 3 lines
+
+Now pass more data to placeholder affectors (required for proper "placeholder scripting" which should be added to the example shortly).
+Updated input binding doc.
+Added some doc on placeholder affectors.
+------------------------------------------------------------------------
+r1004 | fullmetalcoder | 2009-07-12 19:34:04 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Affector test : example now uppercases mirrored placeholders.
+------------------------------------------------------------------------
+r1003 | fullmetalcoder | 2009-07-12 19:23:43 +0200 (Sun, 12 Jul 2009) | 4 lines
+
+Added a new property to QDocumentCommand : keepAnchor -> fine-tuning of cursor adjustement along undo/redo.
+Important change in internal design of placeholder implementation : cursor mirrors dropped in favor of QDocumentCursor::replaceText to circumvent limitations of the previous design (re input and affectors).
+Several related API changes in QDocumentCursor and QDocumentCursorHandle.
+Started making use of placeholder affectors (with a slightly changed entry-point).
+------------------------------------------------------------------------
+r1002 | fullmetalcoder | 2009-07-12 16:44:25 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Changed snippet trigger key to F1-F10 as some WM (stupidly) catch SHIFT+Fx, CTRL+Fx and ALT+Fx even when they don't use them...).
+------------------------------------------------------------------------
+r1001 | fullmetalcoder | 2009-07-12 16:42:40 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Removed another warning.
+------------------------------------------------------------------------
+r1000 | fullmetalcoder | 2009-07-12 16:42:12 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Some work on placeholders.
+------------------------------------------------------------------------
+r999 | fullmetalcoder | 2009-07-12 16:41:27 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Fixed a regression.
+------------------------------------------------------------------------
+r998 | fullmetalcoder | 2009-07-12 11:16:25 +0200 (Sun, 12 Jul 2009) | 3 lines
+
+Some small API extensions.
+Get rid of numerous compilation warning about unused parameters and a couple about signed/unsigned compare.
+Minor doc changes.
+------------------------------------------------------------------------
+r997 | fullmetalcoder | 2009-07-12 10:27:50 +0200 (Sun, 12 Jul 2009) | 1 line
+
+Small unindenting improvement.
+------------------------------------------------------------------------
+r996 | fullmetalcoder | 2009-07-11 10:33:54 +0200 (Sat, 11 Jul 2009) | 1 line
+
+Changed default line ending policy from Local to Conservative.
+------------------------------------------------------------------------
+r995 | fullmetalcoder | 2009-07-11 10:29:33 +0200 (Sat, 11 Jul 2009) | 1 line
+
+Turned verbose modification timing in QStatusPanel (it did not look good and wasted space).
+------------------------------------------------------------------------
+r994 | fullmetalcoder | 2009-07-11 10:22:48 +0200 (Sat, 11 Jul 2009) | 1 line
+
+Fixed a conflict detection error.
+------------------------------------------------------------------------
+r993 | fullmetalcoder | 2009-07-11 10:09:44 +0200 (Sat, 11 Jul 2009) | 2 lines
+
+Fixed QNFA unindentation algorithm to avoid multiple unindent upon edit.
+Fixed computation of documentRegion polygon (went a pixel too far which could cause rendering glitches.
+------------------------------------------------------------------------
+r992 | fullmetalcoder | 2009-07-10 21:00:24 +0200 (Fri, 10 Jul 2009) | 1 line
+
+Fixed broken compilation of Vimacs plugin (QCE API update).
+------------------------------------------------------------------------
+r991 | fullmetalcoder | 2009-07-10 20:27:14 +0200 (Fri, 10 Jul 2009) | 1 line
+
+Fix borken compilation due to QCE API change.
+------------------------------------------------------------------------
+r989 | fullmetalcoder | 2009-05-24 13:37:59 +0200 (Sun, 24 May 2009) | 1 line
+
+Fixed cursor protection.
+------------------------------------------------------------------------
+r988 | fullmetalcoder | 2009-05-22 23:46:50 +0200 (Fri, 22 May 2009) | 1 line
+
+Fixed windows build (missing export macro).
+------------------------------------------------------------------------
+r987 | fullmetalcoder | 2009-05-22 18:11:34 +0200 (Fri, 22 May 2009) | 2 lines
+
+Fixed cursor protection to work with (un)indenting and (un)commenting.
+Moved cursor protection determination in a virtual function (typical use case : command line QEditor).
+------------------------------------------------------------------------
+r986 | fullmetalcoder | 2009-05-22 17:39:04 +0200 (Fri, 22 May 2009) | 5 lines
+
+First slice of generic key mapping.
+ * mappings are done as a pair of QKeySequence/QEditorInputBinding::Command
+ * added several convenience command classes
+ * implemented basic key sequence matching (COMPLETELY bypassed by shortcuts and desktop-wide hotkeys...) [works with emacs-like combinations : up to four subsequent keypresses]
+Updated the example to use this new mecacnism for snippet binding (now uses SHIFT + Fn by default).
+------------------------------------------------------------------------
+r985 | fullmetalcoder | 2009-05-22 13:57:21 +0200 (Fri, 22 May 2009) | 1 line
+
+Fixed showEvent() of QGotoLinePanel to select spin box contents.
+------------------------------------------------------------------------
+r984 | fullmetalcoder | 2009-05-22 13:51:51 +0200 (Fri, 22 May 2009) | 1 line
+
+Fixed an issue in word wrapping.
+------------------------------------------------------------------------
+r983 | fullmetalcoder | 2009-05-22 13:38:42 +0200 (Fri, 22 May 2009) | 5 lines
+
+Started the rework of input binding architecture (WARNING source compat has been broken QEditorInputBinding replace QEditor::InputBinding and it resides in qeditorinputbinding.h) [note : the upcoming "managed key mapping" is not there yet]
+Fixed some inconsistencies of in QEditor when QEditor::ReplaceTabs flag was on.
+Added a new public flag to QEditor : QEditor::AdjustIndent (currently on by default) which causes indentation of text to be adjusted in QEditor::insertText() and thus when pasting from clipboard.
+Fixed focus upon show of goto line panel.
+
+------------------------------------------------------------------------
+r982 | fullmetalcoder | 2009-05-18 14:24:02 +0200 (Mon, 18 May 2009) | 1 line
+
+Improved QEditor::ensureVisible() to make sure visibility of the widget does not interfere (if widget isn't visible the call is postponed until show event thus making sure that all metrics (width/height/scrollbars thingies/...) are correct).
+------------------------------------------------------------------------
+r981 | fullmetalcoder | 2009-05-18 13:14:59 +0200 (Mon, 18 May 2009) | 1 line
+
+Added time stamp to QDocument and tweaked QStatusPanel to make some use of it.
+------------------------------------------------------------------------
+r980 | fullmetalcoder | 2009-05-18 12:10:31 +0200 (Mon, 18 May 2009) | 5 lines
+
+Added a nice goto line panel (goto line dialog kept for use in unmanaged editors or in case someone dislike the new panel).
+Removed some size constraints in the search/replace panel to make it look a little better.
+Small changes in panel infrastructure.
+Added QDocument::lineCount() and QDocument::visualLineCount() (lines() and visualLines() still work but are now deprecated).
+Made qlinenumberpanel.cpp encoding-agnostic (the windows-specific wrapping arrow workaround used to rely on a non-ASCII char, the relevant integer representation is now used instead).
+------------------------------------------------------------------------
+r979 | fullmetalcoder | 2009-05-17 21:28:21 +0200 (Sun, 17 May 2009) | 1 line
+
+Added handling of default platform independent shortcuts for common actions in QEditor.
+------------------------------------------------------------------------
+r978 | fullmetalcoder | 2009-05-17 20:47:14 +0200 (Sun, 17 May 2009) | 1 line
+
+Fixed drawing issues with RTL text and line wrapping.
+------------------------------------------------------------------------
+r977 | fullmetalcoder | 2009-04-16 17:14:24 +0200 (Thu, 16 Apr 2009) | 1 line
+
+Fixed compilation issues with some old major versions of Qt (tested with 4.3.5, 4.4.3 and 4.5.0)
+------------------------------------------------------------------------
+r976 | fullmetalcoder | 2009-04-16 16:07:13 +0200 (Thu, 16 Apr 2009) | 2 lines
+
+Fixed handling of OldMac (CR) line endings. [2760120]
+
+------------------------------------------------------------------------
+r975 | fullmetalcoder | 2009-04-16 15:27:22 +0200 (Thu, 16 Apr 2009) | 1 line
+
+Fixed potential crash (closed editor did not unregister their file watches).
+------------------------------------------------------------------------
+r974 | fullmetalcoder | 2009-04-16 15:14:47 +0200 (Thu, 16 Apr 2009) | 1 line
+
+Updated qmake read-only perser (bumped to Qt 4.5 sources : need to check that it still compiles against 4.3 and 4.4)
+------------------------------------------------------------------------
+r973 | fullmetalcoder | 2009-04-12 15:08:56 +0200 (Sun, 12 Apr 2009) | 2 lines
+
+Preliminary work for future changes of the input binding infrastructure.
+
+------------------------------------------------------------------------
+r972 | fullmetalcoder | 2009-03-15 15:07:41 +0100 (Sun, 15 Mar 2009) | 3 lines
+
+Fixed handling of Qt::Key_Insert in QEditor (edit mode now changes only if the key event has no modifier).
+Fixed a design error in search panel : incremental search is only performed when replacement is not involved.
+
+------------------------------------------------------------------------
+r971 | fullmetalcoder | 2009-03-15 15:00:11 +0100 (Sun, 15 Mar 2009) | 3 lines
+
+Fixed a bug in QNFA unindentation.
+Fixed a selection rendering bug with mixed spaces/tabs.
+
+------------------------------------------------------------------------
+r970 | fullmetalcoder | 2009-03-10 17:00:03 +0100 (Tue, 10 Mar 2009) | 1 line
+
+Small fix in document font change.
+------------------------------------------------------------------------
+r969 | fullmetalcoder | 2009-03-06 20:30:27 +0100 (Fri, 06 Mar 2009) | 3 lines
+
+Updated svn:eol-style property.
+Copied qxs/ data from QCE to Edyuk to stay up-to-date.
+Added a missing icon to Edyuk.
+------------------------------------------------------------------------
+r968 | fullmetalcoder | 2009-03-06 20:00:43 +0100 (Fri, 06 Mar 2009) | 1 line
+
+Added configuration for QCE formatting to Edyuk config dialog.
+------------------------------------------------------------------------
+r967 | fullmetalcoder | 2009-03-06 19:56:00 +0100 (Fri, 06 Mar 2009) | 1 line
+
+Small changes in QFormatConfig for more flexibility.
+------------------------------------------------------------------------
+r966 | fullmetalcoder | 2009-03-05 17:33:35 +0100 (Thu, 05 Mar 2009) | 1 line
+
+Some small improvements to config widgets.
+------------------------------------------------------------------------
+r965 | fullmetalcoder | 2009-03-05 17:26:28 +0100 (Thu, 05 Mar 2009) | 1 line
+
+Added simple color picker widget to the designer plugin.
+------------------------------------------------------------------------
+r964 | fullmetalcoder | 2009-03-04 22:32:43 +0100 (Wed, 04 Mar 2009) | 2 lines
+
+Added per-language QXF files (content not tuned though) for all supported languages.
+Made sure svn:eol-style property was set to native on all source files.
+------------------------------------------------------------------------
+r963 | fullmetalcoder | 2009-03-04 22:29:55 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Adjusted inline HTML in qce.dox : <li> tags are now closed to make folding behave properly. (figure out a way for the syntax to gracefully allow some tags like <li> and <br> not to be closed?)
+------------------------------------------------------------------------
+r962 | fullmetalcoder | 2009-03-04 22:27:21 +0100 (Wed, 04 Mar 2009) | 2 lines
+
+Fixed tag name highlighting in XML syntax (tagnames with numbers are now handled properly).
+Added XML embed in Doxygen syntax, as should have been done from the beginning.
+------------------------------------------------------------------------
+r961 | fullmetalcoder | 2009-03-04 21:47:35 +0100 (Wed, 04 Mar 2009) | 2 lines
+
+Some API extensions.
+Changed the QCE_EXPORT macro definition to avoid easier embed into an app.
+------------------------------------------------------------------------
+r960 | fullmetalcoder | 2009-03-04 21:12:28 +0100 (Wed, 04 Mar 2009) | 2 lines
+
+Added auto-loading of per-language format files (.qxf) if present in the same dir as the associated .qnfa
+Updated QCE::Demo format config to take thes format files into account when found.
+------------------------------------------------------------------------
+r959 | fullmetalcoder | 2009-03-04 20:58:54 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Some small adjustements in format config widget.
+------------------------------------------------------------------------
+r958 | fullmetalcoder | 2009-03-04 20:57:54 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Improved the color picker look when it holds an invalid color and made it possible to clear the color (i.e make it invalid so that app as to use proper default value) using a right click (context menu event is caught actually which may not be the smartest thing...)
+------------------------------------------------------------------------
+r957 | fullmetalcoder | 2009-03-04 19:58:58 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Added missing project file for QCE Designer plugin.
+------------------------------------------------------------------------
+r956 | fullmetalcoder | 2009-03-04 19:47:50 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Added a Designer plugin (currently provides QEditor, QEditConfig and QFormatConfig).
+------------------------------------------------------------------------
+r955 | fullmetalcoder | 2009-03-04 17:43:59 +0100 (Wed, 04 Mar 2009) | 1 line
+
+Fixed QEditor key input bug : enabling key compression and input methods on both viewport and editor appear to be necessary to type accentuated and other "combined" letters.
+------------------------------------------------------------------------
+r954 | fullmetalcoder | 2009-03-03 20:21:12 +0100 (Tue, 03 Mar 2009) | 4 lines
+
+Added a widget to edit format schemes.
+Added a simple color picker widget for use in the format config widget.
+Made room for the new widget in QCE::Demo
+Added new icons to prettify that widget (most come from Oxygen) but some are still missing...
+------------------------------------------------------------------------
+r953 | fullmetalcoder | 2009-03-02 22:28:12 +0100 (Mon, 02 Mar 2009) | 1 line
+
+Fixed horizontal scroll under windows.
+------------------------------------------------------------------------
+r952 | fullmetalcoder | 2009-03-02 22:05:56 +0100 (Mon, 02 Mar 2009) | 1 line
+
+Fixed some drawing issues when the first line of a folded block is wrapped.
+------------------------------------------------------------------------
+r951 | fullmetalcoder | 2009-03-01 21:50:49 +0100 (Sun, 01 Mar 2009) | 1 line
+
+Fixed scrollbars issues.
+------------------------------------------------------------------------
+r950 | fullmetalcoder | 2009-02-27 17:47:57 +0100 (Fri, 27 Feb 2009) | 1 line
+
+Fixed a line protection bug : protection of block end remained after expand.
+------------------------------------------------------------------------
+r949 | fullmetalcoder | 2009-02-26 22:24:33 +0100 (Thu, 26 Feb 2009) | 1 line
+
+Some usability improvements and corner case fixes in the search panel.
+------------------------------------------------------------------------
+r948 | fullmetalcoder | 2009-02-26 22:05:50 +0100 (Thu, 26 Feb 2009) | 1 line
+
+Fixed a bug in paren matching : matches were not always cleared properly upon edition.
+------------------------------------------------------------------------
+r947 | fullmetalcoder | 2009-02-26 21:48:49 +0100 (Thu, 26 Feb 2009) | 9 lines
+
+Vast improvements to tools management :
+* tools can now be assigned shortcuts through the shortcuts config dialog
+* the Tools dialog got some love :
+    * Added an inline help (resizing on show/hide sucks a bit, some layout magic to improve that would be cool)
+    * Added tooltips to the four fields
+    * Added simple program selector (getOpenFileName, may need something more advanced)
+    * Added a simple working directory selector
+    * Added input checking for program and working directory, reported using simple style sheets, mentinoned in the inline help btw)
+
+------------------------------------------------------------------------
+r946 | fullmetalcoder | 2009-02-20 22:29:12 +0100 (Fri, 20 Feb 2009) | 4 lines
+
+Some changes in internal API :
+* private header has been split in 3 (but backward compat has been kept by including the two new ones into the old one).
+* use int instead of enums from "public" classes in some function signatures.
+Added the WIP QDocumentBuffer class (not used yet).
+------------------------------------------------------------------------
+r945 | fullmetalcoder | 2009-02-20 19:53:17 +0100 (Fri, 20 Feb 2009) | 1 line
+
+Fixed an isue in managed insertion of multiline text.
+------------------------------------------------------------------------
+r940 | fullmetalcoder | 2009-02-18 20:50:41 +0100 (Wed, 18 Feb 2009) | 1 line
+
+Added a VERSION variable to config.pri to comply with Unix library naming policies (requested by packagers).
+------------------------------------------------------------------------
+r939 | fullmetalcoder | 2009-02-18 19:19:35 +0100 (Wed, 18 Feb 2009) | 1 line
+
+Fixed selection "leak" on wrapped lines.
+------------------------------------------------------------------------
+r938 | fullmetalcoder | 2009-02-18 19:11:18 +0100 (Wed, 18 Feb 2009) | 1 line
+
+Some fixes in search.
+------------------------------------------------------------------------
+r937 | fullmetalcoder | 2009-02-18 19:07:48 +0100 (Wed, 18 Feb 2009) | 1 line
+
+Fixed an issue in auto-identing when no language definition set.
+------------------------------------------------------------------------
+r936 | fullmetalcoder | 2009-02-17 22:54:23 +0100 (Tue, 17 Feb 2009) | 1 line
+
+Some more changes to the search panel.
+------------------------------------------------------------------------
+r935 | fullmetalcoder | 2009-02-17 22:24:55 +0100 (Tue, 17 Feb 2009) | 2 lines
+
+Fixed various issues in locals registers auto-updating.
+Fixed some UI issues in GDB plugin.
+------------------------------------------------------------------------
+r934 | fullmetalcoder | 2009-02-17 20:47:41 +0100 (Tue, 17 Feb 2009) | 4 lines
+
+Added support for locals in GDB plugin (though not parameters yet).
+Added workaround to prevent issues with uninitialized strings.
+Added possibility to pass conditional commands to the debugger (infrastructure).
+Fixed offset of +1 when jumping to location from backtrace view.
+------------------------------------------------------------------------
+r933 | fullmetalcoder | 2009-02-17 18:25:28 +0100 (Tue, 17 Feb 2009) | 1 line
+
+Changed selection behavior of the \variables watch" tree widget to allow extraction of the cell-data.
+------------------------------------------------------------------------
+r932 | fullmetalcoder | 2009-02-17 18:16:25 +0100 (Tue, 17 Feb 2009) | 4 lines
+
+Finally implemented the general-purpose memory-reading architecture.
+Implemented simple managed parameter substitution in commands (currently only used by memory-accessor internals).
+Added display of QString contents using the new memory-reading infrastructure.
+Made value files of variables editable only for basic types (pointers and a list of C++ basic types, may need to be refined).
+------------------------------------------------------------------------
+r931 | fullmetalcoder | 2009-02-17 15:08:22 +0100 (Tue, 17 Feb 2009) | 4 lines
+
+Protected build tasks and debugging sessions by preventing user from changing the active project when a build task is runnning or a debugging session is open.
+Added message boxes to inform the user of that behavior.
+Added express-termination of debugging session.
+Added automatic termination of debugging sessions upon close event.
+------------------------------------------------------------------------
+r930 | fullmetalcoder | 2009-02-17 14:13:55 +0100 (Tue, 17 Feb 2009) | 1 line
+
+Small fix in QEditor resize event handler.
+------------------------------------------------------------------------
+r929 | fullmetalcoder | 2009-02-17 12:23:45 +0100 (Tue, 17 Feb 2009) | 3 lines
+
+Fixed a scrollbar adjustement issue.
+Reworked the XML syntax file to make it more accurate and avoid indentation troubles.
+Small change in QNFA indenting to keep XML indeting working consitently.
+------------------------------------------------------------------------
+r928 | fullmetalcoder | 2009-02-17 00:29:09 +0100 (Tue, 17 Feb 2009) | 1 line
+
+More search panel tuning.
+------------------------------------------------------------------------
+r927 | fullmetalcoder | 2009-02-17 00:00:10 +0100 (Tue, 17 Feb 2009) | 2 lines
+
+Brought back library pathes workaround.
+Fixed a bug in GDB/MI output parser.
+------------------------------------------------------------------------
+r926 | fullmetalcoder | 2009-02-16 23:33:35 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed an infinite loop in QDocumentSearch when trying to search for an empty string.
+------------------------------------------------------------------------
+r925 | fullmetalcoder | 2009-02-16 23:20:37 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed QCE::Demo settings UI.
+------------------------------------------------------------------------
+r924 | fullmetalcoder | 2009-02-16 22:45:52 +0100 (Mon, 16 Feb 2009) | 4 lines
+
+Many improvements to search panel and QDocumentSearch :
+* incremental search
+* overall improvements of reactivity (toggling checkboxes causes matches to be updated)
+* fixed updating of origin issues.
+------------------------------------------------------------------------
+r923 | fullmetalcoder | 2009-02-16 22:05:43 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Made QDocumentCursor::insertText() conformant to the "closely match QText* API" rule by erasing any existing selection upon insertion.
+------------------------------------------------------------------------
+r922 | fullmetalcoder | 2009-02-16 21:50:15 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed potential segfaults in QDocumentSearch when no format scheme available and implemented proper fallback to default format scheme.
+------------------------------------------------------------------------
+r921 | fullmetalcoder | 2009-02-16 21:37:23 +0100 (Mon, 16 Feb 2009) | 6 lines
+
+Vast improvements to the mecanism providing interaction to debugger plugins :
+* now mix well with threads
+* provide four flavors of messages (modeled after QMessageBox) information, warning, error and question
+* two levels of interaction : simple report or report with possibility of callback to the debugger (which may or may not be blocking inthe debugger plugin).
+
+Adapted GDB plugin to make use of this new mecanism and provide more feedback to users when problems are encountered.
+------------------------------------------------------------------------
+r920 | fullmetalcoder | 2009-02-16 18:36:25 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Extended the range of additional LD_LIBRARY_PATH values passed to env of gdb process to make sure the executable will properly on most configurations.
+------------------------------------------------------------------------
+r919 | fullmetalcoder | 2009-02-16 17:54:52 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed editor cursor column memory refresh upon line wrapping enable/disable.
+------------------------------------------------------------------------
+r917 | fullmetalcoder | 2009-02-16 15:46:59 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed build of designer plugin.
+------------------------------------------------------------------------
+r916 | fullmetalcoder | 2009-02-16 15:43:18 +0100 (Mon, 16 Feb 2009) | 2 lines
+
+Fixed an issue in waveUnderline rendering on wrapped lines.
+
+------------------------------------------------------------------------
+r915 | fullmetalcoder | 2009-02-16 15:42:37 +0100 (Mon, 16 Feb 2009) | 2 lines
+
+fix for a scrolling issue under win (temporary : gotta check that it does not break things on other platforms, which worked just fine til now).
+
+------------------------------------------------------------------------
+r914 | fullmetalcoder | 2009-02-16 15:18:10 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Updated syntax files (copied from QCE).
+------------------------------------------------------------------------
+r913 | fullmetalcoder | 2009-02-16 15:05:39 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed some issues in editor config dialog.
+------------------------------------------------------------------------
+r912 | fullmetalcoder | 2009-02-16 15:04:02 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed some issues in editor config dialog.
+------------------------------------------------------------------------
+r911 | fullmetalcoder | 2009-02-16 14:47:54 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Workaround to prevent some stupid KDE designer plugins to abort Edyuk start due to unwise use of qCritical().
+------------------------------------------------------------------------
+r910 | fullmetalcoder | 2009-02-16 14:45:23 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Reworked Designer integration for better stability accross Qt versions. It now uses run-time version multiplexing to select the correct internal calls (build against the correct private headers).
+------------------------------------------------------------------------
+r909 | fullmetalcoder | 2009-02-16 00:57:12 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Disabled ensureCursorVisible() upon documentHeightChanged() (folding triggers this event and it is bad to change scrollbar value upon folding event.
+------------------------------------------------------------------------
+r908 | fullmetalcoder | 2009-02-16 00:48:56 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Fixed ensureCursorVisible().
+------------------------------------------------------------------------
+r907 | fullmetalcoder | 2009-02-16 00:24:44 +0100 (Mon, 16 Feb 2009) | 1 line
+
+Reverted format file.
+------------------------------------------------------------------------
+r906 | fullmetalcoder | 2009-02-15 23:11:55 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Scrollbar fix in QEditor.
+------------------------------------------------------------------------
+r905 | fullmetalcoder | 2009-02-15 22:48:13 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Changed scrolling behavior of QEditor (now uses scroll by line instead of scrll by a fixed amount of pixel).
+------------------------------------------------------------------------
+r904 | fullmetalcoder | 2009-02-15 22:09:34 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Fixed potential format rendering issues with some fonts (overline and underline this time).
+------------------------------------------------------------------------
+r903 | fullmetalcoder | 2009-02-15 21:40:35 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Fixed saving of format scheme to save the normal (default) format.
+------------------------------------------------------------------------
+r901 | fullmetalcoder | 2009-02-15 21:16:50 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Made rendering of waveUnderline consistent accross fonts (at least as consistent as it can be).
+------------------------------------------------------------------------
+r900 | fullmetalcoder | 2009-02-15 20:23:11 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Doc update.
+------------------------------------------------------------------------
+r899 | fullmetalcoder | 2009-02-15 20:22:21 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Fixed cursor movement bugs in wrapped lines.
+------------------------------------------------------------------------
+r898 | fullmetalcoder | 2009-02-15 16:48:07 +0100 (Sun, 15 Feb 2009) | 1 line
+
+More doc updates.
+------------------------------------------------------------------------
+r897 | fullmetalcoder | 2009-02-15 16:01:03 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Updated C++ syntax file.
+------------------------------------------------------------------------
+r896 | fullmetalcoder | 2009-02-15 16:00:35 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Documentation update : QNFA tuto.
+------------------------------------------------------------------------
+r895 | fullmetalcoder | 2009-02-15 15:59:55 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Fixed some issues with auto-indent.
+------------------------------------------------------------------------
+r894 | fullmetalcoder | 2009-02-15 13:50:20 +0100 (Sun, 15 Feb 2009) | 1 line
+
+Fixed drawing glitches of overline formatting.
+------------------------------------------------------------------------
+r893 | fullmetalcoder | 2009-02-15 02:20:35 +0100 (Sun, 15 Feb 2009) | 4 lines
+
+Auto-indent (and outdent) fixes.
+Reworked QDocument match storage (grouping is now independent from format).
+Made QDocumentSearch use QDocument builtin match storage facility to manage the result of "highlight all" mode.
+Some small adjustements in search panel UI.
+------------------------------------------------------------------------
+r892 | fullmetalcoder | 2009-02-14 23:25:21 +0100 (Sat, 14 Feb 2009) | 1 line
+
+Fixed auto-updating of QEditor::cursor() (now disabled by default).
+------------------------------------------------------------------------
+r891 | fullmetalcoder | 2009-02-14 23:17:44 +0100 (Sat, 14 Feb 2009) | 1 line
+
+Added "write protection" of folded blocks in QEditor. This protection is weak : users cannot type but the content of the document can still be freely modified programmatically, no matter what.
+------------------------------------------------------------------------
+r890 | fullmetalcoder | 2009-02-14 12:19:57 +0100 (Sat, 14 Feb 2009) | 4 lines
+
+Added setting option for auto-indent in QCE::Demo
+Fixed a bunch of issues in snippet management UI in QCE::Demo.
+Fixed tab ordering in QCE::Demo main UI.
+
+------------------------------------------------------------------------
+r889 | fullmetalcoder | 2009-02-14 12:17:57 +0100 (Sat, 14 Feb 2009) | 1 line
+
+Added possibility to turn auto-indent on/off in QEditor.
+------------------------------------------------------------------------
+r888 | fullmetalcoder | 2009-02-14 11:30:21 +0100 (Sat, 14 Feb 2009) | 1 line
+
+More API extension in QFormatScheme.
+------------------------------------------------------------------------
+r887 | fullmetalcoder | 2009-02-13 20:31:06 +0100 (Fri, 13 Feb 2009) | 1 line
+
+Another batch of snippet-related fixes/adjustments.
+------------------------------------------------------------------------
+r886 | fullmetalcoder | 2009-02-13 15:49:48 +0100 (Fri, 13 Feb 2009) | 3 lines
+
+Changes in cursor auto-update process to avoid redundancy (and thus performance loss) and fix some issues thanks to a greater flexibility.
+Test so far indicate a much better behavior but more are needed to confirm.
+
+------------------------------------------------------------------------
+r885 | fullmetalcoder | 2009-02-13 15:48:10 +0100 (Fri, 13 Feb 2009) | 2 lines
+
+Fixed a bug left in documentRegion determination.
+Fixed cursor boundaries substraction.
+------------------------------------------------------------------------
+r884 | fullmetalcoder | 2009-02-13 15:46:43 +0100 (Fri, 13 Feb 2009) | 1 line
+
+Better cleanup of placeholders.
+------------------------------------------------------------------------
+r883 | fullmetalcoder | 2009-02-13 15:46:00 +0100 (Fri, 13 Feb 2009) | 1 line
+
+More storage options available for QFormatScheme.
+------------------------------------------------------------------------
+r882 | fullmetalcoder | 2009-02-12 14:59:30 +0100 (Thu, 12 Feb 2009) | 1 line
+
+Fixed a bug in snippet insertion.
+------------------------------------------------------------------------
+r881 | fullmetalcoder | 2009-02-10 12:04:16 +0100 (Tue, 10 Feb 2009) | 3 lines
+
+Fixed documentRegion computation.
+Fixed some issues in cursor auto-updating to improve placeholders behavior when newlines are typed (still some issues though).
+
+------------------------------------------------------------------------
+r880 | fullmetalcoder | 2009-02-10 11:21:25 +0100 (Tue, 10 Feb 2009) | 2 lines
+
+Fixes (workarounds actually) for weird issues in line wrapping with variable width fonts.
+
+------------------------------------------------------------------------
+r879 | fullmetalcoder | 2009-02-07 12:52:23 +0100 (Sat, 07 Feb 2009) | 8 lines
+
+Improved the snippets UI
+Fixed a bug in snippet insertion which caused insertion to always happen at document start.
+Added basic documentRegion() function to cursors.
+Added cursor boundaries intersection and substraction (low-level so only available in QDocumentCursorHandle atm) to improve cursor auto-updating.
+Added drawing of rectangles around mirrored placeholders.
+
+Note : placeholders are know to have some small troubles with newlines. Nothing dangerous but they may lose "accuracy" in some cases.
+
+------------------------------------------------------------------------
+r878 | fullmetalcoder | 2009-02-03 20:01:37 +0100 (Tue, 03 Feb 2009) | 1 line
+
+Added a (poor) UI to create and use code snippets for test purpose. Only the brave shall dare use it.
+------------------------------------------------------------------------
+r877 | fullmetalcoder | 2009-02-03 20:00:06 +0100 (Tue, 03 Feb 2009) | 1 line
+
+Added syntax file for snippets (draft).
+------------------------------------------------------------------------
+r876 | fullmetalcoder | 2009-02-03 19:51:03 +0100 (Tue, 03 Feb 2009) | 3 lines
+
+Fixed weird (corner case) display glitches.
+Fixed bugs in cursor auto-updating mechanism
+Fixed some issues in placeholders handling.
+------------------------------------------------------------------------
+r875 | fullmetalcoder | 2009-02-03 16:47:27 +0100 (Tue, 03 Feb 2009) | 1 line
+
+Just to make sure no display glitches happen upon editor reloading (when new text is smaller than old one).
+------------------------------------------------------------------------
+r874 | fullmetalcoder | 2009-02-02 12:46:32 +0100 (Mon, 02 Feb 2009) | 1 line
+
+Fixed a typo which prevented compilation.
+------------------------------------------------------------------------
+r873 | fullmetalcoder | 2009-02-02 12:46:00 +0100 (Mon, 02 Feb 2009) | 4 lines
+
+Prettier line number panel :
+ * under windows (which does not support unicode) an alternative font (windings) is used to render wrap arrows
+ * wrap arrows are now always drawn, even in non-verbose mode.
+
+------------------------------------------------------------------------
+r872 | fullmetalcoder | 2009-02-02 00:03:54 +0100 (Mon, 02 Feb 2009) | 1 line
+
+Fixed QDocumentCursor comparison operators.
+------------------------------------------------------------------------
+r871 | fullmetalcoder | 2009-02-01 19:17:47 +0100 (Sun, 01 Feb 2009) | 1 line
+
+Started working on a basic snippet manager.
+------------------------------------------------------------------------
+r870 | fullmetalcoder | 2009-02-01 19:01:10 +0100 (Sun, 01 Feb 2009) | 3 lines
+
+Many improvements in placeholders :
+* added length/positon tracking : when moving to a placeholder, contents will be selected
+* added (optional) affectors : each placeholder can have its own affector whose behavior may change from a mirror to another (not fully implemented).
+------------------------------------------------------------------------
+r869 | fullmetalcoder | 2009-02-01 17:36:56 +0100 (Sun, 01 Feb 2009) | 2 lines
+
+Made auto-updating of cursor property propagated by cloning.
+Introduced placeholders support in QEditor.
+------------------------------------------------------------------------
+r868 | fullmetalcoder | 2009-02-01 16:40:38 +0100 (Sun, 01 Feb 2009) | 1 line
+
+QEditor no longer attempts to monitor empty filenames.
+------------------------------------------------------------------------
+r867 | fullmetalcoder | 2009-01-31 17:51:27 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Fixed clearing of wrapped line data in QDocument::setText().
+------------------------------------------------------------------------
+r866 | fullmetalcoder | 2009-01-31 17:50:17 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Fixed a bug in QCE::Demo which could cause new files to be saved as the last opened file.
+------------------------------------------------------------------------
+r865 | fullmetalcoder | 2009-01-31 17:11:31 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Improved ambiguity resolution : if an ambiguous word is found, regexps will only be chosen over it when they are either special (e.g context start/stop) or longer).
+------------------------------------------------------------------------
+r864 | fullmetalcoder | 2009-01-31 10:52:51 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Changed policy of panel position fix use : now enabled by default on win and not on other platform. More test needed.
+------------------------------------------------------------------------
+r863 | fullmetalcoder | 2009-01-31 10:49:50 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Added ANSI trigraphs to C/C++ syntax definition.
+------------------------------------------------------------------------
+r862 | fullmetalcoder | 2009-01-31 10:44:27 +0100 (Sat, 31 Jan 2009) | 1 line
+
+Fixed some issues with line wrapping mode update through use of defaultFlags()
+------------------------------------------------------------------------
+r861 | fullmetalcoder | 2009-01-30 14:18:57 +0100 (Fri, 30 Jan 2009) | 3 lines
+
+Fixed issues in the defaultFlags management of QEditor
+Fixed line wrapping settings storage/reloading in QCE::Demo.
+
+------------------------------------------------------------------------
+r860 | fullmetalcoder | 2009-01-30 13:26:54 +0100 (Fri, 30 Jan 2009) | 2 lines
+
+Fixed a potential assert failure when loading new content into an editor where line wrapping is enabled (and actually used).
+
+------------------------------------------------------------------------
+r859 | fullmetalcoder | 2009-01-30 13:20:01 +0100 (Fri, 30 Jan 2009) | 5 lines
+
+Added a "New" button to the example.
+Fixed format update upon "save as".
+Fixed lack of "unsaved modification" warning when opening a recent file.
+Fixed the default option of the "unsaved modification" question : Yes (i.e save) is now the default, instead of cancel.
+
+------------------------------------------------------------------------
+r858 | fullmetalcoder | 2009-01-30 13:14:33 +0100 (Fri, 30 Jan 2009) | 1 line
+
+Some fixes in formatting update process.
+------------------------------------------------------------------------
+r857 | fullmetalcoder | 2009-01-29 22:35:53 +0100 (Thu, 29 Jan 2009) | 3 lines
+
+Added (forced) disambiguation of word vs sequence match overlap.
+Some changes in LaTex syntax file.
+
+------------------------------------------------------------------------
+r856 | fullmetalcoder | 2009-01-29 21:36:00 +0100 (Thu, 29 Jan 2009) | 1 line
+
+Updated LaTex syntax file.
+------------------------------------------------------------------------
+r855 | fullmetalcoder | 2009-01-29 21:22:21 +0100 (Thu, 29 Jan 2009) | 2 lines
+
+Fixed ordering of submatch notifications upon subcontext entering (QNFA syntax engine).
+Fixed boundary fold when folding up to the end of a "regular" block (delimited by open/close parens).
+------------------------------------------------------------------------
+r854 | fullmetalcoder | 2009-01-29 21:04:23 +0100 (Thu, 29 Jan 2009) | 3 lines
+
+Yet another rework of code folding. This time to bring a new feature : boundary folding. A new type of parenthesis has been introduced. Boundary is both open and close parenthesis and can form foldable blocks with other parenthesis of the same kind. Priority of boundary parenthesis is determined by the order of definition in syntax files. Boundaries can of course be nested and fold to end (or at least the end of the "priority context" (i.e the next boundary of higher priority.
+Small fix in QFoldPanel to prevent rendering quirks.
+
+------------------------------------------------------------------------
+r853 | fullmetalcoder | 2009-01-29 01:47:54 +0100 (Thu, 29 Jan 2009) | 1 line
+
+Small fix in C++ syntax file.
+------------------------------------------------------------------------
+r852 | fullmetalcoder | 2009-01-29 01:47:28 +0100 (Thu, 29 Jan 2009) | 2 lines
+
+Fixed some issues in QNFA <embed> tag when mixed with transparency attribute of contexts and deferred embedding.
+
+------------------------------------------------------------------------
+r851 | fullmetalcoder | 2009-01-29 01:03:23 +0100 (Thu, 29 Jan 2009) | 4 lines
+
+Fixed the contextMenuEvent handler in input binding.
+Made QDocumentSearch use the local (document) format scheme instead of the global one.
+Some clarifications in API docs.
+
+------------------------------------------------------------------------
+r850 | fullmetalcoder | 2009-01-26 22:27:50 +0100 (Mon, 26 Jan 2009) | 1 line
+
+Another batch of adjustements in code folding : all known issues tackled, all complexity tests passed, yeah :D
+------------------------------------------------------------------------
+r849 | fullmetalcoder | 2009-01-26 21:54:06 +0100 (Mon, 26 Jan 2009) | 1 line
+
+Some more improvements and fixes in brace matching and code folding (mostly covers complicated/rare cases).
+------------------------------------------------------------------------
+r848 | fullmetalcoder | 2009-01-25 15:29:09 +0100 (Sun, 25 Jan 2009) | 1 line
+
+More API extension.
+------------------------------------------------------------------------
+r847 | fullmetalcoder | 2009-01-25 10:33:47 +0100 (Sun, 25 Jan 2009) | 6 lines
+
+API extension :
+* Added a contextMenuEvent handler to input bindings
+* Added several anchor-related convenience methods to QDocumentCursor 
+* Renamed anchorColumn and visualColumn to anchorColumnNumber and visualColumnNumber respectively for naming consistency.
+
+Clarified indexing of line/columns in QDocumentCursor API doc.
+------------------------------------------------------------------------
+r846 | fullmetalcoder | 2009-01-22 22:57:44 +0100 (Thu, 22 Jan 2009) | 1 line
+
+Updated formats and language definitions (copied from QCE).
+------------------------------------------------------------------------
+r845 | fullmetalcoder | 2009-01-22 22:54:37 +0100 (Thu, 22 Jan 2009) | 1 line
+
+Fixed build error caused by a missing method.
+------------------------------------------------------------------------
+r844 | fullmetalcoder | 2009-01-22 21:50:03 +0100 (Thu, 22 Jan 2009) | 3 lines
+
+Added brace mismatch display.
+Fixed some issues in folding reported by Ulrich van den Hekke.
+Improved fold panel drawing to make it render complicated situation in a nicer way.
+------------------------------------------------------------------------
+r843 | fullmetalcoder | 2009-01-22 21:06:38 +0100 (Thu, 22 Jan 2009) | 1 line
+
+Fixed an bug in document line visibility storage.
+------------------------------------------------------------------------
+r842 | fullmetalcoder | 2009-01-22 20:29:22 +0100 (Thu, 22 Jan 2009) | 2 lines
+
+Updated the formats definition file (format names used by brace matching have changed).
+Updated XML definition file to recognize xsl files as XML.
+------------------------------------------------------------------------
+r841 | fullmetalcoder | 2009-01-22 20:27:45 +0100 (Thu, 22 Jan 2009) | 1 line
+
+Implemented auto-shifting of overlays upon insertion/deletion of text.
+------------------------------------------------------------------------
+r840 | fullmetalcoder | 2009-01-22 20:14:45 +0100 (Thu, 22 Jan 2009) | 1 line
+
+QDocumentSearch : made match cursors (for batched search (i.e searching the whole document at once and indexing matches)) auto updated so that editing does not render them invalid/outdated.
+------------------------------------------------------------------------
+r839 | fullmetalcoder | 2009-01-21 22:33:32 +0100 (Wed, 21 Jan 2009) | 1 line
+
+Updated license and docs.
+------------------------------------------------------------------------
+r838 | fullmetalcoder | 2009-01-21 20:35:50 +0100 (Wed, 21 Jan 2009) | 1 line
+
+Added an often requested feature to qdocument (and its display to line change panel) : line ever modified?
+------------------------------------------------------------------------
+r837 | fullmetalcoder | 2009-01-21 20:31:37 +0100 (Wed, 21 Jan 2009) | 1 line
+
+Fixed some limitations of the line "modification state" storage.
+------------------------------------------------------------------------
+r836 | fullmetalcoder | 2009-01-21 19:48:14 +0100 (Wed, 21 Jan 2009) | 1 line
+
+Updated the XML syntax file.
+------------------------------------------------------------------------
+r835 | fullmetalcoder | 2009-01-20 23:23:59 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Fixed a small cursor movement bug.
+------------------------------------------------------------------------
+r834 | fullmetalcoder | 2009-01-20 23:00:50 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Fixed a small drawing bug when wrapping was enabled.
+------------------------------------------------------------------------
+r833 | fullmetalcoder | 2009-01-20 22:54:56 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Made bookmark the default line mark when none provided by the qnfa language file. Lang files can still prevent any mark from being used by default by specifying defaultLineMark="" as an attribute to the QNFA tag.
+------------------------------------------------------------------------
+r832 | fullmetalcoder | 2009-01-20 22:52:04 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Fixed a selection regression.
+------------------------------------------------------------------------
+r831 | fullmetalcoder | 2009-01-20 22:42:38 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Re-enabled the "default line mark" per-language setting and the one click toggling of default line mark through line mark panel.
+------------------------------------------------------------------------
+r830 | fullmetalcoder | 2009-01-20 22:18:46 +0100 (Tue, 20 Jan 2009) | 1 line
+
+Fixed a regression in XML-based qnfa syntax engine.
+------------------------------------------------------------------------
+r829 | fullmetalcoder | 2009-01-20 21:30:39 +0100 (Tue, 20 Jan 2009) | 4 lines
+
+Some regression fixes.
+Extended cursor drawing options : the paint context now provides "regular" and "extra" cursors the first one behave as all cursors used to behave (line background, blinking cursor, ...) whereas the second ones, mostly meant for indicators, do not blink (at least not by themselves) and their presence does not affect line backgrounds.
+Added drawing of drag and drop cursor.
+Changed drawing of cursor mirrors so that it is possible to easily know the actual cursor from its mirrors.
+------------------------------------------------------------------------
+r828 | fullmetalcoder | 2009-01-20 16:44:19 +0100 (Tue, 20 Jan 2009) | 1 line
+
+More docs coming.
+------------------------------------------------------------------------
+r827 | fullmetalcoder | 2009-01-17 15:43:12 +0100 (Sat, 17 Jan 2009) | 1 line
+
+Brought back the panel position fix. Need more testing to determine whit which version to enable it. (use run time version checking?).
+------------------------------------------------------------------------
+r826 | fullmetalcoder | 2009-01-17 15:20:57 +0100 (Sat, 17 Jan 2009) | 1 line
+
+Fixed a potential segfault in drawing code.
+------------------------------------------------------------------------
+r825 | fullmetalcoder | 2009-01-16 19:03:32 +0100 (Fri, 16 Jan 2009) | 5 lines
+
+Changed the panel registration process.
+Made all builtin panels automatically register.
+Changed the id of all default panels.
+Added an overloaded addPanel() method to QCodeEdit that take a panel name as first parameter instead of a QPanel*
+Made the example use the new addPanel method instead of the old one.
+------------------------------------------------------------------------
+r824 | fullmetalcoder | 2009-01-16 18:13:01 +0100 (Fri, 16 Jan 2009) | 1 line
+
+Fixed a regression which prevented from saving documents.
+------------------------------------------------------------------------
+r823 | fullmetalcoder | 2009-01-16 17:46:51 +0100 (Fri, 16 Jan 2009) | 4 lines
+
+Changed copyright notice to take the new year into account.
+Added more QCodeEdit API docs.
+Made the light drawing of line number panel the default.
+Some small fixes.
+------------------------------------------------------------------------
+r822 | fullmetalcoder | 2009-01-15 17:11:11 +0100 (Thu, 15 Jan 2009) | 1 line
+
+Fixed a weird (WAY weird) crash that happened when some actions suddenly decide to commit suicide (or was that Col Mustard with a spoon in the bathroom?). It looks like this happen whenever a file is saved which is embarassing. It does no longer crash but the reall cause has yet to be found...
+------------------------------------------------------------------------
+r821 | fullmetalcoder | 2009-01-14 20:27:27 +0100 (Wed, 14 Jan 2009) | 1 line
+
+Fixed a highlighting issue reported by benito van der zander.
+------------------------------------------------------------------------
+r820 | fullmetalcoder | 2009-01-12 13:30:25 +0100 (Mon, 12 Jan 2009) | 1 line
+
+Added a new QDocument::text() method with a more flexible parametrization of text processing. The old one remains and its behavior has not changed but it is considered as deprecated.
+------------------------------------------------------------------------
+r819 | fullmetalcoder | 2009-01-12 13:16:43 +0100 (Mon, 12 Jan 2009) | 1 line
+
+Added a new line number drawing mode and made it possible to chose between verbose (default, old one) and light (new one) using setVerboseMode(bool).
+------------------------------------------------------------------------
+r818 | fullmetalcoder | 2009-01-12 12:15:41 +0100 (Mon, 12 Jan 2009) | 3 lines
+
+Fixed font cache update when no format scheme set.
+Added "indent restoration" to document saving (turned on by default now but will be made optional).
+Added more API doc to QDocument.
+------------------------------------------------------------------------
+r817 | fullmetalcoder | 2009-01-10 14:32:59 +0100 (Sat, 10 Jan 2009) | 1 line
+
+Added some bounds checking to prevent potential crashes when document is drawn using variable width fonts.
+------------------------------------------------------------------------
+r816 | fullmetalcoder | 2009-01-07 22:55:22 +0100 (Wed, 07 Jan 2009) | 2 lines
+
+Fixed a small cursor movement bug which caused backward search to skip matches on the first line of the document.
+Added Doxygen comments for QDocumentLine and QdocumentCursor. More api doc will follow.
+------------------------------------------------------------------------
+r815 | fullmetalcoder | 2009-01-06 23:14:56 +0100 (Tue, 06 Jan 2009) | 9 lines
+
+Loads of change :
+* changed the default document<->cursor conversion paradigm to be more straightforward, efficient and intuitive (xToCursor() and cursorToX() behavior unchanged but these methods are now deprecated in favor of the new cursorToDocumentOffset() and documentOffsetToCursor()).
+* Fixed some cursor movements glitches
+* Implemented proper line wrapping for lines using QTextLayout to render their content
+* Fixed some bugs in QTextLayout-based drawing.
+* Changed the placement of the cursor at wrapping boundaries : the cursor is now displayed at the begining of the new block (because QTextLayout does it that way and it has to be consistent accross the whole document).
+
+Note : There are still some known limitations when rendering is managed by QTextLayout (selection drawing is bounded to text, spaces markers cannot be drawn, some formatting options cannot be mixed (e.g several "line formatting" cannot coexist on the same character)...) but it is now usable and consistent with the default rendering (QTextLayout is used "on demand" to handle Bidi).
+
+------------------------------------------------------------------------
+r814 | fullmetalcoder | 2009-01-06 18:09:32 +0100 (Tue, 06 Jan 2009) | 1 line
+
+Fixes in QTextLayout-based rendering.
+------------------------------------------------------------------------
+r813 | fullmetalcoder | 2009-01-06 18:07:58 +0100 (Tue, 06 Jan 2009) | 1 line
+
+Started preliminary work on session support.
+------------------------------------------------------------------------
+r812 | fullmetalcoder | 2009-01-05 13:02:48 +0100 (Mon, 05 Jan 2009) | 1 line
+
+Added two new creator method to QNFADefinition for convenience (from QFile or QDomDocument).
+------------------------------------------------------------------------
+r811 | fullmetalcoder | 2009-01-04 22:12:53 +0100 (Sun, 04 Jan 2009) | 1 line
+
+Small fixes for backward search in QDocumentSearch (thanks to Ulrich van den Hekke).
+------------------------------------------------------------------------
+r810 | fullmetalcoder | 2009-01-04 19:22:20 +0100 (Sun, 04 Jan 2009) | 1 line
+
+Added an accessor to QLanguageFactory.Improved QLanguageFactory language inference heuristics. Now allows the file param to be filename or extension or language name. It also accepts case insensitive matches. Last but not least, it prioritize matches (cs > \!cs; filename > extension > language name).
+------------------------------------------------------------------------
+r809 | fullmetalcoder | 2009-01-04 18:49:39 +0100 (Sun, 04 Jan 2009) | 1 line
+
+More settings implementation/fixes (all available settings option are now working).
+------------------------------------------------------------------------
+r808 | fullmetalcoder | 2009-01-04 18:47:03 +0100 (Sun, 04 Jan 2009) | 2 lines
+
+Fixed some wrap mode settings issues.
+Fixed some panel toggleViewActions issues.
+------------------------------------------------------------------------
+r807 | fullmetalcoder | 2009-01-04 16:49:09 +0100 (Sun, 04 Jan 2009) | 4 lines
+
+Added recent files handling to QCE::Demo.
+Added guards to prevent accidental loss of modifications when closing QCE::Demo or opening a new file.
+Implemented GUI state restoration.
+Implemented some more settings in QCE::Demo.
+------------------------------------------------------------------------
+r806 | fullmetalcoder | 2009-01-04 15:27:33 +0100 (Sun, 04 Jan 2009) | 1 line
+
+Some fixes in line marks navigation helper functions.
+------------------------------------------------------------------------
+r805 | fullmetalcoder | 2009-01-04 15:07:07 +0100 (Sun, 04 Jan 2009) | 2 lines
+
+Fixed a minor drawing glitch in fold panel.
+Changed the strings used by fold panel and status panel to identify themselves.
+------------------------------------------------------------------------
+r804 | fullmetalcoder | 2009-01-02 18:48:50 +0100 (Fri, 02 Jan 2009) | 1 line
+
+More improvements in QCE::Demo.
+------------------------------------------------------------------------
+r803 | fullmetalcoder | 2009-01-02 18:03:00 +0100 (Fri, 02 Jan 2009) | 1 line
+
+Imrpovements in file saving.
+------------------------------------------------------------------------
+r802 | fullmetalcoder | 2009-01-02 16:25:48 +0100 (Fri, 02 Jan 2009) | 2 lines
+
+Fixed reloading of line endings settings from settings map.
+Fixed updating of line endings action upon reload.
+------------------------------------------------------------------------
+r801 | fullmetalcoder | 2009-01-02 14:10:16 +0100 (Fri, 02 Jan 2009) | 6 lines
+
+QCE::Demo GUI improvements :
+* added a toolbar
+* added icons to most actions
+* added save as action
+* added print action
+* changed default lookup path of file open dialog
+------------------------------------------------------------------------
+r800 | fullmetalcoder | 2009-01-02 14:08:12 +0100 (Fri, 02 Jan 2009) | 1 line
+
+Preliminary printing support.
+------------------------------------------------------------------------
+r799 | fullmetalcoder | 2009-01-02 11:48:17 +0100 (Fri, 02 Jan 2009) | 1 line
+
+More improvements of the demo application.
+------------------------------------------------------------------------
+r798 | fullmetalcoder | 2009-01-02 11:46:14 +0100 (Fri, 02 Jan 2009) | 2 lines
+
+Improvements to encoding support.
+Improvements to settings widget.
+------------------------------------------------------------------------
+r797 | fullmetalcoder | 2009-01-02 00:19:14 +0100 (Fri, 02 Jan 2009) | 5 lines
+
+Improved example program. It should be a fully functional editor.
+* Added the possibility to save files.
+* Implemented the settings side.
+* Changed the UI a bit (welcome page, editing control and settings page)
+* And more internal improvements...
+------------------------------------------------------------------------
+r796 | fullmetalcoder | 2009-01-02 00:15:51 +0100 (Fri, 02 Jan 2009) | 1 line
+
+Improved QCE configuration facilities and the default config widget : QEditConfig.
+------------------------------------------------------------------------
+r795 | fullmetalcoder | 2009-01-01 15:21:11 +0100 (Thu, 01 Jan 2009) | 3 lines
+
+Added infrastructure for easier memory reading of debugged process in GDB plugin.
+Fixed some remaining compile issues.
+A few other cosmetic changes.
+------------------------------------------------------------------------
+r794 | fullmetalcoder | 2009-01-01 13:27:06 +0100 (Thu, 01 Jan 2009) | 1 line
+
+More small bugfixing.
+------------------------------------------------------------------------
+r793 | fullmetalcoder | 2009-01-01 12:48:32 +0100 (Thu, 01 Jan 2009) | 1 line
+
+Minor fixes
+------------------------------------------------------------------------
+r792 | fullmetalcoder | 2009-01-01 12:41:12 +0100 (Thu, 01 Jan 2009) | 1 line
+
+Added WIP CSS language definition.
+------------------------------------------------------------------------
+r791 | fullmetalcoder | 2009-01-01 12:08:41 +0100 (Thu, 01 Jan 2009) | 1 line
+
+More property update.
+------------------------------------------------------------------------
+r790 | fullmetalcoder | 2009-01-01 12:07:47 +0100 (Thu, 01 Jan 2009) | 1 line
+
+Some fixes/adjustement for Edyuk.
+------------------------------------------------------------------------
+r789 | fullmetalcoder | 2009-01-01 11:50:29 +0100 (Thu, 01 Jan 2009) | 6 lines
+
+Bunch of changes in the source layout.
+QLanguageDefinition has been redesigned after several experiments, resulting in a lighter API (several classes have been removed).
+QLanguageFactory has been redesigned to tightly group components (language deifinition, format scheme, completion engine) dealing with the same language.
+The QEditor/QDocument infrastructure has been adapted to take advantage of this new architecture (few API breaks which should not be problematic as they were rather internal).
+Several improvements to folding engine when several fold tokens (open or close) are on the same line.
+Added svn:eol-style property to some file that did not have it.
+------------------------------------------------------------------------
+r788 | fullmetalcoder | 2008-12-31 15:38:06 +0100 (Wed, 31 Dec 2008) | 2 lines
+
+Big changes in the formatting architecture and even more to come.
+As much as possible, backward compat as been kept to ensure peaceful transition (though full rebuild is required for all apps based on QCE and a bunch of methods are now deprecated, as well as one class : QFormatFactory becomes QFormatScheme and will loose its monolithic design.)
+------------------------------------------------------------------------
+r787 | fullmetalcoder | 2008-12-31 13:50:23 +0100 (Wed, 31 Dec 2008) | 1 line
+
+Added two convenience methods to QFormatFactory.
+------------------------------------------------------------------------
+r786 | fullmetalcoder | 2008-12-31 11:57:49 +0100 (Wed, 31 Dec 2008) | 1 line
+
+Fixed a bug in C++ parser typedef handling which caused, among other things, some recent Qt headers, like qprocess.h, to be parsed improperly.
+------------------------------------------------------------------------
+r785 | fullmetalcoder | 2008-12-31 11:38:26 +0100 (Wed, 31 Dec 2008) | 1 line
+
+Small matcher updating fix.
+------------------------------------------------------------------------
+r784 | fullmetalcoder | 2008-12-31 11:15:48 +0100 (Wed, 31 Dec 2008) | 2 lines
+
+Fixed QEditor::write() method to update things properly (matches, display, ...).
+Changed standard completion entry point (now uses signals/slots instead of event filters to help keeping things consistent).
+------------------------------------------------------------------------
+r783 | fullmetalcoder | 2008-12-30 22:12:08 +0100 (Tue, 30 Dec 2008) | 1 line
+
+Improved wave underlining to prevent flickering ("wave simulation" according to benito ;) ) when selecting. There might be some small glitches left but it still is much better than it used to.
+------------------------------------------------------------------------
+r782 | fullmetalcoder | 2008-12-28 23:00:00 +0100 (Sun, 28 Dec 2008) | 1 line
+
+Fixed potential segfault when trying to complete some invalid C++ constructs.
+------------------------------------------------------------------------
+r781 | fullmetalcoder | 2008-12-28 22:20:30 +0100 (Sun, 28 Dec 2008) | 3 lines
+
+Re-enabled cursor "column memory".
+Some surgery in matcher (a couple of weird and hopefully uncommon) issues remain.
+Some surgery in search/replace panel.
+------------------------------------------------------------------------
+r780 | fullmetalcoder | 2008-12-28 22:08:00 +0100 (Sun, 28 Dec 2008) | 1 line
+
+Fixed some menu updating issues in Build and Debugging engines.
+------------------------------------------------------------------------
+r779 | fullmetalcoder | 2008-12-28 19:14:24 +0100 (Sun, 28 Dec 2008) | 4 lines
+
+Made cursor "column memory" optional.
+Grouped cursor boolean flags (Silent, ColumnMemory and MovementWithinWrappedLines) into a single integer variable.
+A couple of other minor adjustments.
+
+------------------------------------------------------------------------
+r778 | fullmetalcoder | 2008-12-28 12:37:52 +0100 (Sun, 28 Dec 2008) | 1 line
+
+Added two new syntax files.
+------------------------------------------------------------------------
+r777 | fullmetalcoder | 2008-12-27 23:24:17 +0100 (Sat, 27 Dec 2008) | 1 line
+
+Added a convenience compare operators QDocumentLine/QDocumentLineHandle.
+------------------------------------------------------------------------
+r776 | fullmetalcoder | 2008-12-27 23:17:53 +0100 (Sat, 27 Dec 2008) | 1 line
+
+Fixed some cursor movement quirks within wrapped blocks.
+------------------------------------------------------------------------
+r775 | fullmetalcoder | 2008-12-27 22:28:52 +0100 (Sat, 27 Dec 2008) | 3 lines
+
+Fixed findNextMark() and findPrevMark() to use the until parameter properly.
+Added a new convenience method to QEditor : isCursorVisible()
+Changed some cursor visibility adjustement policies.
+------------------------------------------------------------------------
+r774 | fullmetalcoder | 2008-12-16 23:06:27 +0100 (Tue, 16 Dec 2008) | 1 line
+
+Small improvements in file conflicts handling.
+------------------------------------------------------------------------
+r773 | fullmetalcoder | 2008-12-16 22:36:18 +0100 (Tue, 16 Dec 2008) | 1 line
+
+Fixed a cursor positioning regression.
+------------------------------------------------------------------------
+r772 | fullmetalcoder | 2008-12-16 22:25:28 +0100 (Tue, 16 Dec 2008) | 1 line
+
+Fixed a cursor movement regression (movemet within wrapped lines was sometimes screwed up after editing.
+------------------------------------------------------------------------
+r771 | fullmetalcoder | 2008-12-16 22:17:54 +0100 (Tue, 16 Dec 2008) | 1 line
+
+Fixed several regressions (some of which could cause QCE to hang).
+------------------------------------------------------------------------
+r770 | fullmetalcoder | 2008-12-14 20:18:07 +0100 (Sun, 14 Dec 2008) | 1 line
+
+Some usability improvements to the Search/Replace panel contributed by Benito.
+------------------------------------------------------------------------
+r769 | fullmetalcoder | 2008-12-10 18:13:39 +0100 (Wed, 10 Dec 2008) | 1 line
+
+Added a convenience method to QDocumentLine to get indentation.
+------------------------------------------------------------------------
+r768 | fullmetalcoder | 2008-12-10 18:11:35 +0100 (Wed, 10 Dec 2008) | 2 lines
+
+Added extra ctors to allow disabling of builtin menu of QEditor.
+
+------------------------------------------------------------------------
+r767 | fullmetalcoder | 2008-12-10 18:08:41 +0100 (Wed, 10 Dec 2008) | 2 lines
+
+Fixed the non-preservation of maximum cursor x position when moving up/down through wrapped lines.
+
+------------------------------------------------------------------------
+r766 | fullmetalcoder | 2008-12-09 20:55:49 +0100 (Tue, 09 Dec 2008) | 4 lines
+
+Implemented up/down cursor movements within wrapped lines.
+Made movements within lines the default when lines are wrapped.
+Note : there are still some issues with this new behavior but it works well overall.
+
+------------------------------------------------------------------------
+r765 | fullmetalcoder | 2008-12-08 23:13:07 +0100 (Mon, 08 Dec 2008) | 7 lines
+
+ * Some architectural changes in settings handling.
+ * Added a a way to restrict settings loading/storage to a given location on run-time.
+ * Attempted to fight some DLL loading troubles by adding library pathes.
+ * Added a new parameter to the CLI : -settings location to use "sandboxed" settings e.g : 
+
+$ edyuk -settings .settings/
+
+------------------------------------------------------------------------
+r764 | fullmetalcoder | 2008-12-08 21:45:19 +0100 (Mon, 08 Dec 2008) | 2 lines
+
+Fixed a potential assert failure when drawing text for non-formatted documents.
+Fixed QLineChangePanel (did not draw itself when no syntax file was associated with the editor it was operating on, which was non-sensish)
+------------------------------------------------------------------------
+r763 | fullmetalcoder | 2008-12-08 21:29:37 +0100 (Mon, 08 Dec 2008) | 1 line
+
+Added canUndo() and canRedo() convenience methods to both QEditor and QDocument.
+------------------------------------------------------------------------
+r762 | fullmetalcoder | 2008-12-08 21:20:37 +0100 (Mon, 08 Dec 2008) | 7 lines
+
+Modified actions management in QEditor/QCodeEdit :
+ * QEditor now allows builtin actions to be turned on or off in ctor (no change possible afterwards though)
+ * builtin actions are now stored in a QHash<QString, QAction*> which gives more flexibility for future changes, allows them to be retrieved by the users (and tweaked), can save up to several dozen bytes of memory per QEditor object...
+ * panel actions, if present, are now grouped in a submenu to reduce context menu cluttering.
+
+Added new event handlers to InputBinding : post event handlers, which allow to produce a behavior similar to calling the superclass event handler from within a subclass.
+
+------------------------------------------------------------------------
+r761 | fullmetalcoder | 2008-12-08 19:01:26 +0100 (Mon, 08 Dec 2008) | 1 line
+
+Added two accessors to QLanguageFactory (user request).
+------------------------------------------------------------------------
+r760 | fullmetalcoder | 2008-12-08 13:39:30 +0100 (Mon, 08 Dec 2008) | 2 lines
+
+Fixed BibTex syntax definition (comments did not fold).
+
+------------------------------------------------------------------------
+r759 | fullmetalcoder | 2008-12-08 13:38:46 +0100 (Mon, 08 Dec 2008) | 3 lines
+
+Fixed a regression in parenthesis matching.
+Fixed a regression in cursor drawing (where background would overwrite cursors).
+
+------------------------------------------------------------------------
+r758 | fullmetalcoder | 2008-12-05 19:12:29 +0100 (Fri, 05 Dec 2008) | 1 line
+
+Added highlighting of extended C++ comments (with the new DANGER format).
+------------------------------------------------------------------------
+r757 | fullmetalcoder | 2008-12-05 18:51:33 +0100 (Fri, 05 Dec 2008) | 1 line
+
+Added QDocumentCursor::eraseLine()
+------------------------------------------------------------------------
+r756 | fullmetalcoder | 2008-12-05 18:40:57 +0100 (Fri, 05 Dec 2008) | 2 lines
+
+Fixed a small bug : until parameter was not passed to impl in QDocument mark navigation functions.
+
+------------------------------------------------------------------------
+r755 | fullmetalcoder | 2008-12-04 16:01:39 +0100 (Thu, 04 Dec 2008) | 2 lines
+
+Made some members protected instead of private.
+
+------------------------------------------------------------------------
+r754 | fullmetalcoder | 2008-12-04 15:59:28 +0100 (Thu, 04 Dec 2008) | 2 lines
+
+Made QFormatFactory more flexible to allow easy switch to other storage formats. (Requested by phoenix741 on Sf.net tracker.)
+
+------------------------------------------------------------------------
+r753 | fullmetalcoder | 2008-12-04 15:27:55 +0100 (Thu, 04 Dec 2008) | 1 line
+
+Updated the README.
+------------------------------------------------------------------------
+r752 | fullmetalcoder | 2008-12-04 15:27:26 +0100 (Thu, 04 Dec 2008) | 3 lines
+
+Fixed line marks related regressions.
+Improved line marks navigation helper functions.
+
+------------------------------------------------------------------------
+r751 | fullmetalcoder | 2008-12-04 14:26:12 +0100 (Thu, 04 Dec 2008) | 1 line
+
+Improved the look of wave underlining (contributed by Boris Barbulovski).
+------------------------------------------------------------------------
+r750 | fullmetalcoder | 2008-11-30 21:38:54 +0100 (Sun, 30 Nov 2008) | 1 line
+
+Updated syntax files for concision (hyphen in sets).
+------------------------------------------------------------------------
+r749 | fullmetalcoder | 2008-11-30 21:37:34 +0100 (Sun, 30 Nov 2008) | 1 line
+
+Fixed tabs rendering.
+------------------------------------------------------------------------
+r748 | fullmetalcoder | 2008-11-30 18:55:13 +0100 (Sun, 30 Nov 2008) | 1 line
+
+Some improvements in line marks handling and a more sensible resizing policy for the line marks panel.
+------------------------------------------------------------------------
+r747 | fullmetalcoder | 2008-11-30 16:24:28 +0100 (Sun, 30 Nov 2008) | 1 line
+
+Added some convenience functions for line marks handling.
+------------------------------------------------------------------------
+r746 | fullmetalcoder | 2008-11-30 16:02:50 +0100 (Sun, 30 Nov 2008) | 3 lines
+
+Drawing now honors the recently introduced color attributes.
+QXF color attribute now deprecated, use foreground instead (backward compat preserved).
+Backgrounds and lines are now drawn for whitespace ranges as well.
+------------------------------------------------------------------------
+r745 | fullmetalcoder | 2008-11-30 15:06:31 +0100 (Sun, 30 Nov 2008) | 5 lines
+
+Fixed cursor visibility enforcing to work with wrapped lines.
+Fixed panel layout quirks when scrollbars on (more checks needed with older versions).
+Removed the 8bit integer limit for format ids (may still hold in the QNFA syntax engine though...)
+Added lines color and background color attributes to formats (drawing not implemented though).
+Fixed a drawing quirk when using pgUp/pgDown.
+------------------------------------------------------------------------
+r744 | fullmetalcoder | 2008-11-25 18:08:31 +0100 (Tue, 25 Nov 2008) | 2 lines
+
+Fixed QDocumentCursor::clearSelection()
+Fixed some quirks in backward searching (QDocumentSearch)
+------------------------------------------------------------------------
+r743 | fullmetalcoder | 2008-11-25 17:28:24 +0100 (Tue, 25 Nov 2008) | 2 lines
+
+Added user-contributed BibTex syntax file (thanks Benito van der Zander).
+
+------------------------------------------------------------------------
+r742 | fullmetalcoder | 2008-11-25 17:26:47 +0100 (Tue, 25 Nov 2008) | 1 line
+
+Fixed brace match updating (regression fix).
+------------------------------------------------------------------------
+r741 | fullmetalcoder | 2008-11-25 17:16:30 +0100 (Tue, 25 Nov 2008) | 2 lines
+
+Fixed a beg evaluation of WordStart assertion which caused some constructs to be left unhighlighted sometimes.
+
+------------------------------------------------------------------------
+r740 | fullmetalcoder | 2008-11-25 00:10:30 +0100 (Tue, 25 Nov 2008) | 6 lines
+
+Fixed some line wrapping quirks.
+Fixed some tab-related cursor positioning quirks.
+Fixed some drawing glitches.
+Fixed a cursor movement bug.
+Added a couple of new methods (mainly cursor coords (line, column) to document coords (x,y) transformations).
+
+------------------------------------------------------------------------
+r739 | fullmetalcoder | 2008-11-21 13:09:54 +0100 (Fri, 21 Nov 2008) | 1 line
+
+Fixed incoherent updating of QEditor scrollbars when panel layout change and line wrapping is enabled.
+------------------------------------------------------------------------
+r738 | fullmetalcoder | 2008-11-20 23:11:36 +0100 (Thu, 20 Nov 2008) | 1 line
+
+Fixed a minor incoherency in QDocumentSearch : cursor was not nulled when reaching scope end in silent mode.
+------------------------------------------------------------------------
+r737 | fullmetalcoder | 2008-11-20 23:00:51 +0100 (Thu, 20 Nov 2008) | 1 line
+
+Restored waveUnderline formatting.
+------------------------------------------------------------------------
+r736 | fullmetalcoder | 2008-11-20 22:34:57 +0100 (Thu, 20 Nov 2008) | 1 line
+
+Fixed several line wrapping issues (drawing and limited range of parentheses postion.
+------------------------------------------------------------------------
+r735 | fullmetalcoder | 2008-11-20 20:36:29 +0100 (Thu, 20 Nov 2008) | 1 line
+
+Fixed new line rendering approach to properly draw cursors.
+------------------------------------------------------------------------
+r734 | fullmetalcoder | 2008-11-16 23:35:27 +0100 (Sun, 16 Nov 2008) | 1 line
+
+Reworked basic line drawing method to enable more optimizations.
+------------------------------------------------------------------------
+r733 | fullmetalcoder | 2008-11-14 13:44:56 +0100 (Fri, 14 Nov 2008) | 1 line
+
+Small adjustements.
+------------------------------------------------------------------------
+r732 | fullmetalcoder | 2008-11-13 23:09:40 +0100 (Thu, 13 Nov 2008) | 2 lines
+
+Fixed some line wrapping glitches (regression).
+Attempt to fix a reported (but not yet reproduced) bug.
+------------------------------------------------------------------------
+r731 | fullmetalcoder | 2008-11-13 21:02:46 +0100 (Thu, 13 Nov 2008) | 1 line
+
+More line wrapping related speed improvements.
+------------------------------------------------------------------------
+r730 | fullmetalcoder | 2008-11-13 19:54:40 +0100 (Thu, 13 Nov 2008) | 4 lines
+
+Enabled some fixed-pitch specific optimizations.
+Some more drawing optimizations (avoid subsequent painter re-tune to the the same format, avoid painter tune and fontmetrics calls for whitespaces, ...)
+Some simple optimizations in coordinate translation functions (caching the two end iterators of the hidden/wrapped regions map).
+Initial attempt to enable line wrapping on lines that fall back to QTextLayout (for Bidi) (untested).
+------------------------------------------------------------------------
+r729 | fullmetalcoder | 2008-11-13 19:18:08 +0100 (Thu, 13 Nov 2008) | 2 lines
+
+Fixed some issues in QDocumentSearch (not silent enough).
+Added export macro to QDocumentSearch.
+------------------------------------------------------------------------
+r728 | fullmetalcoder | 2008-11-12 22:29:09 +0100 (Wed, 12 Nov 2008) | 3 lines
+
+Fixed some line wrapping regressions.
+Fixed QFormat ctors to init overline to false if not supplied in parameters.
+Fixed a potential assert failure when editing while line wrapping enabled on a non-formatted file.
+------------------------------------------------------------------------
+r727 | fullmetalcoder | 2008-11-11 16:31:31 +0100 (Tue, 11 Nov 2008) | 1 line
+
+Made private members of QEditor protected to allow easier subclassing.
+------------------------------------------------------------------------
+r726 | fullmetalcoder | 2008-11-11 16:20:50 +0100 (Tue, 11 Nov 2008) | 1 line
+
+Several more improvements to brace matching.
+------------------------------------------------------------------------
+r725 | fullmetalcoder | 2008-11-11 16:06:42 +0100 (Tue, 11 Nov 2008) | 4 lines
+
+Fixed drawing of underline, overline, strikeout and waveUnderline formattings.
+Decoupled underline/overline/strikeout/waveUnderline formattings (can combined freely).
+Added possibility to have mutliple brace match at once.
+Fixed some potential assert failures/crash in indenter.
+------------------------------------------------------------------------
+r724 | fullmetalcoder | 2008-11-11 16:03:58 +0100 (Tue, 11 Nov 2008) | 1 line
+
+Added overline formatting option.
+------------------------------------------------------------------------
+r723 | fullmetalcoder | 2008-11-05 10:54:35 +0100 (Wed, 05 Nov 2008) | 1 line
+
+Added a couple of convenience methods to QEditor.
+------------------------------------------------------------------------
+r722 | fullmetalcoder | 2008-11-05 10:39:55 +0100 (Wed, 05 Nov 2008) | 2 lines
+
+Moved QDocumentSelection from qdocument_p.h to qdocument.h
+Replaced QString::indexOf(const QRegExp&) calls by QRegExp::indexIn(const QString&) calls to preserve forward compat with Qt 4.5 (see Qt labs).
+------------------------------------------------------------------------
+r721 | fullmetalcoder | 2008-11-04 13:58:18 +0100 (Tue, 04 Nov 2008) | 3 lines
+
+Fixed possible assert failures when editing wrapped lines.
+Fixed possible offsetting of match when doing backward search.
+Removed software limit (8bit integer) of QFormatRange for position and length (trouble soon appear on files which rely on wrapping, e.g Tex files).
+------------------------------------------------------------------------
+r720 | fullmetalcoder | 2008-11-04 13:22:15 +0100 (Tue, 04 Nov 2008) | 1 line
+
+Fixed build errors introduced by the two previous commits.
+------------------------------------------------------------------------
+r719 | fullmetalcoder | 2008-11-04 13:15:24 +0100 (Tue, 04 Nov 2008) | 1 line
+
+Added two new (protected) ctors to QCodeEdit to allow more flexibility for users.
+------------------------------------------------------------------------
+r718 | fullmetalcoder | 2008-11-03 15:27:17 +0100 (Mon, 03 Nov 2008) | 1 line
+
+Added export macro to QPanelLayout so that it may be reused.
+------------------------------------------------------------------------
+r717 | fullmetalcoder | 2008-11-03 15:16:27 +0100 (Mon, 03 Nov 2008) | 1 line
+
+Significantly improved the performance of the "highlight all" option of QDocumentSearch.
+------------------------------------------------------------------------
+r716 | fullmetalcoder | 2008-11-03 15:00:41 +0100 (Mon, 03 Nov 2008) | 3 lines
+
+Added a new formatting attribute : wave underline.
+Implemented drawing of underline, strikeout and wave underline formatting.
+Small drawing speedup when text scrolled (avoid rendering invisible chars as Qt does not clip them early out...)
+------------------------------------------------------------------------
+r715 | fullmetalcoder | 2008-11-03 14:13:37 +0100 (Mon, 03 Nov 2008) | 1 line
+
+Small performance improvement for drawing of long (and not wrapped) text lines.
+------------------------------------------------------------------------
+r714 | fullmetalcoder | 2008-11-02 16:37:42 +0100 (Sun, 02 Nov 2008) | 2 lines
+
+Fixed multiple matches on the same line when using "highlight all".
+Fixed display update when a text line gains or loses a wrapped line.
+------------------------------------------------------------------------
+r713 | fullmetalcoder | 2008-11-02 14:24:37 +0100 (Sun, 02 Nov 2008) | 3 lines
+
+Fixed a selection drawing issue.
+Fixed line wrapping errors when it is impossible to wrap at word boundaries.
+Prepared infrastructure to allow cursor Up/Down moves within wrapped lines.
+------------------------------------------------------------------------
+r712 | fullmetalcoder | 2008-11-02 12:22:25 +0100 (Sun, 02 Nov 2008) | 3 lines
+
+Lines are now wrapped at word boundaries.
+Introduced a caching of wrapping positions (in QDocumentLineHandle) to speed drawing and cursor positioning on wrapped lines.
+Fixed cursor positioning (would have been way harder without the cache.
+------------------------------------------------------------------------
+r711 | fullmetalcoder | 2008-11-02 12:20:33 +0100 (Sun, 02 Nov 2008) | 1 line
+
+Fixed a potential infinite recursion when highligting all matches in a search.
+------------------------------------------------------------------------
+r710 | fullmetalcoder | 2008-11-01 23:58:45 +0100 (Sat, 01 Nov 2008) | 1 line
+
+Fixed height setting when last line is wrapped.
+------------------------------------------------------------------------
+r709 | fullmetalcoder | 2008-11-01 23:49:33 +0100 (Sat, 01 Nov 2008) | 1 line
+
+Added "fold to EOF" behavior which fixes some bugs when viewing syntactically incorrect files.
+------------------------------------------------------------------------
+r708 | fullmetalcoder | 2008-11-01 18:40:04 +0100 (Sat, 01 Nov 2008) | 1 line
+
+Fixed a matching quirk.
+------------------------------------------------------------------------
+r707 | fullmetalcoder | 2008-10-31 18:21:48 +0100 (Fri, 31 Oct 2008) | 1 line
+
+Updated NSI install script.
+------------------------------------------------------------------------
+r705 | fullmetalcoder | 2008-10-31 17:56:05 +0100 (Fri, 31 Oct 2008) | 1 line
+
+Version bump to 1.1.0
+------------------------------------------------------------------------
+r704 | fullmetalcoder | 2008-10-31 17:53:56 +0100 (Fri, 31 Oct 2008) | 1 line
+
+Added user contributed LUA syntax file.
+------------------------------------------------------------------------
+r702 | fullmetalcoder | 2008-10-31 16:57:25 +0100 (Fri, 31 Oct 2008) | 1 line
+
+Reduced number of alloc/free in QCM deserialization to improve speed.
+------------------------------------------------------------------------
+r701 | fullmetalcoder | 2008-10-31 16:43:20 +0100 (Fri, 31 Oct 2008) | 5 lines
+
+Fixed panel positioning when horizontal scrollbars on (Qt 4.3 and 4.4 behave differently...)
+Fixed some display glitches left.
+Removed some debugging output.
+Fixed file loading (QCE used to append one extra line at the end of each file).
+Inserted "missing" EOL at EOF on some files.
+------------------------------------------------------------------------
+r700 | fullmetalcoder | 2008-10-31 16:15:51 +0100 (Fri, 31 Oct 2008) | 2 lines
+
+Fixed some set-related issues in syntax engine.
+Added namespace support in XML syntax definition.
+------------------------------------------------------------------------
+r699 | fullmetalcoder | 2008-10-28 22:14:58 +0100 (Tue, 28 Oct 2008) | 3 lines
+
+Fixed cursor positioning on wrapped lines.
+Fixed textLine() and visualLine() to handle mixed folding/wrapping schemes.
+
+------------------------------------------------------------------------
+r698 | fullmetalcoder | 2008-10-26 16:08:35 +0100 (Sun, 26 Oct 2008) | 1 line
+
+Fixed last (or so I hope) drawing glitches related to line wrapping.
+------------------------------------------------------------------------
+r697 | fullmetalcoder | 2008-10-26 14:36:58 +0100 (Sun, 26 Oct 2008) | 2 lines
+
+Fixed a bug in line wrapping setting (turning it off caused an infinite loop).
+Added an action to QEditor to change line wrapping easily.
+------------------------------------------------------------------------
+r696 | fullmetalcoder | 2008-10-26 13:43:57 +0100 (Sun, 26 Oct 2008) | 1 line
+
+Removed two old and useless files that appeared to cause confusion in the build process under some systems.
+------------------------------------------------------------------------
+r695 | fullmetalcoder | 2008-10-26 13:04:21 +0100 (Sun, 26 Oct 2008) | 4 lines
+
+Fixed some rgression that appeared due to the introduction of line wrapping :
+* display glitches in code folding
+* display glitches when scrolling horizontally
+
+------------------------------------------------------------------------
+r694 | fullmetalcoder | 2008-10-25 23:36:13 +0200 (Sat, 25 Oct 2008) | 4 lines
+
+Introduced line wrapping in QCodeEdit.
+Updated all panels to take line wrapping into account.
+Reverted default build mode back to debug.
+Fixed some visual/textual line number transformation issues.
+------------------------------------------------------------------------
+r693 | fullmetalcoder | 2008-10-19 23:00:55 +0200 (Sun, 19 Oct 2008) | 2 lines
+
+Fixed some memory leaks here and there.
+A couple of code cleanups (mainly small formatting changes).
+------------------------------------------------------------------------
+r692 | fullmetalcoder | 2008-10-17 17:52:10 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Fixed visual corruption when inserting lines on the first line of a document (improper update rect was used).
+------------------------------------------------------------------------
+r691 | fullmetalcoder | 2008-10-17 17:28:40 +0200 (Fri, 17 Oct 2008) | 2 lines
+
+Fixed visual corruption when editing inside collapsed block.
+Started working on wrapping (only infrastructure right now).
+------------------------------------------------------------------------
+r690 | fullmetalcoder | 2008-10-17 16:48:52 +0200 (Fri, 17 Oct 2008) | 1 line
+
+Fixed an infinite loop occuring when trying to comment/indent selection that contained the last document line.
+------------------------------------------------------------------------
+r689 | fullmetalcoder | 2008-10-13 22:11:49 +0200 (Mon, 13 Oct 2008) | 3 lines
+
+Added special formatting for active project (currently just bold font).
+Added a new action to context menu for top level projects : "set as active project".
+Forced project view to expand projects upon activation (would be good to prevent them from collapsing on double click to avoid flicker...
+------------------------------------------------------------------------
+r688 | fullmetalcoder | 2008-10-13 22:08:58 +0200 (Mon, 13 Oct 2008) | 1 line
+
+Refreshed changelog from SVN log.
+------------------------------------------------------------------------
+r687 | fullmetalcoder | 2008-10-10 15:56:03 +0200 (Fri, 10 Oct 2008) | 1 line
+
+Introduced QReliableFileWatch to remedy some of the problems QFileSystemWatcher has.
+------------------------------------------------------------------------
+r686 | fullmetalcoder | 2008-10-10 15:38:41 +0200 (Fri, 10 Oct 2008) | 4 lines
+
+Reworked QWidgetStack to avoid run-time display mode switching.
+Added watching mecanism to QSettingsServer.
+Added configuration option to settings dialog to change the display mode of the manager dock.
+Added context menu to QWidgetStack for simple display mode switching.
+------------------------------------------------------------------------
+r685 | fullmetalcoder | 2008-10-10 13:44:35 +0200 (Fri, 10 Oct 2008) | 1 line
+
+Added remanence of build mode and exec target when switching between projects.
+------------------------------------------------------------------------
+r684 | fullmetalcoder | 2008-10-06 11:32:35 +0200 (Mon, 06 Oct 2008) | 1 line
+
+Disabled command formatting for qplugin_generator in the prf file (and conditionnaly enabled it in silent mode). This should fix possible issues with some platforms/compilers (particularly MSVC).
+------------------------------------------------------------------------
+r683 | fullmetalcoder | 2008-10-01 20:53:26 +0200 (Wed, 01 Oct 2008) | 3 lines
+
+Fixed a small quirk in file conflict detection caused by build-time autosave.
+Added warning for autosave overlaps (project also opened as source file).
+Commented out some debug output.
+------------------------------------------------------------------------
+r682 | fullmetalcoder | 2008-09-30 22:34:54 +0200 (Tue, 30 Sep 2008) | 3 lines
+
+Fixed build mode setting in qmake project settings dialog.
+Fixed file write overlap in build-time autosave when a project is opened as a project and a source file at the same time (looks like it breaks file conflict detection though...)
+Chnaged wording in build-time autosave confirmation dialog.
+------------------------------------------------------------------------
+r681 | fullmetalcoder | 2008-09-30 22:17:10 +0200 (Tue, 30 Sep 2008) | 2 lines
+
+Fixed some issues in Build engine/Debugging Engine communication.
+Improved auto-selection of exec target to take existence and executability into account.
+------------------------------------------------------------------------
+r680 | fullmetalcoder | 2008-09-26 16:00:21 +0200 (Fri, 26 Sep 2008) | 3 lines
+
+Significantly improved code tree update process :
+ * file deletion automatically triggers removal of related nodes
+ * auto-generated files can be accounted for upon generation (only UI for now).
+------------------------------------------------------------------------
+r679 | fullmetalcoder | 2008-09-26 13:51:45 +0200 (Fri, 26 Sep 2008) | 2 lines
+
+Fixed a bug in qmdiMainWindow::fileOpen() which broke a couple of things all around.
+Removed some debug output.
+------------------------------------------------------------------------
+r678 | fullmetalcoder | 2008-09-24 22:52:16 +0200 (Wed, 24 Sep 2008) | 5 lines
+
+Added line number info to QCodeNode.
+Updated C++ lexer/parser to handle line numbering properly.
+Updated code view to make use of line numbers (if any) when jumping.
+Fixed qualifiedName() to work properly for both caching and search string/regexp generation (in other words restored jump to function from code view).
+Fixed focus setting upon code jump.
+------------------------------------------------------------------------
+r677 | fullmetalcoder | 2008-09-24 20:13:57 +0200 (Wed, 24 Sep 2008) | 1 line
+
+Brought back "debug" menu update upon project build/clean.
+------------------------------------------------------------------------
+r676 | fullmetalcoder | 2008-09-22 20:51:06 +0200 (Mon, 22 Sep 2008) | 6 lines
+
+Important internal changes in QBuildEngine.
+Better build mode handling and better UI for it.
+Better exec target handling (execution action is now managed by QBuildEngine instead of leaving it up to plugins).
+Small design change in auto-generated plugin code to avoid crashes due to improper static initialization order on some compilers.
+Added some guards in GDB debugger UI to avoid some weird crashes on some configurations (Mac, unstripped release build).
+A couple more things which got in the way (but I can't quite remember what they were.
+------------------------------------------------------------------------
+r675 | fullmetalcoder | 2008-09-15 20:56:42 +0200 (Mon, 15 Sep 2008) | 3 lines
+
+Translation updates :
+* more up to date German translation thanks to THomas Keller
+* periodic run of trup.sh to keep all translation files up to date (in terms of source texts, not translations...).
+------------------------------------------------------------------------
+r674 | fullmetalcoder | 2008-09-15 20:50:14 +0200 (Mon, 15 Sep 2008) | 1 line
+
+Added the "swap header|source" action to "search" menu to make it visible.
+------------------------------------------------------------------------
+r673 | fullmetalcoder | 2008-09-15 20:47:33 +0200 (Mon, 15 Sep 2008) | 1 line
+
+Fixed spelling error.
+------------------------------------------------------------------------
+r672 | fullmetalcoder | 2008-09-15 20:44:23 +0200 (Mon, 15 Sep 2008) | 1 line
+
+Added proper line endings management.
+------------------------------------------------------------------------
+r671 | fullmetalcoder | 2008-09-12 18:46:39 +0200 (Fri, 12 Sep 2008) | 3 lines
+
+Added proper UI subclassing.
+Small improvements in QProjectModel to allow more flexibility (e.g add files in flat variables...)
+Made template instanciation primitives publicly available (used for UI subclassing for instance).
+------------------------------------------------------------------------
+r670 | fullmetalcoder | 2008-09-07 17:47:07 +0200 (Sun, 07 Sep 2008) | 3 lines
+
+Added form preview from project browser.
+Added form subclassing from project browser (does not work yet).
+Some small fixes here and there.
+------------------------------------------------------------------------
+r669 | fullmetalcoder | 2008-08-31 20:25:19 +0200 (Sun, 31 Aug 2008) | 3 lines
+
+Fixed some issues in QProjectModel.
+Fixed flat variable display.
+Added some icons.
+------------------------------------------------------------------------
+r668 | fullmetalcoder | 2008-08-31 19:16:36 +0200 (Sun, 31 Aug 2008) | 2 lines
+
+Added configuration for the flat variables.
+Cosmetic source changes.
+------------------------------------------------------------------------
+r667 | fullmetalcoder | 2008-08-31 18:31:53 +0200 (Sun, 31 Aug 2008) | 1 line
+
+Fixed "flat variables" display mode in qmake project backend.
+------------------------------------------------------------------------
+r666 | fullmetalcoder | 2008-08-31 18:28:12 +0200 (Sun, 31 Aug 2008) | 1 line
+
+Fixed a problem in the closeAll action.
+------------------------------------------------------------------------
+r665 | fullmetalcoder | 2008-08-28 12:24:22 +0200 (Thu, 28 Aug 2008) | 1 line
+
+Small update in the NSI install script.
+------------------------------------------------------------------------
+r662 | fullmetalcoder | 2008-08-28 11:43:19 +0200 (Thu, 28 Aug 2008) | 3 lines
+
+Updated splash screen
+Updated windows installer (NSI script)
+Changed settings path to ignore version (settings transmission from 1.0.1 onward instead of break every version...)
+------------------------------------------------------------------------
+r661 | fullmetalcoder | 2008-08-28 00:37:03 +0200 (Thu, 28 Aug 2008) | 4 lines
+
+Fixed an inconsistency in context determination of QCodeNode which led to cache corruption when updating nested nodes and which in turn caused random segfaults when triggering completion.
+Improved QCodeModel file watching (avoid requesting duplicate watches and workaround a Qt bug to merge duplicate fileChanged() signals.
+Fixed assignment of the model member of QCodeNode upon attach() and detach() (was not propagated to children).
+Some cosmetic changes (in source code, not UI...)
+------------------------------------------------------------------------
+r660 | fullmetalcoder | 2008-08-27 21:29:15 +0200 (Wed, 27 Aug 2008) | 5 lines
+
+Fixed template scan to use Edyuk::dataPathes()
+Fixed a closing regression (did not save settings sometimes).
+Fixed a bug in C++ parser auto-update which could lead to crash in completion.
+Fixed some issues in code tree caching.
+Fixed a tr() call in shortcut getter.
+------------------------------------------------------------------------
+r659 | fullmetalcoder | 2008-08-27 19:05:58 +0200 (Wed, 27 Aug 2008) | 4 lines
+
+Fixed a regression (meta type registration for queued connections).
+Added configuration for auto-save upon build and exit (three options available : save, discard and ask).
+Improved the shortcuts dialog according to Kanawut suggestions (the usability student who offered to review Edyuk).
+Added methods for querying modified files and projects (could be useful to create a Kate-like save selector instead of the current QMessageBox::question() used for auto-save confirmations).
+------------------------------------------------------------------------
+r658 | fullmetalcoder | 2008-08-27 10:29:07 +0200 (Wed, 27 Aug 2008) | 1 line
+
+Fixed "fifth variant" of closing under Mac (see Sf.ne tracker).
+------------------------------------------------------------------------
+r657 | fullmetalcoder | 2008-08-27 01:38:16 +0200 (Wed, 27 Aug 2008) | 1 line
+
+Attempt to fix misleading quit behavior under Mac when minimize to systray is enabled.
+------------------------------------------------------------------------
+r656 | fullmetalcoder | 2008-08-26 22:25:20 +0200 (Tue, 26 Aug 2008) | 2 lines
+
+Important change in data storage paradigm for increased flexibility and easier package creation (mac bundle, linux distro package or windows-like sandboxed packages).
+Updated install.pri to adapt to these changes : the old sandboxed install is still available but by default a classic *nix install is performed (exe in /usr/bin, libs in /usr/libs and the rest in /usr/share/edyuk).
+------------------------------------------------------------------------
+r655 | fullmetalcoder | 2008-08-26 20:51:40 +0200 (Tue, 26 Aug 2008) | 1 line
+
+Fixed a potential crash when loading malformed C++ files (missing semicolon after class/struct decl at end of file).
+------------------------------------------------------------------------
+r654 | fullmetalcoder | 2008-08-25 13:01:33 +0200 (Mon, 25 Aug 2008) | 1 line
+
+More fixes in tools management.
+------------------------------------------------------------------------
+r653 | fullmetalcoder | 2008-08-24 20:19:02 +0200 (Sun, 24 Aug 2008) | 1 line
+
+Small reformatting of project files (mostly to test project saving).
+------------------------------------------------------------------------
+r652 | fullmetalcoder | 2008-08-24 20:13:06 +0200 (Sun, 24 Aug 2008) | 2 lines
+
+Fixed value quoting in qmake project saving.
+Fixed potential crash due to auto-reload of subdir project.
+------------------------------------------------------------------------
+r651 | fullmetalcoder | 2008-08-24 13:11:31 +0200 (Sun, 24 Aug 2008) | 1 line
+
+Improved systray minimization : no longer happens upon explicit quit (ctrl+q, apple+q, Quit action and other platform dependent means) but only when the main window is closed.
+------------------------------------------------------------------------
+r650 | fullmetalcoder | 2008-08-24 11:39:29 +0200 (Sun, 24 Aug 2008) | 3 lines
+
+Improved buffered communication in GDB plugin.
+Added guards to prevent GDB output record to get lost in badly buffered output of the debugged program.
+Added fflush() call to Edyuk message handler to avoid troubles in debuggers.
+------------------------------------------------------------------------
+r649 | fullmetalcoder | 2008-08-24 10:56:13 +0200 (Sun, 24 Aug 2008) | 4 lines
+
+
+Fixed a couple of bugs in tools management.
+Improved usability of the tools dialog.
+(duplicate commit? previous commit interrupted...)
+------------------------------------------------------------------------
+r648 | fullmetalcoder | 2008-08-24 10:53:06 +0200 (Sun, 24 Aug 2008) | 3 lines
+
+Fixed entry duplication in settings dialog.
+Fixed a couple of bugs in tools management.
+Improved usability of the tools dialog.
+------------------------------------------------------------------------
+r647 | fullmetalcoder | 2008-08-24 00:32:15 +0200 (Sun, 24 Aug 2008) | 1 line
+
+Fixed build against Qt 4.3
+------------------------------------------------------------------------
+r646 | fullmetalcoder | 2008-08-23 23:43:50 +0200 (Sat, 23 Aug 2008) | 1 line
+
+Fixed a potential assert failure in qmake project saving.
+------------------------------------------------------------------------
+r645 | fullmetalcoder | 2008-08-23 23:37:25 +0200 (Sat, 23 Aug 2008) | 1 line
+
+Added autosave upon build task (no configuration yet).
+------------------------------------------------------------------------
+r644 | fullmetalcoder | 2008-08-23 23:05:01 +0200 (Sat, 23 Aug 2008) | 2 lines
+
+Started to use QAction::MenuRole to improve Mac integration (as suggested by Thomas Keller).
+Quit action is systray now has an icon.
+------------------------------------------------------------------------
+r643 | fullmetalcoder | 2008-08-23 21:12:50 +0200 (Sat, 23 Aug 2008) | 1 line
+
+Small usability improvement in tools dialog (suggested by Thomas Keller).
+------------------------------------------------------------------------
+r642 | fullmetalcoder | 2008-08-23 21:05:15 +0200 (Sat, 23 Aug 2008) | 3 lines
+
+Improved systray :
+ * disabled by default under Mac (appears to be useless and annoying due to the way this OS treats taskbar/systray)
+ * the quit action of the systray ALWAYS quits Edyuk (no endless minimization which forced disabling systray or using SIGKILL to exit).
+------------------------------------------------------------------------
+r641 | fullmetalcoder | 2008-08-23 21:02:53 +0200 (Sat, 23 Aug 2008) | 1 line
+
+Reverted a workaround from QCE panel layout (KDE-ish Qt 4.4 bug?)
+------------------------------------------------------------------------
+r640 | fullmetalcoder | 2008-08-23 21:01:44 +0200 (Sat, 23 Aug 2008) | 1 line
+
+Updated German translation of Edyuk core lib (contributed by Thomas Keller).
+------------------------------------------------------------------------
+r639 | fullmetalcoder | 2008-08-08 15:11:55 +0200 (Fri, 08 Aug 2008) | 7 lines
+
+Updated changelog.
+Added thanks page to about dialog.
+Fixed License and Changelog font (now use courier or alike).
+Fixed word wrapping for thanks page.
+Added a small shell script to update changelog from SVN log.
+Updated doc to reflect the changes in debugging and the
+addition of input binding plugins.
+------------------------------------------------------------------------
+r638 | fullmetalcoder | 2008-08-08 14:24:57 +0200 (Fri, 08 Aug 2008) | 1 line
+
+Changed scroll behaviour from per item to per pixel in some places.
+------------------------------------------------------------------------
+r637 | fullmetalcoder | 2008-08-08 13:46:30 +0200 (Fri, 08 Aug 2008) | 2 lines
+
+Changed plugin settings UI paradigm : inlined settings in the list view.
+Fixed a couple of plugin settings issues (implicit save et all...)
+------------------------------------------------------------------------
+r636 | fullmetalcoder | 2008-08-08 11:22:27 +0200 (Fri, 08 Aug 2008) | 2 lines
+
+Added call tips for ctors.
+Filtered out duplicate call tips (usually stemming from virtual functions).
+------------------------------------------------------------------------
+r635 | fullmetalcoder | 2008-08-07 22:40:13 +0200 (Thu, 07 Aug 2008) | 3 lines
+
+Fixed potential segfault induced by project auto-reloading.
+Implemented Build path option of QMake project config dialog.
+Polishing in QMake project settings dialog.
+------------------------------------------------------------------------
+r634 | fullmetalcoder | 2008-08-07 21:38:36 +0200 (Thu, 07 Aug 2008) | 1 line
+
+More workarounds for GDB/MI whitespace limitations.
+------------------------------------------------------------------------
+r633 | fullmetalcoder | 2008-08-07 20:54:50 +0200 (Thu, 07 Aug 2008) | 1 line
+
+Try using relative pathes in debugger (mainly to avoid spaces issues as GDB/MI -break-insert fucks up when there are spaces, no matter how many quotes and escapes you use...
+------------------------------------------------------------------------
+r632 | fullmetalcoder | 2008-08-07 11:50:26 +0200 (Thu, 07 Aug 2008) | 1 line
+
+Yet more translation polishing (the only untranslated spot I noticed was perspective names).
+------------------------------------------------------------------------
+r631 | fullmetalcoder | 2008-08-06 22:18:00 +0200 (Wed, 06 Aug 2008) | 1 line
+
+Even more translation fixes/updates (French and Russian translations should be up to date now).
+------------------------------------------------------------------------
+r630 | fullmetalcoder | 2008-08-06 22:03:11 +0200 (Wed, 06 Aug 2008) | 6 lines
+
+More run-time translation fixes :
+* Shortcut editor properly translated now.
+* GDB dock properly translated now.
+* Build menu properly translated now.
+
+Updated ts files once again.
+------------------------------------------------------------------------
+r629 | fullmetalcoder | 2008-08-05 15:18:29 +0200 (Tue, 05 Aug 2008) | 2 lines
+
+Updated unstranslated .ts files thanks to a neat homemade tool.
+Added current .qm files (including untranslated ones for proper run-time (de)translation.
+------------------------------------------------------------------------
+r628 | fullmetalcoder | 2008-08-05 12:51:38 +0200 (Tue, 05 Aug 2008) | 4 lines
+
+Fixed a bug in QProjectNode::clear().
+Reworked the project settings dialog a bit.
+Implemented missing options in the project settings dialog.
+Improved the file conflict handling in QCodeEdit.
+------------------------------------------------------------------------
+r627 | fullmetalcoder | 2008-08-04 20:44:21 +0200 (Mon, 04 Aug 2008) | 1 line
+
+Fixed compilation with VC++ 9
+------------------------------------------------------------------------
+r626 | fullmetalcoder | 2008-08-03 18:44:32 +0200 (Sun, 03 Aug 2008) | 1 line
+
+Updated copyright notice to reflect move to GPL v3.
+------------------------------------------------------------------------
+r625 | fullmetalcoder | 2008-08-03 18:23:57 +0200 (Sun, 03 Aug 2008) | 6 lines
+
+Fixed a number of issues in run-time translations.
+Updated .ts files for all languages (brought back fr, es, de and ru).
+Started filling French translation.
+Added contributed Russian translation.
+Updated GPL.txt to GPL3
+Changed the way auto-generated translation strings are handled (qplugin_generator) to prevent whitespaces from messing with translation.
+------------------------------------------------------------------------
+r624 | fullmetalcoder | 2008-07-30 13:50:06 +0200 (Wed, 30 Jul 2008) | 2 lines
+
+Fixed tool launching when no arguments where supplied (workaround to a Qt bug?).
+Slightly reworked ui for tools dialog and (unused but maybe soon used) properties dialog. Thanks to Thomas Keller for that.
+------------------------------------------------------------------------
+r623 | fullmetalcoder | 2008-07-28 16:58:19 +0200 (Mon, 28 Jul 2008) | 2 lines
+
+Implemented (at last) trailing ws removal (with optional indent preservation) and replacement of tabs by spaces.
+Updated the editor config dialog.
+------------------------------------------------------------------------
+r622 | fullmetalcoder | 2008-07-28 16:15:42 +0200 (Mon, 28 Jul 2008) | 2 lines
+
+Disabled unified toolbar on Mac (too much icons in some perspective and a number of bugs in Qt).
+Fixed a compilation issue.
+------------------------------------------------------------------------
+r621 | fullmetalcoder | 2008-07-28 16:13:57 +0200 (Mon, 28 Jul 2008) | 1 line
+
+Cropped Edyuk SVG icon, which fixes a display bug in Mac (dock icon looked weird).
+------------------------------------------------------------------------
+r620 | fullmetalcoder | 2008-07-28 16:00:51 +0200 (Mon, 28 Jul 2008) | 1 line
+
+Fixed misleading behavior of reset button in settings dialog.
+------------------------------------------------------------------------
+r619 | fullmetalcoder | 2008-07-23 16:50:06 +0200 (Wed, 23 Jul 2008) | 2 lines
+
+Fixed the input binding switching menu.
+Blocked all key event in Vim binding for test purposes.
+------------------------------------------------------------------------
+r618 | fullmetalcoder | 2008-07-23 16:13:26 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Fixed building of the vimacs plugin.
+------------------------------------------------------------------------
+r617 | fullmetalcoder | 2008-07-23 16:12:14 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Added missing extra.cpp to the new plugin.
+------------------------------------------------------------------------
+r616 | fullmetalcoder | 2008-07-23 16:11:00 +0200 (Wed, 23 Jul 2008) | 2 lines
+
+Added plugin hook into EdyukApplication to load objects of type QEditor::InputBinding.
+Added a new plugin with skeleton for Vim and Emacs input binding.
+------------------------------------------------------------------------
+r615 | fullmetalcoder | 2008-07-23 15:02:22 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Added infrastructure for extending QCodeEdit input method (for, e.g. Vi-like editing or emacs key bindings...)
+------------------------------------------------------------------------
+r614 | fullmetalcoder | 2008-07-23 15:00:33 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Fixed a panel drawing glitch.
+------------------------------------------------------------------------
+r613 | fullmetalcoder | 2008-07-23 14:58:46 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Fixed a regression in selection drawing that could cause assert failures.
+------------------------------------------------------------------------
+r612 | fullmetalcoder | 2008-07-23 14:53:45 +0200 (Wed, 23 Jul 2008) | 1 line
+
+Added config options related to the new systray features.
+------------------------------------------------------------------------
+r611 | fullmetalcoder | 2008-07-23 12:37:36 +0200 (Wed, 23 Jul 2008) | 2 lines
+
+Added systray support.
+Added session management infrastructure (not much testing).
+------------------------------------------------------------------------
+r607 | fullmetalcoder | 2008-07-20 22:38:32 +0200 (Sun, 20 Jul 2008) | 1 line
+
+Updated splash, installer and version.h
+------------------------------------------------------------------------
+r606 | fullmetalcoder | 2008-07-20 20:51:59 +0200 (Sun, 20 Jul 2008) | 5 lines
+
+Updated exec icon (and added a Mac icns).
+Revamped plugin management UI (inspiration taken from Plasma).
+Improved the plugin API (blacklist, enable/disable) and cleaned up the UI code.
+Updated stock plugins to take advantage of new UI (3 have an icon already).
+Relabeled "Qt 4 Assistant prespective" to "Qt 4 perspective" and added a boolean option to control Assistant integration (became too long on load with Qt 4.4 and no way to use defered loading...).
+------------------------------------------------------------------------
+r605 | fullmetalcoder | 2008-07-20 15:28:06 +0200 (Sun, 20 Jul 2008) | 1 line
+
+Fixed a small connection bug in Assistant integration.
+------------------------------------------------------------------------
+r604 | fullmetalcoder | 2008-07-20 15:24:26 +0200 (Sun, 20 Jul 2008) | 2 lines
+
+Restored the use of native file open dialog (under platforms that have one i.e. Win and Mac).
+Improved a bit the feel of the generic MDI client save dialog.
+------------------------------------------------------------------------
+r603 | fullmetalcoder | 2008-07-20 14:50:30 +0200 (Sun, 20 Jul 2008) | 2 lines
+
+Added Header/source swapping (F11).
+Fixed a couple of minor bugs.
+------------------------------------------------------------------------
+r602 | fullmetalcoder | 2008-07-03 12:22:10 +0200 (Thu, 03 Jul 2008) | 2 lines
+
+Added "highlight all" to search panel (and underlying QDocumentSearch) using overlays.
+Fixed a drawing artifact when setCursor caused ensureCursorVisible to be called.
+------------------------------------------------------------------------
+r601 | fullmetalcoder | 2008-07-01 18:21:29 +0200 (Tue, 01 Jul 2008) | 4 lines
+
+Added a tool to convert GeSHi syntax files to QCodeEdit ones.
+Added support for character ranges in QNFA definitions.
+Fixed QNFA syntax engine to match keywords greedily even when they contain non-word characters (like in CSS).
+Updated C++ syntax definition and default format file (backported from Edyuk).
+------------------------------------------------------------------------
+r600 | fullmetalcoder | 2008-06-30 21:08:19 +0200 (Mon, 30 Jun 2008) | 1 line
+
+Fixed some bugs in Qt Assistant integration.
+------------------------------------------------------------------------
+r599 | fullmetalcoder | 2008-06-30 18:17:18 +0200 (Mon, 30 Jun 2008) | 1 line
+
+Improved Assistant integration for Qt 4.4
+------------------------------------------------------------------------
+r598 | fullmetalcoder | 2008-06-30 14:25:41 +0200 (Mon, 30 Jun 2008) | 1 line
+
+Updated Assistant integration to work with Qt 4.4
+------------------------------------------------------------------------
+r597 | fullmetalcoder | 2008-06-30 14:23:25 +0200 (Mon, 30 Jun 2008) | 1 line
+
+Fixed selection drawing.
+------------------------------------------------------------------------
+r596 | fullmetalcoder | 2008-06-29 14:14:08 +0200 (Sun, 29 Jun 2008) | 1 line
+
+Added arguments query upon program execution/debuging.
+------------------------------------------------------------------------
+r595 | fullmetalcoder | 2008-06-29 12:05:42 +0200 (Sun, 29 Jun 2008) | 3 lines
+
+Fixed breakpoints enabling/disabling.
+Added a way to tune the expression used for watchpoint creation on variable objects.
+Added a new debugging action : Exec until current line (edit cursor) is reached.
+------------------------------------------------------------------------
+r594 | fullmetalcoder | 2008-06-28 00:08:32 +0200 (Sat, 28 Jun 2008) | 1 line
+
+Worked around a weird blocking bug upon reopening.
+------------------------------------------------------------------------
+r593 | fullmetalcoder | 2008-06-27 14:45:51 +0200 (Fri, 27 Jun 2008) | 1 line
+
+Added highlighting for some Qt keywords and macros.
+------------------------------------------------------------------------
+r592 | fullmetalcoder | 2008-06-27 14:23:41 +0200 (Fri, 27 Jun 2008) | 1 line
+
+Added support for memory reading in GDB plugin.
+------------------------------------------------------------------------
+r591 | fullmetalcoder | 2008-06-26 15:10:16 +0200 (Thu, 26 Jun 2008) | 1 line
+
+Fixed compilation with GCC 4.3
+------------------------------------------------------------------------
+r590 | fullmetalcoder | 2008-06-26 13:55:08 +0200 (Thu, 26 Jun 2008) | 1 line
+
+Cleaned up file/projects reloading.
+------------------------------------------------------------------------
+r589 | fullmetalcoder | 2008-06-26 13:08:39 +0200 (Thu, 26 Jun 2008) | 1 line
+
+Fixed duplication of debugging extra GUI upon active project switch.
+------------------------------------------------------------------------
+r588 | fullmetalcoder | 2008-06-25 13:09:32 +0200 (Wed, 25 Jun 2008) | 1 line
+
+Updated installers
+------------------------------------------------------------------------
+r587 | fullmetalcoder | 2008-06-24 23:12:48 +0200 (Tue, 24 Jun 2008) | 1 line
+
+Fixed a segfault when trying to load non-existing translations (e.g system locale on startup...).
+------------------------------------------------------------------------
+r586 | fullmetalcoder | 2008-06-24 22:35:33 +0200 (Tue, 24 Jun 2008) | 2 lines
+
+Added expression evaluator to GDB plugin (almost equivalent to the print command).
+Added disassembly support (file, line, length in actual code line).
+------------------------------------------------------------------------
+r585 | fullmetalcoder | 2008-06-24 13:27:33 +0200 (Tue, 24 Jun 2008) | 3 lines
+
+Added support for registers (view, auto-refresh and watchpoints).
+Fixed a couple of UI bugs related to watchpoints.
+Added support for token prefix in GDB/MI commands (referred to as "id" in root RecordNode and used for register management internals.
+------------------------------------------------------------------------
+r584 | fullmetalcoder | 2008-06-22 15:55:08 +0200 (Sun, 22 Jun 2008) | 2 lines
+
+Updated QCodeEdit README.
+Replaced QCodeEdit default syntax files with Edyuk ones, more up to date.
+------------------------------------------------------------------------
+r583 | fullmetalcoder | 2008-06-22 15:39:32 +0200 (Sun, 22 Jun 2008) | 4 lines
+
+Implemented proper buffered process I/O in GDB plugin.
+Cleaned up GDB extra UI a bit.
+Improved the backtrace viewer.
+Improved the file/line relocation mechanism.
+------------------------------------------------------------------------
+r582 | fullmetalcoder | 2008-06-22 15:01:08 +0200 (Sun, 22 Jun 2008) | 2 lines
+
+Improved breakpoints management (perfect editor/debuger reciprocity).
+Uploaded two missing icons.
+------------------------------------------------------------------------
+r581 | fullmetalcoder | 2008-06-22 14:24:52 +0200 (Sun, 22 Jun 2008) | 1 line
+
+Fixed default shortcut for "Continue" action of GDB plugin.
+------------------------------------------------------------------------
+r580 | fullmetalcoder | 2008-06-22 14:21:19 +0200 (Sun, 22 Jun 2008) | 2 lines
+
+Added icons for instruction-level stepping commands (GDB plugin).
+Improved variable auto-refresh.
+------------------------------------------------------------------------
+r579 | fullmetalcoder | 2008-06-16 13:36:19 +0200 (Mon, 16 Jun 2008) | 1 line
+
+Updated default macro list for C++ lexer/parser to fix parsing errors in uic-generated files.
+------------------------------------------------------------------------
+r578 | fullmetalcoder | 2008-06-16 11:58:42 +0200 (Mon, 16 Jun 2008) | 3 lines
+
+Fixed a limitation in GDB/MI output parser.
+Prettified variable watch tree.
+Improved variable watch auto-refresh.
+------------------------------------------------------------------------
+r577 | fullmetalcoder | 2008-06-16 11:01:06 +0200 (Mon, 16 Jun 2008) | 2 lines
+
+Fixed command queueing in GDB plugin.
+Added optional auto-refresh of variable watch upon watchpoint trigger, breakpoint hit and after each manual step.
+------------------------------------------------------------------------
+r576 | fullmetalcoder | 2008-06-16 10:59:41 +0200 (Mon, 16 Jun 2008) | 1 line
+
+Improved look and usability of Plugin config tab in settings dialog.
+------------------------------------------------------------------------
+r575 | fullmetalcoder | 2008-06-15 23:42:47 +0200 (Sun, 15 Jun 2008) | 1 line
+
+Work around for QTreeWidget editing misdesign (per-column editable flag would be nice...).
+------------------------------------------------------------------------
+r574 | fullmetalcoder | 2008-06-15 23:32:53 +0200 (Sun, 15 Jun 2008) | 3 lines
+
+Improved breakpoints management UI and cleaned up internals.
+Added a missing file that broke compilation.
+Improved watchpoint management.
+------------------------------------------------------------------------
+r573 | fullmetalcoder | 2008-06-12 22:32:37 +0200 (Thu, 12 Jun 2008) | 1 line
+
+Added (preliminary) support for GDB variable assignment.
+------------------------------------------------------------------------
+r572 | fullmetalcoder | 2008-06-12 22:08:17 +0200 (Thu, 12 Jun 2008) | 1 line
+
+Added support for conditions and ignore count of breakpoints (read and write from UI).
+------------------------------------------------------------------------
+r571 | fullmetalcoder | 2008-06-12 21:44:08 +0200 (Thu, 12 Jun 2008) | 1 line
+
+Added support for watchpoints.
+------------------------------------------------------------------------
+r570 | fullmetalcoder | 2008-06-12 20:04:48 +0200 (Thu, 12 Jun 2008) | 1 line
+
+Improved GDB variable watches.
+------------------------------------------------------------------------
+r569 | fullmetalcoder | 2008-06-11 14:30:01 +0200 (Wed, 11 Jun 2008) | 1 line
+
+Implemented basic variable watch (more UI work needed, internals are OK).
+------------------------------------------------------------------------
+r568 | fullmetalcoder | 2008-06-11 12:03:19 +0200 (Wed, 11 Jun 2008) | 2 lines
+
+First draft of GDB extra dock.
+Fixed a small bug in breakpoint reloading in subsequent debuging sessions.
+------------------------------------------------------------------------
+r567 | fullmetalcoder | 2008-06-11 10:56:14 +0200 (Wed, 11 Jun 2008) | 1 line
+
+Finalized infrastructure for custom widget registration from debuger plugin.
+------------------------------------------------------------------------
+r566 | fullmetalcoder | 2008-06-10 19:13:33 +0200 (Tue, 10 Jun 2008) | 1 line
+
+Added GDB extra interface (only skeleton ATM).
+------------------------------------------------------------------------
+r565 | fullmetalcoder | 2008-06-10 19:12:42 +0200 (Tue, 10 Jun 2008) | 3 lines
+
+Added a backtrace viewer to GDB plugin.
+Added a way for plugins to register an extra widget (to be placed in a managed dock widget) [not used yet].
+Some more fixes in GDB plugin.
+------------------------------------------------------------------------
+r564 | fullmetalcoder | 2008-06-10 10:05:48 +0200 (Tue, 10 Jun 2008) | 5 lines
+
+Improved usability of the shortcut dialog.
+Added auto-registration of actions provided by debuger plugins.
+Added default shortcuts to most of the actions provided by GDB plugin.
+Fixed some enabling/disabling glitches in GDB plugin.
+Added an action to toggle breakpoint on the current line of the active file.
+------------------------------------------------------------------------
+r563 | fullmetalcoder | 2008-06-09 18:19:42 +0200 (Mon, 09 Jun 2008) | 2 lines
+
+Added the possibility to toggle breakpoints from QDebugger in a generic way and added a related action to GDB plugin.
+Added a "stop" action to GDB plugin to replace the start/stop action switch.
+------------------------------------------------------------------------
+r562 | fullmetalcoder | 2008-06-09 17:41:35 +0200 (Mon, 09 Jun 2008) | 1 line
+
+Improved QCodeEdit drawing speed when multiples lines selected.
+------------------------------------------------------------------------
+r561 | fullmetalcoder | 2008-06-09 13:37:24 +0200 (Mon, 09 Jun 2008) | 1 line
+
+Added support for escape sequences in replacement text [QCodeEdit serch/replace panel].
+------------------------------------------------------------------------
+r560 | fullmetalcoder | 2008-06-09 12:46:55 +0200 (Mon, 09 Jun 2008) | 1 line
+
+Fixed generation/execution of freshly created project.
+------------------------------------------------------------------------
+r559 | fullmetalcoder | 2008-05-19 21:11:36 +0200 (Mon, 19 May 2008) | 1 line
+
+Disabled bundle creation for QCodeEdit example app.
+------------------------------------------------------------------------
+r558 | fullmetalcoder | 2008-05-19 20:53:56 +0200 (Mon, 19 May 2008) | 1 line
+
+Updated translations.
+------------------------------------------------------------------------
+r557 | fullmetalcoder | 2008-05-08 21:35:09 +0200 (Thu, 08 May 2008) | 1 line
+
+Updated QCodeEdit config file (definition of the export macro.)
+------------------------------------------------------------------------
+r556 | fullmetalcoder | 2008-05-07 20:10:33 +0200 (Wed, 07 May 2008) | 1 line
+
+Changed all QCompletion prefixes to QCodeCompletion so as to avoid name conflicts with some internal Qt classes which could cause linking errors and/or segfaults dependeing on the platform/compiler.
+------------------------------------------------------------------------
+r555 | fullmetalcoder | 2008-05-07 19:28:06 +0200 (Wed, 07 May 2008) | 1 line
+
+Fixed a bug in QEditor::insertFromMimeData() (used by paste()).
+------------------------------------------------------------------------
+r554 | fullmetalcoder | 2008-05-06 17:46:16 +0200 (Tue, 06 May 2008) | 2 lines
+
+Fixed some quirks in call tip display widget.
+Added a new configuration option to C++ completion : implicit namespaces (especially useful when you use a lot of using namespace directives but place them in header files...)
+------------------------------------------------------------------------
+r553 | fullmetalcoder | 2008-05-06 09:34:12 +0200 (Tue, 06 May 2008) | 1 line
+
+Applied a small patch to correct the PreviousWord and NextWord cursor moves. (contributed by Jerome Vizcaino)
+------------------------------------------------------------------------
+r552 | fullmetalcoder | 2008-05-04 22:42:10 +0200 (Sun, 04 May 2008) | 1 line
+
+Worked around a tricky windoows-specific linker bug...
+------------------------------------------------------------------------
+r551 | fullmetalcoder | 2008-05-03 18:01:35 +0200 (Sat, 03 May 2008) | 2 lines
+
+Fixed concurrent display of call tips and completion widget.
+Fixed completion to work properly with cursor mirrors.
+------------------------------------------------------------------------
+r550 | fullmetalcoder | 2008-05-03 12:01:11 +0200 (Sat, 03 May 2008) | 1 line
+
+Added basic call tips support (still some rough edges...)
+------------------------------------------------------------------------
+r549 | fullmetalcoder | 2008-05-03 10:49:57 +0200 (Sat, 03 May 2008) | 1 line
+
+Fixed file conflict detection (or so I believe and hope... QFileSystemWatcher seems to be borked for it emits multiple signals for a single file modification...).
+------------------------------------------------------------------------
+r548 | fullmetalcoder | 2008-05-02 20:10:49 +0200 (Fri, 02 May 2008) | 1 line
+
+Added a neat new feature to QBuildEngine dependency mecanism which brings the "rebuild" command back in the business.
+------------------------------------------------------------------------
+r547 | fullmetalcoder | 2008-05-02 11:16:09 +0200 (Fri, 02 May 2008) | 1 line
+
+Updated NSIS install script to take new files into account.
+------------------------------------------------------------------------
+r546 | fullmetalcoder | 2008-05-02 11:15:36 +0200 (Fri, 02 May 2008) | 2 lines
+
+Fixed duplicate file reloading upon restart.
+
+------------------------------------------------------------------------
+r545 | fullmetalcoder | 2008-05-02 11:14:37 +0200 (Fri, 02 May 2008) | 2 lines
+
+Fixed small completion quirks that could happen when the completion prefix (last word sequence after trigger) looked like an identifier (e.g : "do" for "document"...)
+
+------------------------------------------------------------------------
+r544 | fullmetalcoder | 2008-05-02 10:51:40 +0200 (Fri, 02 May 2008) | 2 lines
+
+Fixed display glitches upon panel hide/show event due to improper update of the panel layout.
+Fixed conflict check in QCodeEdit (same workaround as in QProjectModel to prevent duplicate signals from QFileSystemWatcher...)
+------------------------------------------------------------------------
+r543 | fullmetalcoder | 2008-05-01 17:51:27 +0200 (Thu, 01 May 2008) | 1 line
+
+Updated windows build-helper batchfiles.
+------------------------------------------------------------------------
+r542 | fullmetalcoder | 2008-05-01 17:45:05 +0200 (Thu, 01 May 2008) | 4 lines
+
+Implemented proper file watching in QCodeEdit.
+Added file conflict notification upon saving.
+Added file conflict notification in status panel.
+Updated svn:eol-style property for recently added files.
+------------------------------------------------------------------------
+r541 | fullmetalcoder | 2008-05-01 11:12:41 +0200 (Thu, 01 May 2008) | 1 line
+
+Little fixes and speed improvements in QCodeEdit rendering.
+------------------------------------------------------------------------
+r540 | fullmetalcoder | 2008-04-29 22:24:16 +0200 (Tue, 29 Apr 2008) | 3 lines
+
+Fixed potentially blocking bugs in QProjectModel related to project saving/reopening.
+Worked around a bug in project auto-reloading (QFileSystemWatcher broken?).
+Fixed a couple of bugs left in C++ completion.
+------------------------------------------------------------------------
+r539 | fullmetalcoder | 2008-04-29 17:43:14 +0200 (Tue, 29 Apr 2008) | 1 line
+
+Updated NSIS install script and Edyuk plugin template to achieve straightforward plugin building.
+------------------------------------------------------------------------
+r538 | fullmetalcoder | 2008-04-29 13:42:23 +0200 (Tue, 29 Apr 2008) | 1 line
+
+Updated NSIS install script and fixed highlighting of qxf, qxm files (xml subset).
+------------------------------------------------------------------------
+r537 | fullmetalcoder | 2008-04-27 18:40:30 +0200 (Sun, 27 Apr 2008) | 1 line
+
+Fixed some nasty bugs that stepped in when language definition adjustement was restored.
+------------------------------------------------------------------------
+r536 | fullmetalcoder | 2008-04-25 11:09:37 +0200 (Fri, 25 Apr 2008) | 1 line
+
+Fixed a blocking bug in file saving introduced recently.
+------------------------------------------------------------------------
+r535 | fullmetalcoder | 2008-04-25 10:54:04 +0200 (Fri, 25 Apr 2008) | 1 line
+
+A bit of formatting in the HTML manual to make it more readable.
+------------------------------------------------------------------------
+r534 | fullmetalcoder | 2008-04-24 20:09:01 +0200 (Thu, 24 Apr 2008) | 3 lines
+
+Added a basic HTML manual/walkthrough.
+Updated install target and plugin feature file.
+Added a template for Edyuk plugin projects.
+------------------------------------------------------------------------
+r533 | fullmetalcoder | 2008-04-24 12:44:22 +0200 (Thu, 24 Apr 2008) | 1 line
+
+Removed transitional syntax engine from trunk.
+------------------------------------------------------------------------
+r532 | fullmetalcoder | 2008-04-24 12:42:23 +0200 (Thu, 24 Apr 2008) | 1 line
+
+Fixed last corner case of cursor re-positioning.
+------------------------------------------------------------------------
+r531 | fullmetalcoder | 2008-04-24 12:07:15 +0200 (Thu, 24 Apr 2008) | 1 line
+
+Improved cursor re-positioning upon type (still one corner case left to fix).
+------------------------------------------------------------------------
+r530 | fullmetalcoder | 2008-04-24 11:41:04 +0200 (Thu, 24 Apr 2008) | 1 line
+
+Significantly improved arrow-scrolling speed through improvements of parenthesis matching.
+------------------------------------------------------------------------
+r529 | fullmetalcoder | 2008-04-24 11:29:49 +0200 (Thu, 24 Apr 2008) | 5 lines
+
+Fixed quick empty file creation.
+Fixed syntax adjustement upon file save (when extension changes).
+Fixed Python and C sharp syntax definition (malformed XML caused errors in NFA building).
+Added highligting of escape sequences in strings for both C++ and PHP.
+Fixed highlighting of variables within weak strings for PHP.
+------------------------------------------------------------------------
+r528 | fullmetalcoder | 2008-04-24 00:15:11 +0200 (Thu, 24 Apr 2008) | 3 lines
+
+Fixed operator handling in C++ completion [broken by previous commit(s)]
+Fixed template-related regressions in C++ completion.
+Fixed a minor quirk in local variable lookup (C++ completion).
+------------------------------------------------------------------------
+r527 | fullmetalcoder | 2008-04-23 23:03:39 +0200 (Wed, 23 Apr 2008) | 1 line
+
+Fixes/improvements to C++ lexer and parser.
+------------------------------------------------------------------------
+r526 | fullmetalcoder | 2008-04-23 17:56:23 +0200 (Wed, 23 Apr 2008) | 5 lines
+
+C++ lexer : fixed macro block filtering
+C++ parser : fixed many template-related issues
+C++ parser : fixed some variable initialization-related issues
+Moved some utility functions from C++ completion code to C++ parsing code
+C++ lexer/parser : added some more default macros to the config scheme
+------------------------------------------------------------------------
+r525 | fullmetalcoder | 2008-04-23 17:51:54 +0200 (Wed, 23 Apr 2008) | 1 line
+
+Fixed a small config parsing quirk.
+------------------------------------------------------------------------
+r524 | fullmetalcoder | 2008-04-23 10:42:32 +0200 (Wed, 23 Apr 2008) | 1 line
+
+Fixed a quirk in C++ completion.
+------------------------------------------------------------------------
+r523 | fullmetalcoder | 2008-04-23 09:41:41 +0200 (Wed, 23 Apr 2008) | 1 line
+
+Fixed a small quirk in QPluginConfig variable substitution algorithm.
+------------------------------------------------------------------------
+r522 | fullmetalcoder | 2008-04-23 09:07:50 +0200 (Wed, 23 Apr 2008) | 2 lines
+
+Fixed a couple of namespace related completion quirks.
+Added support for "using namespace" directive.
+------------------------------------------------------------------------
+r521 | fullmetalcoder | 2008-04-23 08:49:53 +0200 (Wed, 23 Apr 2008) | 1 line
+
+Fixed a regression in C++ parser.
+------------------------------------------------------------------------
+r520 | fullmetalcoder | 2008-04-23 08:11:49 +0200 (Wed, 23 Apr 2008) | 2 lines
+
+Fixed initial context adjustement in C++ completion.
+Added infrastructure to support "using namespace" directives.
+------------------------------------------------------------------------
+r519 | fullmetalcoder | 2008-04-22 22:15:10 +0200 (Tue, 22 Apr 2008) | 4 lines
+
+Improved C++ completion : now support global functions.
+Improved C++ completion : proper support of templated function calls.
+Improved C++ parser to properly handle variable assignments upon declaration.
+Added context to the debug output thrown by the parser upon syntactic confusion to make it easier to locate pitfalls (and eventually fix them or find a workaround...).
+------------------------------------------------------------------------
+r518 | fullmetalcoder | 2008-04-22 19:29:29 +0200 (Tue, 22 Apr 2008) | 1 line
+
+Added current file parsing to C++ completion. [can be disabled through plugin options for the sake of perfrmance.]
+------------------------------------------------------------------------
+r517 | fullmetalcoder | 2008-04-22 18:43:56 +0200 (Tue, 22 Apr 2008) | 1 line
+
+Slightly improved the Assistant database feedback.
+------------------------------------------------------------------------
+r516 | fullmetalcoder | 2008-04-22 18:30:55 +0200 (Tue, 22 Apr 2008) | 2 lines
+
+Improved context lookup in C++ completion.
+Fixed a potential assert failure when dealing with syntactically incorrect templates.
+------------------------------------------------------------------------
+r515 | fullmetalcoder | 2008-04-19 10:06:16 +0200 (Sat, 19 Apr 2008) | 3 lines
+
+C++ completion : improved support for syntax construct using ctors.
+C++ completion : fixed some context nesting quirks.
+QCodeEdit : removed debug output introduced in last commit.
+------------------------------------------------------------------------
+r514 | fullmetalcoder | 2008-04-18 22:32:11 +0200 (Fri, 18 Apr 2008) | 1 line
+
+Small visual improvements to editor panels.
+------------------------------------------------------------------------
+r512 | fullmetalcoder | 2008-04-18 17:03:47 +0200 (Fri, 18 Apr 2008) | 1 line
+
+Various fixes in QCodeEdit and QProjectModel.
+------------------------------------------------------------------------
+r511 | fullmetalcoder | 2008-04-17 23:46:16 +0200 (Thu, 17 Apr 2008) | 3 lines
+
+Fixed a bug in C++ completion.
+Fixed a compilation issue.
+Added some tweaks to config.pri to generate minimum debug info in release mode under win so that gdb may be used properly even if debug libs are not there.
+------------------------------------------------------------------------
+r509 | fullmetalcoder | 2008-04-17 15:34:12 +0200 (Thu, 17 Apr 2008) | 5 lines
+
+Fixed a potential source of troubles in QPluginConfig about whitespace handling.
+Added a list of default macros to the default plugin\'s configuration pattern.
+Improved the macro handling in QCppLexer.
+Fixed a couple of quirks in C++ completion.
+Added minimal visibility guesses in C++ completion.
+------------------------------------------------------------------------
+r508 | fullmetalcoder | 2008-04-17 12:07:22 +0200 (Thu, 17 Apr 2008) | 2 lines
+
+Removed some useless code from QCompletionBackend.
+Added proper code in QCppLexer to make use of user-defined macros.
+------------------------------------------------------------------------
+r507 | fullmetalcoder | 2008-04-17 12:06:19 +0200 (Thu, 17 Apr 2008) | 1 line
+
+Made the log dock to auto select the raw log tab upon new task start.
+------------------------------------------------------------------------
+r506 | fullmetalcoder | 2008-04-17 12:05:20 +0200 (Thu, 17 Apr 2008) | 1 line
+
+Fixed a potential segfault in QCompletionWidget which stepped in upon introduction of temporary variables.
+------------------------------------------------------------------------
+r505 | fullmetalcoder | 2008-04-17 00:01:25 +0200 (Thu, 17 Apr 2008) | 1 line
+
+Added display of local variables and parameters in C++ completion when relevant.
+------------------------------------------------------------------------
+r504 | fullmetalcoder | 2008-04-16 23:39:53 +0200 (Wed, 16 Apr 2008) | 2 lines
+
+Improved the shortcut assignement implementation and significantly reduced its size/complexity.
+Surrounded debug output in refactored C++ completion with #ifdef statements.
+------------------------------------------------------------------------
+r503 | fullmetalcoder | 2008-04-16 21:55:21 +0200 (Wed, 16 Apr 2008) | 1 line
+
+Refactored C++ completion code. It is now much easier to read/undestand/maintain. It has also been stripped by a couple of kb (hundreds of lines) and performs more reliabily and faster than ever. Enjoy! :)
+------------------------------------------------------------------------
+r502 | fullmetalcoder | 2008-04-15 14:57:56 +0200 (Tue, 15 Apr 2008) | 5 lines
+
+Added a new property type to QPluginConfig.
+Added a new property to CppCompletion : list of include pathes (using the aforementioned type).
+Added basic substitution to QPluginConfig : $${...} a couple of builtin constants are supported and conditionals are allowed (currently only platform check) : $${condition:value,othercondition:othervalue,defaultvalue}
+Added a way to simply display messages on the splash screen during init by using qDebug("status:%s", myStatusMessage);
+Fixed use of accelerators in shortcut getter dialog which prevented two shortcuts from being used.
+------------------------------------------------------------------------
+r501 | fullmetalcoder | 2008-04-15 09:47:46 +0200 (Tue, 15 Apr 2008) | 1 line
+
+Fixed QProjectView node activation policy.
+------------------------------------------------------------------------
+r500 | fullmetalcoder | 2008-04-15 09:25:01 +0200 (Tue, 15 Apr 2008) | 1 line
+
+Fixed a potential segfault in C++ completion when type not found in db.
+------------------------------------------------------------------------
+r499 | fullmetalcoder | 2008-04-14 23:16:58 +0200 (Mon, 14 Apr 2008) | 1 line
+
+Updated version informations, README, TODO and STANDARDS.
+------------------------------------------------------------------------
+r498 | fullmetalcoder | 2008-04-14 22:54:00 +0200 (Mon, 14 Apr 2008) | 4 lines
+
+Improved local variable lookup in C++ completion.
+Fixed some quirks in parameter lookup in C++ completion.
+Added inline local vars lookup (i.e defined inside for () or foreach () block init).
+Fixed a small filetering bug in C++ lexer.
+------------------------------------------------------------------------
+r497 | fullmetalcoder | 2008-04-14 20:34:03 +0200 (Mon, 14 Apr 2008) | 1 line
+
+Fixed an inconsistency in project activation upon opening.
+------------------------------------------------------------------------
+r496 | fullmetalcoder | 2008-04-14 19:54:10 +0200 (Mon, 14 Apr 2008) | 3 lines
+
+Added a way to abort debgging session without using custom command.
+Fixed pwd change detection to work properly under both win and linux (shoud do well on other systems as well).
+Removed some old useless commented out code.
+------------------------------------------------------------------------
+r495 | fullmetalcoder | 2008-04-14 14:31:31 +0200 (Mon, 14 Apr 2008) | 1 line
+
+Updated the svn:eol-style property on recently added files.
+------------------------------------------------------------------------
+r494 | fullmetalcoder | 2008-04-14 14:26:35 +0200 (Mon, 14 Apr 2008) | 1 line
+
+Fixed a C++ parsing bug (enumerator-related).
+------------------------------------------------------------------------
+r493 | fullmetalcoder | 2008-04-13 21:15:55 +0200 (Sun, 13 Apr 2008) | 1 line
+
+Improved debugging infrastructure [non-atomic commit... should have been part of previous one]
+------------------------------------------------------------------------
+r492 | fullmetalcoder | 2008-04-13 15:06:37 +0200 (Sun, 13 Apr 2008) | 1 line
+
+Improved debugging infrastructure and GDB driver plugin.
+------------------------------------------------------------------------
+r491 | fullmetalcoder | 2008-04-13 15:05:31 +0200 (Sun, 13 Apr 2008) | 1 line
+
+Fixed detection of path change during compilation.
+------------------------------------------------------------------------
+r490 | fullmetalcoder | 2008-04-13 15:04:25 +0200 (Sun, 13 Apr 2008) | 1 line
+
+Fixed a code folding drawing bug.
+------------------------------------------------------------------------
+r489 | fullmetalcoder | 2008-04-09 18:47:32 +0200 (Wed, 09 Apr 2008) | 1 line
+
+Moved QCodeEdit benchmark app to a more appropriate place.
+------------------------------------------------------------------------
+r488 | fullmetalcoder | 2008-04-09 18:44:09 +0200 (Wed, 09 Apr 2008) | 1 line
+
+Moved QCodeEdit pplayground to a more appropriate place.
+------------------------------------------------------------------------
+r487 | fullmetalcoder | 2008-04-09 18:30:16 +0200 (Wed, 09 Apr 2008) | 3 lines
+
+Fixed misdesign and potential segfault in project management model/view stuff (thanks to Rolf Eike Beer for his blog post on persistent index workaround).
+Prettied up the code in QProjectView and made a small change concerning edit triggers.
+Fixed a bug in qmake project backend that caused errors in QProjectModel upon node deletion.
+------------------------------------------------------------------------
+r486 | fullmetalcoder | 2008-04-08 21:16:42 +0200 (Tue, 08 Apr 2008) | 1 line
+
+Broght back drag and drop in project management.
+------------------------------------------------------------------------
+r485 | fullmetalcoder | 2008-04-08 20:45:46 +0200 (Tue, 08 Apr 2008) | 3 lines
+
+Small design change in QBuilder which makes room for more flexibility and allow some caching to be done.
+Fixed some filter rules issues in QCompletionWidget.
+Changed project activation paradigm which is now done by default using a combo box.
+------------------------------------------------------------------------
+r484 | fullmetalcoder | 2008-04-08 12:59:14 +0200 (Tue, 08 Apr 2008) | 1 line
+
+Fixed file addition/deletion notifications in QProjectModel and made them transparent to backend models.
+------------------------------------------------------------------------
+r483 | fullmetalcoder | 2008-04-07 23:48:44 +0200 (Mon, 07 Apr 2008) | 4 lines
+
+Fixed a wrong filter rule in QCompletionModel.
+Added support for two often used (overloaded...) operators : [] and ->
+Improved decremental scoping.
+Some more fix in C++ completion.
+------------------------------------------------------------------------
+r482 | fullmetalcoder | 2008-04-06 22:52:34 +0200 (Sun, 06 Apr 2008) | 4 lines
+
+Fixed Qt macros related parsing issue.
+Fixed completion of subtypes in tempalte classes.
+Fixed decremental type scoping to avoid failure in classes which have a dtor.
+Some more fix in C++ completion.
+------------------------------------------------------------------------
+r481 | fullmetalcoder | 2008-04-05 11:22:17 +0200 (Sat, 05 Apr 2008) | 5 lines
+
+Added an icon for unions (code browser).
+Fixed code browser update upon addition of a file to a project.
+Fixed initialization of code browser for project that do not contain relvant files (so as to allow proper update later on).
+Fixed completion of scoped types (e.g QCodeLoader::OpenRequest).
+Fixed completion issues related to template inheritance.
+------------------------------------------------------------------------
+r480 | fullmetalcoder | 2008-04-03 23:12:25 +0200 (Thu, 03 Apr 2008) | 2 lines
+
+Much improved support for templates (including inherited and nested ones).
+Fixed a couple of C++ parsing quirks (inline ctors, Qt macros, ...)
+------------------------------------------------------------------------
+r479 | fullmetalcoder | 2008-04-03 13:49:37 +0200 (Thu, 03 Apr 2008) | 1 line
+
+Encoding optimization in QCompletionModel (avoid multiple calls to toLocal8Bit() when one is enough).
+------------------------------------------------------------------------
+r478 | fullmetalcoder | 2008-04-03 13:44:45 +0200 (Thu, 03 Apr 2008) | 1 line
+
+Fixed a filter rule in QCompletionWidget to properly display functions from namespaces.
+------------------------------------------------------------------------
+r477 | fullmetalcoder | 2008-04-03 13:33:23 +0200 (Thu, 03 Apr 2008) | 1 line
+
+Added support for type completion (e.g : QSql [CTRL+Space] :) )
+------------------------------------------------------------------------
+r476 | fullmetalcoder | 2008-04-02 19:45:48 +0200 (Wed, 02 Apr 2008) | 1 line
+
+Fixed windows compilation issue.
+------------------------------------------------------------------------
+r475 | fullmetalcoder | 2008-04-02 17:20:01 +0200 (Wed, 02 Apr 2008) | 1 line
+
+Added a user-contributed windows-specific implementation of QInterProcessChannel using named pipes to avoid the troubles caused by the default implementation under this platform.
+------------------------------------------------------------------------
+r474 | fullmetalcoder | 2008-04-02 16:53:19 +0200 (Wed, 02 Apr 2008) | 2 lines
+
+Re-enabled class browser "jumps" with much improved accuracy.
+Added a new option to QDocumentSearch : Silent to prevent dialogs from popping up even if a search fails.
+------------------------------------------------------------------------
+r473 | fullmetalcoder | 2008-04-02 13:31:33 +0200 (Wed, 02 Apr 2008) | 4 lines
+
+Improved QProjectModel editing paradigm to handle multipl proxy models properly.
+Switched to QProjectProxyModel (with maximum detail level) in QMakeSettings.
+Disabled the action bar in QProjectView.
+Fixed proxy redirection of source model requestEdit(QModelIndex) signal.
+------------------------------------------------------------------------
+r472 | fullmetalcoder | 2008-04-02 13:17:42 +0200 (Wed, 02 Apr 2008) | 1 line
+
+Fixed a bug in argument splitting of QManagedRequest (QCumber IPC classes).
+------------------------------------------------------------------------
+r471 | fullmetalcoder | 2008-04-02 11:40:17 +0200 (Wed, 02 Apr 2008) | 1 line
+
+Added basic inline search to integrated assistant.
+------------------------------------------------------------------------
+r470 | fullmetalcoder | 2008-04-01 22:41:55 +0200 (Tue, 01 Apr 2008) | 2 lines
+
+Much improved support for enums in C++ completion.
+Fixed some namespace related issues in C++ completion.
+------------------------------------------------------------------------
+r469 | fullmetalcoder | 2008-04-01 20:03:34 +0200 (Tue, 01 Apr 2008) | 1 line
+
+Added two new class browsing icons [previous commit lacked a svn add...]
+------------------------------------------------------------------------
+r468 | fullmetalcoder | 2008-04-01 20:02:43 +0200 (Tue, 01 Apr 2008) | 2 lines
+
+Added two new class browsing icons (variations of existing ones) : enum and enumerator.
+Enabled display of enums and subtypes when triggering completion via "::".
+------------------------------------------------------------------------
+r467 | fullmetalcoder | 2008-04-01 18:09:40 +0200 (Tue, 01 Apr 2008) | 10 lines
+
+Added a new display paradigm for project manager : detailed view (internally considered as a level of detail.
+Added QProjectProxyModel which implements "level of detail"-based filtering.
+Updated QProjectView to properly manage QProjectModel both directly or behind a proxy.
+Added a couple of new icons for use in qmake project manager.
+Added a configuration key to GDB driver plugin (gdb command/path).
+Fixed GNU make builder to use mingw32-make instead of make on windows by default.
+Changed the defaultActions() of QProjectNode of type Other to Rename | Remove instead of None.
+Updated the plugin header template of qplugin_generator to return default value in case the config backend returns an empty string or invalid value.
+Added an action to the Project menu to toggle detailed view.
+
+------------------------------------------------------------------------
+r466 | fullmetalcoder | 2008-03-31 13:33:14 +0200 (Mon, 31 Mar 2008) | 2 lines
+
+Fixed a bug in cursor movement : some moves could cause endless loops or assert failures.
+Improved line number panel width guess by using a QFontMetrics object build ofr bold font.
+------------------------------------------------------------------------
+r465 | fullmetalcoder | 2008-03-25 10:38:57 +0100 (Tue, 25 Mar 2008) | 3 lines
+
+Fixed a bug in line marks save/restore.
+Added support for breakpoints deletion.
+Prettied the debug menu.
+------------------------------------------------------------------------
+r464 | fullmetalcoder | 2008-03-24 16:14:44 +0100 (Mon, 24 Mar 2008) | 1 line
+
+Added proper connections to allow breakpoint creation while debugging is going on.
+------------------------------------------------------------------------
+r463 | fullmetalcoder | 2008-03-24 16:08:40 +0100 (Mon, 24 Mar 2008) | 1 line
+
+Resurrected the debugging facilities. The new plugin now uses GDB/MI instead of GDB/CLI for increased stability, flexibility and easier development. There are still some rough edges but the basis is there.
+------------------------------------------------------------------------
+r462 | fullmetalcoder | 2008-03-22 18:56:41 +0100 (Sat, 22 Mar 2008) | 1 line
+
+Fixed a bug in QMake projects parser which caused variables enclosed in single line scopes to be badly understood.
+------------------------------------------------------------------------
+r461 | fullmetalcoder | 2008-03-22 18:45:46 +0100 (Sat, 22 Mar 2008) | 1 line
+
+Improved debugging infrastructure (GDB plugin still not working)
+------------------------------------------------------------------------
+r460 | fullmetalcoder | 2008-03-22 11:03:17 +0100 (Sat, 22 Mar 2008) | 1 line
+
+Added GDB plugin (only skeleton ATM for testing purposes...)
+------------------------------------------------------------------------
+r459 | fullmetalcoder | 2008-03-22 11:01:26 +0100 (Sat, 22 Mar 2008) | 4 lines
+
+Introduced the new QDebuggingEngine class to manage QDebugger plugin-based objects.
+Added to convenience getters to QBuildEngine.
+Cleaned up EdyukGUI a bit and integrated QDebuggingEngine in it.
+Enabled loading of "raw" qmdiClient from plugins.
+------------------------------------------------------------------------
+r458 | fullmetalcoder | 2008-03-22 10:57:21 +0100 (Sat, 22 Mar 2008) | 1 line
+
+Fixed a bug in unindentSelection().
+------------------------------------------------------------------------
+r457 | fullmetalcoder | 2008-03-22 10:56:17 +0100 (Sat, 22 Mar 2008) | 1 line
+
+Fixed a potential source of pointer corruption in the plugin system due to multiple inheritance and offsets. \[FULL REBUILD NEEDED\!\!\!\]
+------------------------------------------------------------------------
+r456 | fullmetalcoder | 2008-03-15 13:09:33 +0100 (Sat, 15 Mar 2008) | 1 line
+
+Updated python syntax file.
+------------------------------------------------------------------------
+r455 | fullmetalcoder | 2008-03-13 13:30:19 +0100 (Thu, 13 Mar 2008) | 1 line
+
+Small changes in QBuilder to allow easy build action registration so that user can assign shortcuts.
+------------------------------------------------------------------------
+r454 | fullmetalcoder | 2008-03-12 19:06:28 +0100 (Wed, 12 Mar 2008) | 1 line
+
+Changed cursor mirror bindings : hand-placement of mirrors is now done with CTRL+ALT held down instead of just CTRL to avoid accidental creation (especially when using CTRL+C CTRL+V intensively...).
+------------------------------------------------------------------------
+r453 | fullmetalcoder | 2008-03-12 18:36:15 +0100 (Wed, 12 Mar 2008) | 1 line
+
+Fixed the output path search button in project properties dialog.
+------------------------------------------------------------------------
+r452 | fullmetalcoder | 2008-03-12 16:56:39 +0100 (Wed, 12 Mar 2008) | 2 lines
+
+Added context menu to Assistant search results.
+Fixed handling of non-local URLs (forwarded to system through QDesktopServices.)
+------------------------------------------------------------------------
+r451 | fullmetalcoder | 2008-03-12 16:28:54 +0100 (Wed, 12 Mar 2008) | 2 lines
+
+Added a preview icon (contributed by CodeSlicer).
+Updated QDesignerClient to use the preview icon for the form preview action.
+------------------------------------------------------------------------
+r450 | fullmetalcoder | 2008-03-12 16:21:30 +0100 (Wed, 12 Mar 2008) | 2 lines
+
+Fixed handling of complement sets ("^" operator).
+Modified doxygen syntax file to restrict multiline comment matching to EXACTLY two stars (so that headers are no longer highlighted as Doxygen comments).
+------------------------------------------------------------------------
+r449 | fullmetalcoder | 2008-03-08 11:29:56 +0100 (Sat, 08 Mar 2008) | 1 line
+
+Brought support for multiples code blocks boundaries on a single document line for both indentation-based and token-based code folding engines.
+------------------------------------------------------------------------
+r448 | fullmetalcoder | 2008-03-08 11:07:05 +0100 (Sat, 08 Mar 2008) | 1 line
+
+Fixed some bugs introduced by the new code folding design.
+------------------------------------------------------------------------
+r447 | fullmetalcoder | 2008-03-02 19:56:35 +0100 (Sun, 02 Mar 2008) | 2 lines
+
+Changes in QMatcher interface to allow more flexibility in folding (especially multiple block closure on a single line...).
+Added a indentation-based folder to QNFA syntax engine which can be enabled through the indentFold boolean attribute of language element in xml syntax files (see python.qnfa)
+------------------------------------------------------------------------
+r446 | fullmetalcoder | 2008-03-02 13:17:25 +0100 (Sun, 02 Mar 2008) | 1 line
+
+Fixed a potential script error on systems where sh does not point to bash.
+------------------------------------------------------------------------
+r445 | fullmetalcoder | 2008-03-02 12:48:17 +0100 (Sun, 02 Mar 2008) | 1 line
+
+Fixed a potential segfault on project folder (scope/variable) removal and swapped the rename/remove entries for these items in order to make the editing behavior more consistent.
+------------------------------------------------------------------------
+r444 | fullmetalcoder | 2008-02-21 16:34:40 +0100 (Thu, 21 Feb 2008) | 1 line
+
+Fixed a potential drawing bug in QLineNumberPanel.
+------------------------------------------------------------------------
+r443 | fullmetalcoder | 2008-02-21 15:51:09 +0100 (Thu, 21 Feb 2008) | 1 line
+
+Fixed an annoying scrollbar update on showEvent.
+------------------------------------------------------------------------
+r442 | fullmetalcoder | 2008-02-17 10:29:52 +0100 (Sun, 17 Feb 2008) | 1 line
+
+Fixed a bug in (un)indent/(un)comment that caused bad placement of the inserted strings.
+------------------------------------------------------------------------
+r441 | fullmetalcoder | 2008-02-09 22:38:19 +0100 (Sat, 09 Feb 2008) | 1 line
+
+Fixed build issues related to awkard behavior of MSVC.
+------------------------------------------------------------------------
+r440 | fullmetalcoder | 2008-02-03 18:38:19 +0100 (Sun, 03 Feb 2008) | 1 line
+
+Two minor fixes.
+------------------------------------------------------------------------
+r439 | fullmetalcoder | 2008-02-03 18:38:01 +0100 (Sun, 03 Feb 2008) | 1 line
+
+Removed a statement used in debug/optimization phase.
+------------------------------------------------------------------------
+r438 | fullmetalcoder | 2008-02-03 15:15:00 +0100 (Sun, 03 Feb 2008) | 1 line
+
+Another fix for hide/delete mix.
+------------------------------------------------------------------------
+r437 | fullmetalcoder | 2008-02-03 15:05:08 +0100 (Sun, 03 Feb 2008) | 3 lines
+
+Fixed a cursor positioning bug when using variable width fonts.
+More line->linenumber changes to improve speed. And especially a couple of API changes to prevent bad practices that caused numerous useless computations (such as repeted indexOf() to find the line number of a line object).
+Fixed bugs that could occur when deleting hidden (i.e. collapsed) text by properly updating hidden areas cache. NB : hidden blocks are back to visible when deleting operation is undone.
+------------------------------------------------------------------------
+r436 | fullmetalcoder | 2008-02-02 16:25:55 +0100 (Sat, 02 Feb 2008) | 1 line
+
+Updated copyright notice to reflect year change.
+------------------------------------------------------------------------
+r435 | fullmetalcoder | 2008-02-02 16:18:53 +0100 (Sat, 02 Feb 2008) | 5 lines
+
+Updated copyright notice.
+Updated README.
+Updated feature file.
+Restored install target.
+Removed useless LGPL.txt
+------------------------------------------------------------------------
+r434 | fullmetalcoder | 2008-02-02 15:32:18 +0100 (Sat, 02 Feb 2008) | 2 lines
+
+Added some workaround to path combining issues to avoid duplicate file opening.
+Restored line marking on error jump.
+------------------------------------------------------------------------
+r433 | fullmetalcoder | 2008-02-02 15:25:33 +0100 (Sat, 02 Feb 2008) | 1 line
+
+Some changes in line marks handling, persistency now works as expected and is handled directly by QLineMarksInfoCenter.
+------------------------------------------------------------------------
+r432 | fullmetalcoder | 2008-02-02 14:07:14 +0100 (Sat, 02 Feb 2008) | 1 line
+
+Propagated latest changes from QCodeEdit stable branch.
+------------------------------------------------------------------------
+r431 | fullmetalcoder | 2008-02-02 13:52:56 +0100 (Sat, 02 Feb 2008) | 1 line
+
+Propagated line->line number paradigm change already done in cursors to selection and improved some code in QEditor to fully take advantage of these optimization : MUCH faster scrolling and cursor movement.
+------------------------------------------------------------------------
+r430 | fullmetalcoder | 2008-02-02 11:31:16 +0100 (Sat, 02 Feb 2008) | 2 lines
+
+Fixed a minor selection drawing bug.
+Added a "Find next" action (default shortcut is F3).
+------------------------------------------------------------------------
+r429 | fullmetalcoder | 2008-02-01 22:42:11 +0100 (Fri, 01 Feb 2008) | 3 lines
+
+Set the find/replace dialog to select find pattern on show.
+Made the replace panel to behave like the find panel (ctrl+r always gives it the focus).
+Panels now forward mouse events to the editor, thus enabling cursor placement when clicking on a panel.
+------------------------------------------------------------------------
+r428 | fullmetalcoder | 2008-01-27 17:07:04 +0100 (Sun, 27 Jan 2008) | 5 lines
+
+Updated version string to 1.0.0-rc1
+Fixed some "smart save" issues in project management.
+Added basic write facilities to INCLUDEPATH, LIBS and DEFINES.
+Added a context menu to close files from manager dock without changing the current file.
+Improved some pattern extraction for GCC output parser.
+------------------------------------------------------------------------
+r427 | fullmetalcoder | 2008-01-27 15:06:40 +0100 (Sun, 27 Jan 2008) | 3 lines
+
+Playground :
+ * updated the benchmark tool
+ * Several tweaks to speed up highlighting (still a bit slower than stable branch large files such as benchmark_big.cpp : ~1500ms more on average...)
+------------------------------------------------------------------------
+r426 | fullmetalcoder | 2008-01-27 12:40:30 +0100 (Sun, 27 Jan 2008) | 5 lines
+
+Many changes in the playground :
+ * syntax engine is getting better (parsing works, proper formatting confi remains to be implemented...)
+ * new context formatting scheme has been implemented (allows context aware behavior by storing contexts coordinates in line handles).
+ * now back using QFormat (though QFormatFactory is no longer used) which has been granted some wrapper functions to make it easier to apply settings on QPainter or QFont objects.
+and more...
+------------------------------------------------------------------------
+r425 | fullmetalcoder | 2008-01-20 14:47:54 +0100 (Sun, 20 Jan 2008) | 1 line
+
+Set back default font to Monospace.
+------------------------------------------------------------------------
+r424 | fullmetalcoder | 2008-01-20 14:44:29 +0100 (Sun, 20 Jan 2008) | 1 line
+
+Added bounds checking in format compositing to prevent occasional assert failures when using variable width fonts.
+------------------------------------------------------------------------
+r423 | fullmetalcoder | 2008-01-19 22:19:05 +0100 (Sat, 19 Jan 2008) | 1 line
+
+Updated svn:eol-style and svn:executable properties.
+------------------------------------------------------------------------
+r422 | fullmetalcoder | 2008-01-19 20:08:46 +0100 (Sat, 19 Jan 2008) | 1 line
+
+Added some guards to fix corner-case assert failures. (Unable to reproduce the bugs but this should work considering the backtrace...).
+------------------------------------------------------------------------
+r421 | fullmetalcoder | 2008-01-19 18:18:36 +0100 (Sat, 19 Jan 2008) | 2 lines
+
+Fixed some parsing issues in gcc output parser.
+Improved behavior of log dock.
+------------------------------------------------------------------------
+r420 | fullmetalcoder | 2008-01-19 17:10:18 +0100 (Sat, 19 Jan 2008) | 2 lines
+
+Fixed a bug in hidden line cache which caused drawing bugs when editing was performed above collapsed blocks.
+Modified the line number panel to display the current line in bold.
+------------------------------------------------------------------------
+r419 | fullmetalcoder | 2008-01-19 13:21:45 +0100 (Sat, 19 Jan 2008) | 4 lines
+
+Fixed some encoding issues in QEditor (now always using local8Bit<=>UNICODE codec).
+Fixed a very nasty random bug : missing lines, which came from a bad initialization of atomic counters (dates back to 4.4.0 compat fixes).
+Added QDocumentCursor::moveTo(int line, int column) (overload).
+Fixed doc height update on line deletion.
+------------------------------------------------------------------------
+r418 | fullmetalcoder | 2008-01-19 12:02:05 +0100 (Sat, 19 Jan 2008) | 5 lines
+
+fixed a bug in qmdiWorkspace that caused nasty undocking of clients on focus out.
+Fixed a bug in QProjectModel::closeAll() that could lead to segfault when several complex projects where opened.
+Added a message tab to EdyukLogDock that displays parsed build ouptut (tasks performed and errors/warnings thrown by the build engine).
+Added proper output parsing to GCC plugin.
+Removed some useless code in QApplication and fixed log duplication.
+------------------------------------------------------------------------
+r417 | fullmetalcoder | 2008-01-19 09:53:13 +0100 (Sat, 19 Jan 2008) | 1 line
+
+Fixed an annoying drawing bug (selection on empty lines).
+------------------------------------------------------------------------
+r416 | fullmetalcoder | 2008-01-18 22:25:24 +0100 (Fri, 18 Jan 2008) | 2 lines
+
+Fixed encoding quirk in output log (use of QDebug screwed it all... Long live printf() and fprintf() :) ).
+Some improvements in build system.
+------------------------------------------------------------------------
+r415 | fullmetalcoder | 2008-01-18 21:30:24 +0100 (Fri, 18 Jan 2008) | 2 lines
+
+Added bindings to add cursor mirrors without mouse action (CTRL + ALT + UP/DOWN).
+Made the line number panel width semi-fixed (i.e. varying only with the number of lines of the document not with the maximum line number visible in the current viewport.).
+------------------------------------------------------------------------
+r414 | fullmetalcoder | 2008-01-18 21:13:01 +0100 (Fri, 18 Jan 2008) | 2 lines
+
+Fixed a couple of assert failures.
+Fixed NextWord/PrevWord commands.
+------------------------------------------------------------------------
+r413 | fullmetalcoder | 2008-01-12 20:42:05 +0100 (Sat, 12 Jan 2008) | 1 line
+
+Fixed shortcut persitency bug on language switch when no existing shortcuts found.
+------------------------------------------------------------------------
+r412 | fullmetalcoder | 2008-01-12 15:25:33 +0100 (Sat, 12 Jan 2008) | 4 lines
+
+Removed an old outdated ui file which caused build problems on some platform (same name for two files in two different dependpath...)
+Fixed a couple of small bugs in QCodeEdit.
+Fixed a couple of bugs in QProjectModel which broke some features in QMake project backend.
+
+------------------------------------------------------------------------
+r411 | fullmetalcoder | 2008-01-12 13:09:05 +0100 (Sat, 12 Jan 2008) | 1 line
+
+Fixed a couple of build problems encountered under Windows.
+------------------------------------------------------------------------
+r410 | fullmetalcoder | 2008-01-04 16:50:26 +0100 (Fri, 04 Jan 2008) | 3 lines
+
+Improved the build script to detect tech preview, release candidate and beta version in qmake version string and act accordingly.
+Disabled the install of Edyuk desktop entry on user desktop (too invasive method...)
+Attempt to make plugins compilation work better under windows (path issue reported...)
+------------------------------------------------------------------------
+r409 | fullmetalcoder | 2008-01-04 16:48:12 +0100 (Fri, 04 Jan 2008) | 4 lines
+
+Fixed caduel fix ;) i.e restored backward compatibility with Qt 4.3
+Fixed cursor watch (aka auto update) mechanism to work well with cursor mirrors and new number-based cursor handles.
+A couple of other fixes/improvements in the cursor mechanism.
+Centralized cursor mirrors clearing in QEditor to make sure they unhook from watch system so as to avoid incremental memory and speed waste.
+------------------------------------------------------------------------
+r408 | caduel | 2008-01-04 13:58:44 +0100 (Fri, 04 Jan 2008) | 2 lines
+
+compile fix Qt4.4 (TP1): use QAtomicInt API
+
+------------------------------------------------------------------------
+r407 | fullmetalcoder | 2008-01-03 18:23:22 +0100 (Thu, 03 Jan 2008) | 2 lines
+
+Forced panel update on file save (a bit hackish : full update), mostly useful for line change panel.
+Fixed plugins loading on installed version (plugin lookup path...).
+------------------------------------------------------------------------
+r406 | fullmetalcoder | 2008-01-03 18:16:20 +0100 (Thu, 03 Jan 2008) | 3 lines
+
+Set the build script to require a Bash shell so as to avoid "Bad substitution" errors.
+Improved the run script so that it always find Edyuk binaries near to him (debug or release).
+Fixed the install.pri : debug version of the wrapper executable was not copied.
+------------------------------------------------------------------------
+r405 | fullmetalcoder | 2008-01-03 17:19:20 +0100 (Thu, 03 Jan 2008) | 2 lines
+
+Fixed the find panel show behaviour.
+Tagged Edyuk for 1.0.0-pre2.
+------------------------------------------------------------------------
+r404 | fullmetalcoder | 2008-01-03 16:44:04 +0100 (Thu, 03 Jan 2008) | 1 line
+
+added two user-contributed batch files for simpler build process with MSVC.
+------------------------------------------------------------------------
+r403 | fullmetalcoder | 2008-01-03 16:13:09 +0100 (Thu, 03 Jan 2008) | 3 lines
+
+Various bugfixes.
+Added the \interpreter" version of qmake backend (a single missing file actually).
+Improvements here and there (e.g. added the line change panel to the default layout.)
+------------------------------------------------------------------------

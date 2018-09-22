@@ -1,0 +1,19 @@
+#! /bin/sh
+
+#
+# (c) FullMetalCoder 2006
+#
+# Script for debugging Edyuk
+#
+
+
+# Unix variable
+LD_LIBRARY_PATH=$PWD/$dirname:$LD_LIBRARY_PATH
+
+# MacX variable
+DYLD_LIBRARY_PATH=$PWD/$dirname:$DYLD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH DYLD_LIBRARY_PATH
+
+gdb edyuk_debug.bin
+
